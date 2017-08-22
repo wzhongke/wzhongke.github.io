@@ -145,149 +145,6 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-mybatis"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-07-20 16:05:42" datetime="2017-07-20T16:05:42.000Z"  itemprop="datePublished">2017-07-20</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/sql/">sql</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/07/21/mybatis/">mybatis</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        MyBatis是什么MyBatis是定制化SQL、存储过程以及高级映射的持久层框架。MyBatis 可以对配置和原生Map使用简单的 XML 或注解，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。
-    
-        <br>
-        <a href="/2017/07/21/mybatis/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Lambda表达式和Stream"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-07-20 12:14:12" datetime="2017-07-20T12:14:12.000Z"  itemprop="datePublished">2017-07-20</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/07/20/Lambda表达式和Stream/">Lambda表达式和Stream</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        流被设计为与lambda表达式一起使用，这使得日常编程更容易。
-Lambda 表达式匿名类的一个非常明显的问题是，如果匿名类的实现非常简单，例如只包含一个方法的接口，那么匿名类的语法可能看起来很笨重而且也不清晰。在这些情况下，可以将功能作为参数传递给另一种方法。Lambda表达式就是为此而生，它能够将功能视为方法参数或将代码作为数据。对于单一方法的实例，相对于匿名类，lambda表达式可以更紧凑地表示。
-    
-        <br>
-        <a href="/2017/07/20/Lambda表达式和Stream/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Java线程池技术"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-07-03 19:01:11" datetime="2017-07-03T19:01:11.000Z"  itemprop="datePublished">2017-07-03</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/07/04/Java线程池技术/">java线程池技术</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        服务器在处理客户端请求时，经常面对的是客户端的任务简单，单一。如果针对每个任务，都创建一个线程执行，那么对于成千上万的客户端任务，服务器会创建数以万计的线程。这会使得操作系统频繁地进行线程的上下文切换，增加系统负载，浪费系统资源。线程池技术很好地解决了这个问题，它预先创建了若干个线程。用这些线程处理客户端提交的任务，避免了频繁的线程创建和销毁的系统开销。
-下面是一个简单的线程池接口定义12345678public interface ThreadPool&lt;Job extends Runnable&gt; &#123;    // 执行一个Job，这个Job需要实现Runnable    void execute(Job job);    void shutdown();    void addWorkers(int num);    void removeWorkers(int num);    int getJobSize();&#125;
-    
-        <br>
-        <a href="/2017/07/04/Java线程池技术/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-缓存算法"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -488,6 +345,149 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-ConcurrentHashMap"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/ConcurrentHashMap/">HashMap 和 ConcurrentHashMap</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        并发编程为什么使用ConcurrentHashMapHashMap并不是线程安全的，HashTable虽然是线程安全的，但是HashTable的效率非常低下。
+HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导致程序进入死循环，是因为多线程会导致HashMap的冲突链表形成环形数据。一旦新城环形数据结构，Node的next永远不为空，导致死循环。
+    
+        <br>
+        <a href="/2017/06/18/ConcurrentHashMap/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-hello-world"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/hello-world/">hexo Hello World</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
+    
+        <br>
+        <a href="/2017/06/18/hello-world/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-apply和call的区别"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/apply和call的区别/">apply和call</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        JavaScript中每个函数都包含两个非继承而来的方法：apply()和call().apply()方法接收两个参数：运行调用函数的作用域；参数数组或者arguments对象。call()方法同apply()不同之处在于除了第一个参数是函数运行的作用域，其余参数都是直接传递给函数的，因此使用call()方法时传递的参数必须全部列举出来。
+    
+        <br>
+        <a href="/2017/06/18/apply和call的区别/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-二叉树的分层遍历"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -536,6 +536,53 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-linux-常用命令"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:42:25" datetime="2017-06-17T19:42:25.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/linux-常用命令/">linux 常用命令</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。
+    
+        <br>
+        <a href="/2017/06/18/linux-常用命令/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-markdown语法"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -576,54 +623,6 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-resin 配置"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-06-17 19:42:25" datetime="2017-06-17T19:42:25.000Z"  itemprop="datePublished">2017-06-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/resin 配置/">resin 配置</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        resin 配置resin 配置日志信息12345678910111213&lt;log-handler name="" level="info" path="stdout:"               timestamp="[%y-%m-%d %H:%M:%S.%s] &#123;%&#123;thread&#125;&#125; "/&gt;&lt;stdout-log path-format="log/stdout.log.%Y%m%d" rollover-period="1D"/&gt;&lt;stderr-log path-format="log/stderr.log.%Y%m%d" rollover-period="1D"/&gt;&lt;!-- - level='info' for production - 'fine' or 'finer' for development and troubleshooting--&gt;&lt;logger name="com.caucho" level="info"/&gt;&lt;logger name="com.caucho.java" level="config"/&gt;&lt;logger name="com.caucho.loader" level="config"/&gt;
-stdout-log中的path-format设置了正常输出日志的路径和日志文件命名格式；rollover-period设置了日志文件生成时间间隔。 1D是一天，1H是一个小时。
-    
-        <br>
-        <a href="/2017/06/18/resin 配置/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </div>
     
