@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>pycurl 快速开始指南 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="python">
+    <meta name="description" content="获取网络资源安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以下步骤：  创建一个pucurl.Curl的实例。 使用  setopt  来设置一些请求选项。 调用 perform 来执行请求。">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pycurl 快速开始指南">
+<meta property="og:url" content="http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="获取网络资源安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以下步骤：  创建一个pucurl.Curl的实例。 使用  setopt  来设置一些请求选项。 调用 perform 来执行请求。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-04T05:51:58.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pycurl 快速开始指南">
+<meta name="twitter:description" content="获取网络资源安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以下步骤：  创建一个pucurl.Curl的实例。 使用  setopt  来设置一些请求选项。 调用 perform 来执行请求。">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">pycurl 快速开始指南</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">pycurl 快速开始指南</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2014-12-20T11:37:28.000Z" itemprop="datePublished" class="page-time">
+  2014-12-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/python/">python</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取网络资源"><span class="post-toc-number">1.</span> <span class="post-toc-text">获取网络资源</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-pycurl-快速开始指南"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">pycurl 快速开始指南</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2014-12-20 11:37:28" datetime="2014-12-20T11:37:28.000Z"  itemprop="datePublished">2014-12-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/python/">python</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="获取网络资源"><a href="#获取网络资源" class="headerlink" title="获取网络资源"></a>获取网络资源</h2><p>安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以下步骤：</p>
+<ol>
+<li>创建一个pucurl.Curl的实例。</li>
+<li>使用  setopt  来设置一些请求选项。</li>
+<li>调用 perform 来执行请求。<br><a id="more"></a>
+</li>
+</ol>
+<p>在python2 中，我们采用以下的方法获取网络资源：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"><span class="keyword">from</span> StringIO <span class="keyword">import</span> StringIO</div><div class="line"></div><div class="line">buffer = StringIO()</div><div class="line">c = pycurl.Curl()</div><div class="line">c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net/'</span>)</div><div class="line">c.setopt(c.WRITEDATA, buffer)</div><div class="line">c.perform()</div><div class="line">c.close()</div><div class="line"></div><div class="line">body = buffer.getvalue()</div><div class="line"><span class="comment"># Body is a string in some encoding.</span></div><div class="line"><span class="comment"># In Python 2, we can print it without knowing what the encoding is.</span></div><div class="line">print(body)</div></pre></td></tr></table></figure></p>
+<p>PycURL没有对网络的响应提供存贮机制。因此，我们必须提供一个缓存（以StringIO的形式）并且让PycURL将内容写入这个缓存。<br>现有的大多数PycURL代码使用 WRITEFUNCTION 而不是WRITEDATA：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c.setopt(c.WRITEFUNCTION, buffer.write)</div></pre></td></tr></table></figure></p>
+<p>虽然 WRITEFUNCTION 还能继续使用，但是没有必要了。因为PycURL 7.19.3版本中的WRITEDATA 可以使用任何具有write方法的Python类。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</div><div class="line"></div><div class="line">buffer = BytesIO()</div><div class="line">c = pycurl.Curl()</div><div class="line">c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net/'</span>)</div><div class="line">c.setopt(c.WRITEDATA, buffer)</div><div class="line">c.perform()</div><div class="line">c.close()</div><div class="line"></div><div class="line">body = buffer.getvalue()</div><div class="line"><span class="comment"># Body is a byte string.</span></div><div class="line"><span class="comment"># We have to know the encoding in order to print it to a text file</span></div><div class="line"><span class="comment"># such as standard output.</span></div><div class="line">print(body.decode(<span class="string">'iso-8859-1'</span>))</div></pre></td></tr></table></figure></p>
+<p>在Python 3 中，PycURL的响应是字节串。字节串对于我们下载二进制文件是比较方便的，但是我们处理文本内容时必须对字节串解码。<br>在上面的例子中，我们假设内容是以iso-8859-1编码的。检查响应头在现实中，我们希望使用服务器指定的编码格式对响应解码而不是假设一个编码格式解码。我们需要检查响应头来提取服务器指定的编码格式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">from</span> StringIO <span class="keyword">import</span> StringIO <span class="keyword">as</span> BytesIO</div><div class="line"></div><div class="line">headers = &#123;&#125;</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">header_function</span><span class="params">(header_line)</span>:</span></div><div class="line">    <span class="comment"># HTTP standard specifies that headers are encoded in iso-8859-1.</span></div><div class="line">    <span class="comment"># On Python 2, decoding step can be skipped.</span></div><div class="line">    <span class="comment"># On Python 3, decoding step is required.</span></div><div class="line">    header_line = header_line.decode(<span class="string">'iso-8859-1'</span>)</div><div class="line"></div><div class="line">    <span class="comment"># Header lines include the first status line (HTTP/1.x ...).</span></div><div class="line">    <span class="comment"># We are going to ignore all lines that don't have a colon in them.</span></div><div class="line">    <span class="comment"># This will botch headers that are split on multiple lines...</span></div><div class="line">    <span class="keyword">if</span> <span class="string">':'</span> <span class="keyword">not</span> <span class="keyword">in</span> header_line:</div><div class="line">        <span class="keyword">return</span></div><div class="line"></div><div class="line">    <span class="comment"># Break the header line into header name and value.</span></div><div class="line">    name, value = header_line.split(<span class="string">':'</span>, <span class="number">1</span>)</div><div class="line"></div><div class="line">    <span class="comment"># Remove whitespace that may be present.</span></div><div class="line">    <span class="comment"># Header lines include the trailing newline, and there may be whitespace</span></div><div class="line">    <span class="comment"># around the colon.</span></div><div class="line">    name = name.strip()</div><div class="line">    value = value.strip()</div><div class="line"></div><div class="line">    <span class="comment"># Header names are case insensitive.</span></div><div class="line">    <span class="comment"># Lowercase name here.</span></div><div class="line">    name = name.lower()</div><div class="line"></div><div class="line">    <span class="comment"># Now we can actually record the header name and value.</span></div><div class="line">    headers[name] = value</div><div class="line"></div><div class="line">buffer = BytesIO()</div><div class="line">c = pycurl.Curl()</div><div class="line">c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net'</span>)</div><div class="line">c.setopt(c.WRITEFUNCTION, buffer.write)</div><div class="line"><span class="comment"># Set our header function.</span></div><div class="line">c.setopt(c.HEADERFUNCTION, header_function)</div><div class="line">c.perform()</div><div class="line">c.close()</div><div class="line"></div><div class="line"><span class="comment"># Figure out what encoding was sent with the response, if any.</span></div><div class="line"><span class="comment"># Check against lowercased header name.</span></div><div class="line">encoding = <span class="keyword">None</span></div><div class="line"><span class="keyword">if</span> <span class="string">'content-type'</span> <span class="keyword">in</span> headers:</div><div class="line">    content_type = headers[<span class="string">'content-type'</span>].lower()</div><div class="line">    match = re.search(<span class="string">'charset=(\S+)'</span>, content_type)</div><div class="line">    <span class="keyword">if</span> match:</div><div class="line">        encoding = match.group(<span class="number">1</span>)</div><div class="line">        print(<span class="string">'Decoding using %s'</span> % encoding)</div><div class="line"><span class="keyword">if</span> encoding <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">    <span class="comment"># Default encoding for HTML is iso-8859-1.</span></div><div class="line">    <span class="comment"># Other content types may have different default encoding,</span></div><div class="line">    <span class="comment"># or in case of binary data, may have no encoding at all.</span></div><div class="line">    encoding = <span class="string">'iso-8859-1'</span></div><div class="line">    print(<span class="string">'Assuming encoding is %s'</span> % encoding)</div><div class="line"></div><div class="line">body = buffer.getvalue()</div><div class="line"><span class="comment"># Decode using the encoding we figured out.</span></div><div class="line">print(body.decode(encoding))</div></pre></td></tr></table></figure></p>
+<p>不得不说，完成一个非常简单的提取编码格式的工作需要大量的代码。不幸的是，因为libcurl 限制了分配给响应数据的内存，所以只能依赖我的程序来执行这个枯燥乏味的工作。<br><br>写入文件: 如果我们要将响应数据存入文件，只要稍作改变就可以了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"></div><div class="line"><span class="comment"># As long as the file is opened in binary mode, both Python 2 and Python 3</span></div><div class="line"><span class="comment"># can write response body to it without decoding.</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'out.html'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">    c = pycurl.Curl()</div><div class="line">    c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net/'</span>)</div><div class="line">    c.setopt(c.WRITEDATA, f)</div><div class="line">    c.perform()</div><div class="line">    c.close()</div></pre></td></tr></table></figure></p>
+<p>最重要的是以二进制方式打开文件，响应内容不需要编码或者解码就可以直接写入文件。</p>
+<p>##跟随重定向<br>默认情况下，libcurl和PycURL都不会跟随重定向的内容。我们可以通过 setopt 来设置跟随重定向：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"></div><div class="line">c = pycurl.Curl()</div><div class="line"><span class="comment"># Redirects to https://www.python.org/.</span></div><div class="line">c.setopt(c.URL, <span class="string">'http://www.python.org/'</span>)</div><div class="line"><span class="comment"># Follow redirect.</span></div><div class="line">c.setopt(c.FOLLOWLOCATION, <span class="keyword">True</span>)</div><div class="line">c.perform()</div><div class="line">c.close()</div></pre></td></tr></table></figure></p>
+<p>正如我们没有设置一个写的回调函数一样，默认的libcurl和PycURL将响应体输出到标准输出上。<br><br>（使用Python 3.4.1 报错：pycurl.error: (23, ‘Failed writing body (0 != 7219)’)）</p>
+<p>##设置选项<br>跟随重定向只是libcurl提供的一个选项。还有好多其他的选项，点击这里查看。除了少数例外，PycURL选项的名字都是从libcurl中通过去掉CURLOPT_前缀得来的。因此CURLOPT_URL就成了简单的URL。</p>
+<p>##检测响应<br>我们已经介绍了检测响应头。其他的响应信息可以通过 getinfo 获得，如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">from</span> StringIO <span class="keyword">import</span> StringIO <span class="keyword">as</span> BytesIO</div><div class="line"></div><div class="line">buffer = BytesIO()</div><div class="line">c = pycurl.Curl()</div><div class="line">c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net/'</span>)</div><div class="line">c.setopt(c.WRITEDATA, buffer)</div><div class="line">c.perform()</div><div class="line"></div><div class="line"><span class="comment"># HTTP response code, e.g. 200.</span></div><div class="line">print(<span class="string">'Status: %d'</span> % c.getinfo(c.RESPONSE_CODE))</div><div class="line"><span class="comment"># Elapsed time for the transfer.</span></div><div class="line">print(<span class="string">'Status: %f'</span> % c.getinfo(c.TOTAL_TIME))</div><div class="line"></div><div class="line"><span class="comment"># getinfo must be called before close.</span></div><div class="line">c.close()</div></pre></td></tr></table></figure></p>
+<p>在此，我们将响应内容写到缓存，避免在标准输出中输出不感兴趣的内容。<br>响应信息都在<a href="https://curl.haxx.se/libcurl/c/curl_easy_getinfo.html" target="_blank">libcurl的相关文档</a>上有展示。除了少数例外，PycURL的常量都是通过去掉libcurl常量的前缀 CURLINFO_来命名的。因此CURLINFO_RESPONSE_CODE变为RESPONSE_CODE</p>
+<p>##提交数据<br>使用POSTFIELDS选项来提交数据。提交的数据必须先经过URL编码格式编码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pycurl</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="comment"># python 3</span></div><div class="line">    <span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="comment"># python 2</span></div><div class="line">    <span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</div><div class="line"></div><div class="line">c = pycurl.Curl()</div><div class="line">c.setopt(c.URL, <span class="string">'http://pycurl.sourceforge.net/tests/testpostvars.php'</span>)</div><div class="line"></div><div class="line">post_data = &#123;<span class="string">'field'</span>: <span class="string">'value'</span>&#125;</div><div class="line"><span class="comment"># Form data must be provided already urlencoded.</span></div><div class="line">postfields = urlencode(post_data)</div><div class="line"><span class="comment"># Sets request method to POST,</span></div><div class="line"><span class="comment"># Content-Type header to application/x-www-form-urlencoded</span></div><div class="line"><span class="comment"># and data to send in request body.</span></div><div class="line">c.setopt(c.POSTFIELDS, postfields)</div><div class="line"></div><div class="line">c.perform()</div><div class="line">c.close()</div></pre></td></tr></table></figure></p>
+<p>POSTFIELDS自动将HTTP请求方式设置为POST方式。其他的请求方式可以通过CUSTOMREQUEST选项设置：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c.setopt(c.CUSTOMREQUEST, <span class="string">'PATCH'</span>)</div></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-08-04T05:51:58.080Z" itemprop="dateUpdated">2017-08-04 05:51:58</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&title=《pycurl 快速开始指南》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&title=《pycurl 快速开始指南》 — 壹叶知秋的博客&source=获取网络资源安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《pycurl 快速开始指南》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2014/12/29/pycurl-https-error-unable-to-get-local-issuer-certificate/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">pycurl https error: unable to get local issuer certificate </h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&title=《pycurl 快速开始指南》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&title=《pycurl 快速开始指南》 — 壹叶知秋的博客&source=获取网络资源安装好PycURL之后，我们就可以执行一些网络操作了。最简单的是通过一个网站的URL获取它的相关资源。使用PycURL执行一个网络请求，需要以..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《pycurl 快速开始指南》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2014/12/20/pycurl-快速开始指南/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
