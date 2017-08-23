@@ -176,7 +176,9 @@
         Java
 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &quot;GBK&quot;)
 
-JavaScript1.在ipad上通过jquery绑定的click事件不生效，解决方法：    1$(document).bind("click touchstart", function()&#123;&#125;)
+JavaScript
+在ipad上通过jquery绑定的click事件不生效，解决方法：
+ 1$(document).bind("click touchstart", function()&#123;&#125;)
 
 使用java拼接json字符串时，不能用\n， 否则JavaScript不会识别。
     
@@ -760,10 +762,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '你走了';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '你来了';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

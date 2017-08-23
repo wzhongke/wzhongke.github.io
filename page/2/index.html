@@ -345,6 +345,54 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-ConcurrentHashMap"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/ConcurrentHashMap/">HashMap 和 ConcurrentHashMap</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        并发编程为什么使用ConcurrentHashMapHashMap并不是线程安全的，HashTable虽然是线程安全的，但是HashTable的效率非常低下。
+HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导致程序进入死循环，是因为多线程会导致HashMap的冲突链表形成环形数据。一旦新城环形数据结构，Node的next永远不为空，导致死循环。
+    
+        <br>
+        <a href="/2017/06/18/ConcurrentHashMap/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-apply和call的区别"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -392,7 +440,7 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-ConcurrentHashMap"
+            <article id="post-二叉树的分层遍历"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -410,7 +458,7 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/ConcurrentHashMap/">HashMap 和 ConcurrentHashMap</a>
+      <a class="post-title-link" href="/2017/06/18/二叉树的分层遍历/">二叉树的分层遍历</a>
     </h3>
   
 
@@ -420,11 +468,11 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        并发编程为什么使用ConcurrentHashMapHashMap并不是线程安全的，HashTable虽然是线程安全的，但是HashTable的效率非常低下。
-HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导致程序进入死循环，是因为多线程会导致HashMap的冲突链表形成环形数据。一旦新城环形数据结构，Node的next永远不为空，导致死循环。
+        今天去面试的时候被问到二叉树的分层遍历，因为原来写Python脚本的时候自己用队列的方法写过一次 分层遍历。结果面试官说能不能用递归的方法，不用队列实现。唔，临时想没有想起来，因此记录一下。
+首先定义一个二叉树的节点：12345class TreeNode:    def __init__(self,value):        self.value=value        self.left=None        self.right=None
     
         <br>
-        <a href="/2017/06/18/ConcurrentHashMap/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/18/二叉树的分层遍历/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -488,55 +536,7 @@ Qu...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-二叉树的分层遍历"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/二叉树的分层遍历/">二叉树的分层遍历</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        今天去面试的时候被问到二叉树的分层遍历，因为原来写Python脚本的时候自己用队列的方法写过一次 分层遍历。结果面试官说能不能用递归的方法，不用队列实现。唔，临时想没有想起来，因此记录一下。
-首先定义一个二叉树的节点：12345class TreeNode:    def __init__(self,value):        self.value=value        self.left=None        self.right=None
-    
-        <br>
-        <a href="/2017/06/18/二叉树的分层遍历/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-linux-常用命令"
+            <article id="post-resin 配置"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -554,7 +554,7 @@ Qu...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/linux-常用命令/">linux 常用命令</a>
+      <a class="post-title-link" href="/2017/06/18/resin 配置/">resin 配置</a>
     </h3>
   
 
@@ -564,10 +564,11 @@ Qu...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。
+        resin 配置resin 配置日志信息12345678910111213&lt;log-handler name="" level="info" path="stdout:"               timestamp="[%y-%m-%d %H:%M:%S.%s] &#123;%&#123;thread&#125;&#125; "/&gt;&lt;stdout-log path-format="log/stdout.log.%Y%m%d" rollover-period="1D"/&gt;&lt;stderr-log path-format="log/stderr.log.%Y%m%d" rollover-period="1D"/&gt;&lt;!-- - level='info' for production - 'fine' or 'finer' for development and troubleshooting--&gt;&lt;logger name="com.caucho" level="info"/&gt;&lt;logger name="com.caucho.java" level="config"/&gt;&lt;logger name="com.caucho.loader" level="config"/&gt;
+stdout-log中的path-format设置了正常输出日志的路径和日志文件命名格式；rollover-period设置了日志文件生成时间间隔。 1D是一天，1H是一个小时。
     
         <br>
-        <a href="/2017/06/18/linux-常用命令/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/18/resin 配置/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -753,10 +754,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '你走了';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '你来了';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

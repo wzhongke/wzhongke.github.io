@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="other">
-    <meta name="description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript1.在ipad上通过jquery绑定的click事件不生效，解决方法：    1$(document).bind(&quot;click touchstart&quot;, function(">
+    <meta name="description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript 在ipad上通过jquery绑定的click事件不生效，解决方法：  1$(document).bind(&quot;click touchstart&quot;, function()&amp;#">
 <meta name="keywords" content="other">
 <meta property="og:type" content="article">
 <meta property="og:title" content="碰到过的问题">
 <meta property="og:url" content="http://wzhongke.github.io/2017/08/22/碰到过的问题/index.html">
 <meta property="og:site_name" content="壹叶知秋的博客">
-<meta property="og:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript1.在ipad上通过jquery绑定的click事件不生效，解决方法：    1$(document).bind(&quot;click touchstart&quot;, function(">
+<meta property="og:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript 在ipad上通过jquery绑定的click事件不生效，解决方法：  1$(document).bind(&quot;click touchstart&quot;, function()&amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-22T04:25:02.251Z">
+<meta property="og:updated_time" content="2017-08-22T04:27:03.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="碰到过的问题">
-<meta name="twitter:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript1.在ipad上通过jquery绑定的click事件不生效，解决方法：    1$(document).bind(&quot;click touchstart&quot;, function(">
+<meta name="twitter:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript 在ipad上通过jquery绑定的click事件不生效，解决方法：  1$(document).bind(&quot;click touchstart&quot;, function()&amp;#">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -181,11 +181,13 @@
             <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><ol>
 <li>在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码<code>new InputStreamReader(new FileInputStream(file), &quot;GBK&quot;)</code></li>
 </ol>
-<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>1.在ipad上通过jquery绑定的click事件不生效，解决方法：<br>    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).bind(<span class="string">"click touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</div></pre></td></tr></table></figure></p>
-<ol>
-<li>使用java拼接json字符串时，不能用<code>\n</code>， 否则JavaScript不会识别。<a id="more"></a>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3></li>
-<li><p>含有画布内容隐藏时，获取画布可能会出现错误。隐藏方式修改为：</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ol>
+<li><p>在ipad上通过jquery绑定的click事件不生效，解决方法：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).bind(<span class="string">"click touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用java拼接json字符串时，不能用<code>\n</code>， 否则JavaScript不会识别。</p>
+<a id="more"></a>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>1.含有画布内容隐藏时，获取画布可能会出现错误。隐藏方式修改为：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">position: relative; </div><div class="line">left: 1000px;</div></pre></td></tr></table></figure>
 <p> 通过定位的方式可能会导致页面可以左右滑动或者下方有大片空白。<br> 后来采用的方式是先展示元素，通过js脚本控制元素最后隐藏。<br> 因为js脚本执行可能会有延时或者顺序不可保证，因此使用先展示后隐藏会有问题，因此可以使用设置通过如下方式控制</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">height:0;</div><div class="line">overflow: hidden;</div></pre></td></tr></table></figure>
@@ -212,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-08-22T04:25:02.251Z" itemprop="dateUpdated">2017-08-22 04:25:02</time>
+    最后更新时间：<time datetime="2017-08-22T04:27:03.677Z" itemprop="dateUpdated">2017-08-22 04:27:03</time>
 </span><br>
 
 
@@ -435,10 +437,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '你走了';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '你来了';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

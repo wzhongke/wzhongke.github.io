@@ -145,7 +145,7 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-resin 配置"
+            <article id="post-linux-常用命令"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -163,7 +163,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/resin 配置/">resin 配置</a>
+      <a class="post-title-link" href="/2017/06/18/linux-常用命令/">linux 常用命令</a>
     </h3>
   
 
@@ -173,11 +173,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        resin 配置resin 配置日志信息12345678910111213&lt;log-handler name="" level="info" path="stdout:"               timestamp="[%y-%m-%d %H:%M:%S.%s] &#123;%&#123;thread&#125;&#125; "/&gt;&lt;stdout-log path-format="log/stdout.log.%Y%m%d" rollover-period="1D"/&gt;&lt;stderr-log path-format="log/stderr.log.%Y%m%d" rollover-period="1D"/&gt;&lt;!-- - level='info' for production - 'fine' or 'finer' for development and troubleshooting--&gt;&lt;logger name="com.caucho" level="info"/&gt;&lt;logger name="com.caucho.java" level="config"/&gt;&lt;logger name="com.caucho.loader" level="config"/&gt;
-stdout-log中的path-format设置了正常输出日志的路径和日志文件命名格式；rollover-period设置了日志文件生成时间间隔。 1D是一天，1H是一个小时。
+        使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。
     
         <br>
-        <a href="/2017/06/18/resin 配置/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/18/linux-常用命令/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -722,10 +721,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '你走了';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '你来了';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
