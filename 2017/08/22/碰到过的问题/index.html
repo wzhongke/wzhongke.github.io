@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript 在ipad上通过jquery绑定的click事件不生效，解决方法：  1$(document).bind(&quot;click touchstart&quot;, function()&amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-22T04:27:03.677Z">
+<meta property="og:updated_time" content="2017-08-31T07:26:43.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="碰到过的问题">
 <meta name="twitter:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;)  JavaScript 在ipad上通过jquery绑定的click事件不生效，解决方法：  1$(document).bind(&quot;click touchstart&quot;, function()&amp;#">
@@ -39,7 +39,13 @@
 
     <!-- custom head -->
     
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 
 <body>
@@ -157,7 +163,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaScript"><span class="post-toc-number">2.</span> <span class="post-toc-text">JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">3.</span> <span class="post-toc-text">CSS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHP"><span class="post-toc-number">4.</span> <span class="post-toc-text">PHP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Other"><span class="post-toc-number">5.</span> <span class="post-toc-text">Other</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP"><span class="post-toc-number">6.</span> <span class="post-toc-text">JSP</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaScript"><span class="post-toc-number">2.</span> <span class="post-toc-text">JavaScript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">3.</span> <span class="post-toc-text">CSS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#linux"><span class="post-toc-number">4.</span> <span class="post-toc-text">linux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHP"><span class="post-toc-number">5.</span> <span class="post-toc-text">PHP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Other"><span class="post-toc-number">6.</span> <span class="post-toc-text">Other</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP"><span class="post-toc-number">7.</span> <span class="post-toc-text">JSP</span></a></li></ol>
         </nav>
     </aside>
     
@@ -193,19 +199,23 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">height:0;</div><div class="line">overflow: hidden;</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><ol>
+<li><code>/var</code> 目录使用率为100%<ul>
+<li>使用 <code>du -h --max-depth=1 /var</code>命令查看var下的文件，发现没有占用空间特别大的文件，总量也不够磁盘的100%</li>
+<li>使用<code>lsof -n | grep delete</code> 命令查看哪些进程使用了已经删除的文件，这些文件虽然已经删除，但是没有释放空间，解决方法是<code>kill</code>掉进程或者reboot</li>
+<li>可能是<code>inode</code>的总量达到磁盘上限，使用<code>df -i</code>查看<code>inode</code>使用情况。如果达到100%，可能是小文件过多，需要找到并清理这些文件</li>
+</ul>
+</li>
+</ol>
 <h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><ol>
 <li>php脚本中不能将 “+” 通过<code>urldecode($str)</code>正确解析，需要通过<code>rawurldecode($str)</code>解析</li>
 <li>PHP中双引号中的变量会被解析 </li>
 </ol>
 <h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><ol>
 <li>换个角度思考问题，往往能更好地解决问题。</li>
-</ol>
-<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3><ol>
+<li>resin 出现<code>validating indexes due to unclean shutdown.</code>错误时，可以将resin安装目录下的 resin-data 文件夹整体删除。<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3></li>
 <li>JSP执行莫名失败，不报错。可能是变量名称定义重复。可以通过在外层加一个大括号，将变量的定义分离开来</li>
-<li><p>在使用JSP的<code>out.write()</code>返回内容时，需要用<code>out.flush()</code>将缓存中的内容刷新到返回体中</p>
-</li>
-<li><p>resin 出现  validating indexes due to unclean shutdown. 错误时，可以将resin安装目录下的 resin-data 文件夹整体删除。</p>
-</li>
+<li>在使用JSP的<code>out.write()</code>返回内容时，需要用<code>out.flush()</code>将缓存中的内容刷新到返回体中</li>
 </ol>
 
         </div>
@@ -214,7 +224,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-08-22T04:27:03.677Z" itemprop="dateUpdated">2017-08-22 04:27:03</time>
+    最后更新时间：<time datetime="2017-08-31T07:26:43.842Z" itemprop="dateUpdated">2017-08-31 07:26:43</time>
 </span><br>
 
 
@@ -289,14 +299,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/24/git/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">git 版本管理工具</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/08/19/sublime/" id="post-next" class="post-nav-link">
+      <a href="/2017/08/19/shell/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">sublime 配置</h4>
+        <h4 class="title">shell 编程</h4>
       </a>
     </div>
   
