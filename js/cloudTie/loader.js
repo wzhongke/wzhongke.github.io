@@ -1,1 +1,51 @@
-!function(e){function n(e,n){var i=document.createElement("script");return i.src=e,i.async=!1,i.charset="utf-8",n?m.appendChild(i):d.appendChild(i),i}function i(e,n){var i=document.createElement("link");return i.rel="stylesheet",i.type="text/css",i.href=e,n?m.appendChild(i):d.appendChild(i),i}function t(e){if(!r){for(var t,a=0,s=e.length;a<s;a++)t=e[a],o.test(t)&&n(t,!1),c.test(t)&&i(t,!1);m.appendChild(d),r=!0}}function a(e){t(window.cloudTieConfig["pc"===e?"pcFiles":"mobileFiles"])}var o=/\.js(\?.*)?$/,c=/\.css(\?.*)?$/,d=document.createDocumentFragment(),r=!1,m=document.head||document.getElementsByTagName("head")[0];window.yunManualLoad||window.yunModuleEnv||a(function(){var e=navigator.userAgent.toLowerCase(),n="ipad"==e.match(/ipad/i),i="iphone os"==e.match(/iphone os/i),t="midp"==e.match(/midp/i),a="rv:1.2.3.4"==e.match(/rv:1.2.3.4/i),o="ucweb"==e.match(/ucweb/i),c="android"==e.match(/android/i),d="windows ce"==e.match(/windows ce/i),r="windows mobile"==e.match(/windows mobile/i);return n||i||t||a||o||c||d||r}()?"mobile":"pc"),e.Tie=e.Tie||{},e.Tie.loader=a}(window);
+!function (e) {
+    function t(e, t) {
+        var n = document.createElement("script");
+        return n.src = e,
+            n.async = !1,
+            n.charset = "utf-8",
+            t ? l.appendChild(n) : h.appendChild(n),
+            n
+    }
+    function n(e, t) {
+        var n = document.createElement("link");
+        return n.rel = "stylesheet",
+            n.type = "text/css",
+            n.href = e,
+            t ? l.appendChild(n) : h.appendChild(n),
+            n
+    }
+    function a(e) {
+        if (!u) {
+            for (var a, i = 0, r = e.length; i < r; i++)
+                a = e[i],
+                    d.test(a) && t(a, !1),
+                    c.test(a) && n(a, !1);
+            l.appendChild(h),
+                u = !0
+        }
+    }
+    function r(e) {
+        a(window.cloudTieConfig[e === 'pc' ? 'pcFiles' : 'mobileFiles'])
+    }
+    function o() {
+        var e = navigator.userAgent.toLowerCase()
+            , t = "ipad" == e.match(/ipad/i)
+            , n = "iphone os" == e.match(/iphone os/i)
+            , a = "midp" == e.match(/midp/i)
+            , i = "rv:1.2.3.4" == e.match(/rv:1.2.3.4/i)
+            , r = "ucweb" == e.match(/ucweb/i)
+            , o = "android" == e.match(/android/i)
+            , d = "windows ce" == e.match(/windows ce/i)
+            , c = "windows mobile" == e.match(/windows mobile/i);
+        return t || n || a || i || r || o || d || c
+    }
+    var d = /\.js(\?.*)?$/
+        , c = /\.css(\?.*)?$/
+        , h = document.createDocumentFragment()
+        , u = !1
+        , l = document.head || document.getElementsByTagName("head")[0];
+    window.yunManualLoad || window.yunModuleEnv || (o() ? r('mobile') : r('pc')),
+        e.Tie = e.Tie || {},
+        e.Tie.loader = r
+}(window);
