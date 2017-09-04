@@ -311,9 +311,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/08/19/shell/" id="post-next" class="post-nav-link">
+      <a href="/2017/08/19/sublime/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">shell 编程</h4>
+        <h4 class="title">sublime 配置</h4>
       </a>
     </div>
   
@@ -467,6 +467,15 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </script>
 
 
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+</script>
 
 </body>
 </html>

@@ -508,5 +508,14 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+</script>
+
 </body>
 </html>

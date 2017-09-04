@@ -269,9 +269,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/18/正则表达式/" id="post-prev" class="post-nav-link">
+      <a href="/2017/06/18/markdown语法/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">正则表达式</h4>
+        <h4 class="title">markdown语法</h4>
       </a>
     </div>
   
@@ -433,6 +433,15 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </script>
 
 
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+</script>
 
 </body>
 </html>

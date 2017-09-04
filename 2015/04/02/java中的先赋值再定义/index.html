@@ -263,9 +263,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2015/07/24/unexpected end of file/" id="post-prev" class="post-nav-link">
+      <a href="/2015/07/24/java中override与overload的区别/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">linux下执行脚本出现报：syntax error: unexpected end of file</h4>
+        <h4 class="title">java中override与overload的区别</h4>
       </a>
     </div>
   
@@ -427,6 +427,15 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </script>
 
 
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+</script>
 
 </body>
 </html>

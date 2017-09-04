@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>sed和awk | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux">
+    <meta name="description" content="awk和sed有很多共同点：  使用相似的语法 面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出 使用正则表达式来进行模式匹配 允许在脚本文件中指定命令这是因为awk和sed都可以追溯到原始的UNIX行编辑器–ed。vim中使用的命令与ed非常相似  ed使用行编辑器，需要知道每次处理都是以行为单位的。重要的是知道当前处理的是文件的哪行。但是用ed打开文件时，控制台展示了文件的字符数，">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sed和awk">
+<meta property="og:url" content="http://wzhongke.github.io/2017/09/01/awk使用说明/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="awk和sed有很多共同点：  使用相似的语法 面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出 使用正则表达式来进行模式匹配 允许在脚本文件中指定命令这是因为awk和sed都可以追溯到原始的UNIX行编辑器–ed。vim中使用的命令与ed非常相似  ed使用行编辑器，需要知道每次处理都是以行为单位的。重要的是知道当前处理的是文件的哪行。但是用ed打开文件时，控制台展示了文件的字符数，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-03T08:29:48.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sed和awk">
+<meta name="twitter:description" content="awk和sed有很多共同点：  使用相似的语法 面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出 使用正则表达式来进行模式匹配 允许在脚本文件中指定命令这是因为awk和sed都可以追溯到原始的UNIX行编辑器–ed。vim中使用的命令与ed非常相似  ed使用行编辑器，需要知道每次处理都是以行为单位的。重要的是知道当前处理的是文件的哪行。但是用ed打开文件时，控制台展示了文件的字符数，">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">sed和awk</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">sed和awk</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-09-01T14:20:00.000Z" itemprop="datePublished" class="page-time">
+  2017-09-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ed"><span class="post-toc-number">1.</span> <span class="post-toc-text">ed</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#awk和sed中的正则表达式"><span class="post-toc-number">2.</span> <span class="post-toc-text">awk和sed中的正则表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#元字符汇总"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">元字符汇总</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展的元字符-egrep-和-awk"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">扩展的元字符(egrep 和 awk)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sed"><span class="post-toc-number">3.</span> <span class="post-toc-text">sed</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sed的基本用法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">sed的基本用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sed脚本"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">sed脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分组命令"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">分组命令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#awk-可编程编辑器"><span class="post-toc-number">4.</span> <span class="post-toc-text">awk - 可编程编辑器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#awk的基本使用"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">awk的基本使用</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-awk使用说明"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">sed和awk</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-09-01 14:20:00" datetime="2017-09-01T14:20:00.000Z"  itemprop="datePublished">2017-09-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><code>awk</code>和<code>sed</code>有很多共同点：</p>
+<ul>
+<li>使用相似的语法</li>
+<li>面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出</li>
+<li>使用正则表达式来进行模式匹配</li>
+<li>允许在脚本文件中指定命令<br>这是因为<code>awk</code>和<code>sed</code>都可以追溯到原始的UNIX行编辑器–<code>ed</code>。vim中使用的命令与<code>ed</code>非常相似</li>
+</ul>
+<h1 id="ed"><a href="#ed" class="headerlink" title="ed"></a><code>ed</code></h1><p>使用行编辑器，需要知道每次处理都是以行为单位的。重要的是知道当前处理的是文件的哪行。但是用<code>ed</code>打开文件时，控制台展示了文件的字符数，并且指向最后一行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ed <span class="built_in">test</span></div><div class="line">23</div></pre></td></tr></table></figure></p>
+<p><code>ed</code>命令下没有提示符。如果输入错误的命令，<code>ed</code>会返回一个问号。可以使用<code>p</code>来显示当前行。<br>默认情况下，一个命令只对当前行生效。可以通过输入行号来跳转到指定的行。可以通过<code>1d</code>命令来删除第一个行(同vim一样)<br>还可以使用正则表达式来指定地址。删除所有包含有”regular”的行，可以通过执行命令<code>g/regular/d</code><br>替换命令在<code>ed</code>中如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[address]s/pattern/replacement/flag</div></pre></td></tr></table></figure></p>
+<p>其中<code>[address]</code>地址限制命令可以用数字，正则表达式来表示<br>可以像下面使用替换命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 用 complex 替换当前行的 &lt;b&gt;第一个&lt;/b&gt; regular </span></div><div class="line">s/regular/complex</div><div class="line"><span class="comment"># 用complex 替换当前行所有的regular</span></div><div class="line">s/regular/complex/g</div><div class="line"><span class="comment"># 用 complex 替换 含有regular的所有行的regular</span></div><div class="line"><span class="comment"># 第一个 /regular 是行地址选择</span></div><div class="line">/regular/s/regular/complex/g</div><div class="line"><span class="comment"># 替换所有的regular为complex</span></div><div class="line">g/regular/s/regular/complex/g</div><div class="line"><span class="comment"># 当 正则表达式和要被替换的内容相同时，可以简写为</span></div><div class="line">g/regular/s//complex/g</div></pre></td></tr></table></figure></p>
+<p>UNIX下的<code>grep</code>命令可以用<code>ed</code>的 <code>g/regular/p</code> 来实现。<br><code>ed</code>可以执行操作集合的文件，将要执行的命令放到一个文件中，通过指定它们为行编辑器的输入，就可以执行相应的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ed <span class="built_in">test</span> &lt; edscript</div><div class="line"><span class="comment">## edscript 中的内容可以是</span></div><div class="line">/wz/</div><div class="line">p</div></pre></td></tr></table></figure></p>
+<h1 id="awk和sed中的正则表达式"><a href="#awk和sed中的正则表达式" class="headerlink" title="awk和sed中的正则表达式"></a><code>awk</code>和<code>sed</code>中的正则表达式</h1><h2 id="元字符汇总"><a href="#元字符汇总" class="headerlink" title="元字符汇总"></a>元字符汇总</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">元字符</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配换行符以外的任意单个字符，awk中能匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">匹配任意一个在它前面的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">[…]</td>
+<td style="text-align:left">匹配方括号字符中的任意一个，如果第一个字符是^，则表示不匹配其中字符的任意一个</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">如果作为正则表达式的第一个字符，则表示匹配行的开始</td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">如果作为正则表达式中的最后一个字符，表示匹配行的结束</td>
+</tr>
+<tr>
+<td style="text-align:left">\{n, m\}</td>
+<td style="text-align:left">匹配前面某个范围内单个字符出现的词数</td>
+</tr>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">转义字符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="扩展的元字符-egrep-和-awk"><a href="#扩展的元字符-egrep-和-awk" class="headerlink" title="扩展的元字符(egrep 和 awk)"></a>扩展的元字符(egrep 和 awk)</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">扩展字符</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">匹配前面的正则表达式一次或多次</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">匹配前面的正则表达式零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left"></td>
+<td>指定可以匹配前面或者后面的表达式</td>
+</tr>
+<tr>
+<td style="text-align:left">()</td>
+<td style="text-align:left">分组</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,m}</td>
+<td style="text-align:left">匹配前面某个范围内单个字符出现的次数</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a><code>sed</code></h1><p>使用<code>sed</code>可以将类似vim编辑器手动的操作过程提取出来，编写成一个可以执行的脚本来实现</p>
+<h2 id="sed的基本用法"><a href="#sed的基本用法" class="headerlink" title="sed的基本用法"></a><code>sed</code>的基本用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">sed [-nefr] [动作]</div><div class="line">    -n: 使用安静模式，一般情况下，所有来自STDIN的数据都会输出到屏幕上，加上-n，则只有经过sed特殊处理的那行才会被列出来</div><div class="line">    -e: 直接在命令行模式上进行sed的动作编辑</div><div class="line">    -f: 直接将sed的动作写在一个文件内，-f filename 可以执行filename中的sed动作</div><div class="line">    -r: sed的动作执行的是扩展型的正则表达式语法</div><div class="line">    -i: 直接修改读取的文件内容，而不是输出到屏幕上</div><div class="line"><span class="comment">## 动作说明</span></div><div class="line">[n1 [,n2]] <span class="keyword">function</span></div><div class="line">    n1, n2: 可选参数，表示进行动作的行数。如 10,20动作， 会在10到20行执行动作</div><div class="line"><span class="comment">## function可以是下面的参数</span></div><div class="line">    a: 新增，a后接字符串，字符串会添加到当前行的下一行</div><div class="line">    c: 替换，c后接字符串，这些字符串替换n1, n2之间的内容</div><div class="line">    d: 删除</div><div class="line">    i: 插入，i后接字符串，字符串会插入到当前行的前一行</div><div class="line">    p: 打印</div><div class="line">    s: 替换，后接正则表达式，执行行内的替换工作</div></pre></td></tr></table></figure>
+<p>示例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 删除2到8行</span></div><div class="line">cat filename | sed <span class="string">'2,8d'</span></div><div class="line"><span class="comment"># 在第2行后新增内容</span></div><div class="line">cat filename | sed <span class="string">'2a append string'</span></div><div class="line"><span class="comment"># 在第2行前新增内容</span></div><div class="line">cat filename | sed <span class="string">'2i append string'</span></div><div class="line"><span class="comment"># 增加多行内容，使用 \ 加 回车换行</span></div><div class="line">cat filename | sed <span class="string">'2a append string  \</span></div><div class="line"><span class="string">second line'</span></div><div class="line"><span class="comment"># 输出文件的第2到8行，需要加上 -n，否则2到8行会重复输出</span></div><div class="line">cat filename | sed -n <span class="string">'2,8p'</span></div><div class="line"><span class="comment"># 替换字符串</span></div><div class="line">sed <span class="string">'s/replaced string/new string/g'</span></div><div class="line"><span class="comment"># 将文件filename中的每行结尾的 . 替换成 !</span></div><div class="line">sed -i <span class="string">'s/\.$/\.!/g'</span> filename</div></pre></td></tr></table></figure></p>
+<p><code>sed</code>可以用来做：</p>
+<ol>
+<li>对一个或者多个文件自动执行编辑操作</li>
+<li>简化对多个文件执行相同的编辑操作</li>
+<li>编写转换程序</li>
+</ol>
+<p><code>sed</code>工作的三个基本原理：</p>
+<ol>
+<li>脚本中的所有编辑命令都将依次应用于每个输入行</li>
+<li>命令应用于所有行，除非寻址限制</li>
+<li>原始的输入文件未改变</li>
+</ol>
+<h2 id="sed脚本"><a href="#sed脚本" class="headerlink" title="sed脚本"></a><code>sed</code>脚本</h2><p><code>sed</code> 将文件中每一行都顺序执行脚本内的命令。<code>sed</code>总是处理行的最新内容，因此生成的任何编辑工作都会改变后续命令应用的行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s/pig/cow/g</div><div class="line">s/cow/horse/g</div></pre></td></tr></table></figure></p>
+<p>上面的命令会将 pig 替换成 cow，再将cow替换成horse，也就是将pig和cow都替换成horse。所以这么写是有问题的。</p>
+<p><code>sed</code>可以用地址限制命令来告诉它哪一行需要相关的操作 <code>/pig/s/cow/horse/g</code>: 行中有pig，才将cow替换为horse</p>
+<p><code>sed</code>命令最多可以指定两个地址，地址可以是描述模式、行号或者行寻址符号的正则表达式</p>
+<ul>
+<li>如果没有指定地址，那么命令将用于每行</li>
+<li>如果只有一个地址，命令应用于于地址匹配的任意行</li>
+<li>如果指定了由逗号分隔的两个地址，那么命令会应用于第一个地址和第二个地址之间的行</li>
+<li>如果地址后边有感叹号(!)，那么命令就应用于不匹配改地址的所有行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 删除第一行</span></div><div class="line">1d</div><div class="line"><span class="comment"># 删除最后一行</span></div><div class="line"><span class="variable">$d</span></div><div class="line"><span class="comment"># 删除空行</span></div><div class="line">/^$/d</div><div class="line"><span class="comment"># 删除第一行到第一个空行中的所有行</span></div><div class="line">1,/^$/d</div></pre></td></tr></table></figure>
+<p>可以通过如下方式执行脚本，并将结果保存到临时文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sed -f sedscr <span class="variable">$x</span> &gt; tmp.<span class="variable">$x</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></p>
+<h3 id="分组命令"><a href="#分组命令" class="headerlink" title="分组命令"></a>分组命令</h3><p><code>sed</code>使用大括号见给一个地址嵌套在另一个地址中，或在相同的地址上应用多个命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &lt;b&gt;左大括号可以放在行末，但右大括号必须单独占一行。大括号之后没有空格&lt;/b&gt;</span></div><div class="line"><span class="comment">## .TS 和 .TE 标记了tb1输入</span></div><div class="line"><span class="comment">## 删除tb1输入中的空行，并执行替换命令</span></div><div class="line">/^\.TS/,/^\.TE/ &#123;</div><div class="line">    /^$/d</div><div class="line">    s/^\.ps 10/.ps 8/</div><div class="line">    s/^\.vs 12/.vs 10/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>sed</code>只能用来执行脚本，没有像<code>ed</code>的交互功能。<code>sed</code>不会更改输入文件，如果想要改变输入文件，可以用流的重定向功能。</p>
+<h1 id="awk-可编程编辑器"><a href="#awk-可编程编辑器" class="headerlink" title="awk - 可编程编辑器"></a><code>awk</code> - 可编程编辑器</h1><h2 id="awk的基本使用"><a href="#awk的基本使用" class="headerlink" title="awk的基本使用"></a><code>awk</code>的基本使用</h2><p><code>awk</code>命令格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 所有的动作都用 单引号 包裹</span></div><div class="line">awk <span class="string">'条件类型1 &#123;动作1&#125; 条件类型2 &#123;动作2&#125; ...'</span> filename</div></pre></td></tr></table></figure></p>
+<p><code>awk</code> 后可以接文件，也可以作为管道命令使用。其处理流程大概为：</p>
+<ol>
+<li>读入第一行，并将第一行的数据填入到$0, $1, $2等变量中</li>
+<li>依据条件类型限制，判断后续动作是否要执行</li>
+<li>做完所有的动作与条件类型</li>
+<li>重复1-3，直到所有的数据处理完<br><code>awk</code>中有如下内置变量<br>变量名     | 含义<br>:———-|:———<br>NF         | 每行拥有的字段总数<br>NR         | 目前awk处理的是行号<br>FS         | 目前的分隔符，默认是空格</li>
+</ol>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cat filename | awk <span class="string">'BEGIN &#123;FS=":"&#125; $3 &lt; 10 &#123;print $1 "\t" $3&#125;'</span></div><div class="line"></div><div class="line">cat filename | awk <span class="string">'&#123;if (NR==1) printf "%10s %10s %10s\n", $1,$2,$3, "Total"&#125;</span></div><div class="line"><span class="string">                    NR&gt;=2 &#123;total = $2+$3 printf "%10s %10s %10s\n", $1,$2,$3, total&#125;'</span></div></pre></td></tr></table></figure></p>
+<p><code>awk</code> 将文本编辑的功能扩展到计算，可以进行大多数的数据处理，像分析，提取和数据报告。<br><code>awk</code> 最独特的特性是它将输入的每行解析成可用于脚本处理的单个字。<br>使用<code>awk</code> 可以做的事有：</p>
+<ul>
+<li>将文本文件看做是有record和field的数据库</li>
+<li>可以使用变量操作数据库</li>
+<li>可以使用数学和字符串运算符</li>
+<li>可以使用条件和循环等编程结构</li>
+<li>生成格式化的报表</li>
+<li>定义函数</li>
+<li>执行脚本</li>
+<li>处理UNIX命令的结果</li>
+<li>更优雅地处理命令行参数</li>
+<li>轻松地处理多输入流</li>
+</ul>
+<p>命令行语法是 <code>commend [options] script filename</code></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-09-03T08:29:48.309Z" itemprop="dateUpdated">2017-09-03 08:29:48</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/09/01/awk使用说明/&title=《sed和awk》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/09/01/awk使用说明/&title=《sed和awk》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/09/01/awk使用说明/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《sed和awk》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/09/01/awk使用说明/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/09/01/awk使用说明/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/08/31/vuex/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vuex</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/09/01/awk使用说明/&title=《sed和awk》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/09/01/awk使用说明/&title=《sed和awk》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/09/01/awk使用说明/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《sed和awk》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/09/01/awk使用说明/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/09/01/awk使用说明/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/09/01/awk使用说明/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+</script>
+
+</body>
+</html>
