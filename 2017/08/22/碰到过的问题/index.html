@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8) Cookie rejected [...] 对于 Cookie rejected">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-21T04:15:35.617Z">
+<meta property="og:updated_time" content="2017-09-30T03:44:54.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="碰到过的问题">
 <meta name="twitter:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8) Cookie rejected [...] 对于 Cookie rejected">
@@ -197,6 +197,9 @@
             <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><ol>
 <li>在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码<code>new InputStreamReader(new FileInputStream(file), &quot;GBK&quot;)</code> 或者 <code>Files.newBufferedReader(path, StandardCharsets.UTF_8)</code></li>
 <li><code>Cookie rejected [...]</code> 对于 Cookie rejected ，可能是机器配置了域名，但是没有使用域名访问机器。</li>
+<li>使用Java转换xslt时，可以通过 <code>TransformerFactory.newInstance(&quot;com.self.SelfConfig&quot;,com.self.SelfConfig.class.getClassLoader())</code>，其中 <code>com.self.SelfConfig</code> 是继承自 <code>TransformerFactoryImpl</code>，覆盖了其 <code>newTemplatesHandlers()</code> 方法的类。</li>
+<li>在maven中使用java编译时，出现 <code>Compilation failed:internal java compiler error</code>，信息中有<code>Information:java:javacTask:源发行版1.8需要目标发行版1.8</code>。这是因为maven默认的编译版本不是1.8，修改<code>pom.xml</code>:<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ol>
 <li><p>在ipad上通过jquery绑定的click事件不生效，解决方法：</p>
@@ -250,7 +253,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-09-21T04:15:35.617Z" itemprop="dateUpdated">2017-09-21 04:15:35</time>
+    最后更新时间：<time datetime="2017-09-30T03:44:54.657Z" itemprop="dateUpdated">2017-09-30 03:44:54</time>
 </span><br>
 
 
