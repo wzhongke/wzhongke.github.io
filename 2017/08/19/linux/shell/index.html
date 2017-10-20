@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>shell 编程 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux">
+    <meta name="description" content="shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的函数库。shell 经常被用来管理系统，而不是处理数据。">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell 编程">
+<meta property="og:url" content="http://wzhongke.github.io/2017/08/19/linux/shell/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的函数库。shell 经常被用来管理系统，而不是处理数据。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-22T06:23:09.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell 编程">
+<meta name="twitter:description" content="shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的函数库。shell 经常被用来管理系统，而不是处理数据。">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-105841950-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">shell 编程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">shell 编程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-19T09:52:00.000Z" itemprop="datePublished" class="page-time">
+  2017-08-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux-编程/">linux 编程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shell程序执行"><span class="post-toc-number">1.</span> <span class="post-toc-text">shell程序执行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shell基本说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">shell基本说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#test测试命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">test测试命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检测文件类型-test-e-filename"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">检测文件类型  test -e filename</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检测文件权限-test-r-filename"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">检测文件权限 test -r filename</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两个文件间比较-test-file1-nt-file2"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">两个文件间比较 test file1 -nt file2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#整数之间的判断-test-n1-eq-n2"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">整数之间的判断 test n1 -eq n2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#判定字符串的数据"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">判定字符串的数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多条件判定-test-r-filename-a-x-filename"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">多条件判定 test -r filename -a -x filename</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用判断符号"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">使用判断符号 []</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shell脚本的默认变量"><span class="post-toc-number">4.</span> <span class="post-toc-text">shell脚本的默认变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shift"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">shift</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件判断"><span class="post-toc-number">5.</span> <span class="post-toc-text">条件判断</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#if-then"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">if ... then...</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-case-esac判断"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">使用 case...esac判断</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#function"><span class="post-toc-number">6.</span> <span class="post-toc-text">function</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#循环"><span class="post-toc-number">7.</span> <span class="post-toc-text">循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#不定循环：while-do-done-util-do-done"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">不定循环：while do done, util do done</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for-do-done"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">for...do...done</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shell脚本调试"><span class="post-toc-number">8.</span> <span class="post-toc-text">shell脚本调试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境变量"><span class="post-toc-number">9.</span> <span class="post-toc-text">环境变量</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/shell"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">shell 编程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-08-19 09:52:00" datetime="2017-08-19T09:52:00.000Z"  itemprop="datePublished">2017-08-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux-编程/">linux 编程</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的函数库。<br>shell 经常被用来管理系统，而不是处理数据。<br><a id="more"></a></p>
+<h2 id="shell程序执行"><a href="#shell程序执行" class="headerlink" title="shell程序执行"></a>shell程序执行</h2><p>有两种方式可以执行shell脚本：</p>
+<ol>
+<li>直接命令执行：这种方式要求文件有rx权限<ul>
+<li>绝对路径 <code>/home/user/shell.sh</code></li>
+<li>相对路径 <code>./shell.sh</code></li>
+<li>放到<code>PATH</code>路径下，直接执行 <code>shell.sh</code></li>
+</ul>
+</li>
+<li>通过<code>bash shell.sh</code>或者 <code>sh shell.sh</code>来执行<h2 id="shell基本说明"><a href="#shell基本说明" class="headerlink" title="shell基本说明"></a>shell基本说明</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></div><div class="line"><span class="meta">#</span><span class="bash"> Program: shell脚本用途说明</span></div><div class="line"><span class="meta">#</span><span class="bash"> 修改时间，作者相关信息</span></div><div class="line">read -p "name: " name</div><div class="line">echo -e "\nname is $name"</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>shell 脚本通常以<code>#!/bin/bash</code> 开头，来声明这个文件使用bash语法。在文件执行时，能够加载bash的相关环境配置文件</p>
+<h2 id="test测试命令"><a href="#test测试命令" class="headerlink" title="test测试命令"></a>test测试命令</h2><p>test命令经常用来检测文件或者是其相关属性</p>
+<h3 id="检测文件类型-test-e-filename"><a href="#检测文件类型-test-e-filename" class="headerlink" title="检测文件类型  test -e filename"></a>检测文件类型  <code>test -e filename</code></h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-e</td>
+<td style="text-align:left">该文件名是否存在</td>
+</tr>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">该文件名是否存在且为文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">该文件名是否存在且为目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-L</td>
+<td style="text-align:left">该文件名是否存在且为一个连接文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="检测文件权限-test-r-filename"><a href="#检测文件权限-test-r-filename" class="headerlink" title="检测文件权限 test -r filename"></a>检测文件权限 <code>test -r filename</code></h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">检测文件名是否存在且具有可读权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-w</td>
+<td style="text-align:left">检测文件名是否存在且具有可写权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">检测文件名是否存在且具有可执行权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">检测文件名是否存在且具有SUID属性</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">检测文件名是否存在且为 非空白文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="两个文件间比较-test-file1-nt-file2"><a href="#两个文件间比较-test-file1-nt-file2" class="headerlink" title="两个文件间比较 test file1 -nt file2"></a>两个文件间比较 <code>test file1 -nt file2</code></h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-nt</td>
+<td style="text-align:left">(newer than) 判断file1是否比file2新</td>
+</tr>
+<tr>
+<td style="text-align:left">-ot</td>
+<td style="text-align:left">(older than) 判断file1是否比file2旧</td>
+</tr>
+<tr>
+<td style="text-align:left">-ef</td>
+<td style="text-align:left">判断file1与file2是否为同一个文件，可用在hard link的判断上</td>
+</tr>
+</tbody>
+</table>
+<h3 id="整数之间的判断-test-n1-eq-n2"><a href="#整数之间的判断-test-n1-eq-n2" class="headerlink" title="整数之间的判断 test n1 -eq n2"></a>整数之间的判断 <code>test n1 -eq n2</code></h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-eq</td>
+<td style="text-align:left">两数值相等</td>
+</tr>
+<tr>
+<td style="text-align:left">-ne</td>
+<td style="text-align:left">两数值不相等</td>
+</tr>
+<tr>
+<td style="text-align:left">-gt</td>
+<td style="text-align:left">n1 大于 n2</td>
+</tr>
+<tr>
+<td style="text-align:left">-lt</td>
+<td style="text-align:left">n1 小于 n2</td>
+</tr>
+<tr>
+<td style="text-align:left">-ge</td>
+<td style="text-align:left">n1 大于等于 n2</td>
+</tr>
+<tr>
+<td style="text-align:left">-le</td>
+<td style="text-align:left">n1 小于等于 n2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="判定字符串的数据"><a href="#判定字符串的数据" class="headerlink" title="判定字符串的数据"></a>判定字符串的数据</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">test -z string</td>
+<td style="text-align:left">判定字符串是否为0，若string为字符串，则为true</td>
+</tr>
+<tr>
+<td style="text-align:left">test -n string</td>
+<td style="text-align:left">判定字符串是否为0，若string为字符串，则为false, -n可以省略</td>
+</tr>
+<tr>
+<td style="text-align:left">test st1 = str2</td>
+<td style="text-align:left">判断str1是否等于str2，若相等，则为true</td>
+</tr>
+<tr>
+<td style="text-align:left">test st1 != str2</td>
+<td style="text-align:left">判断str1是否等于str2，若相等，则为false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="多条件判定-test-r-filename-a-x-filename"><a href="#多条件判定-test-r-filename-a-x-filename" class="headerlink" title="多条件判定 test -r filename -a -x filename"></a>多条件判定 <code>test -r filename -a -x filename</code></h3><table>
+<thead>
+<tr>
+<th style="text-align:left">测试标志</th>
+<th style="text-align:left">代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">两个条件同时成立</td>
+</tr>
+<tr>
+<td style="text-align:left">-o</td>
+<td style="text-align:left">任何一个条件成立</td>
+</tr>
+<tr>
+<td style="text-align:left">!</td>
+<td style="text-align:left">反向状态，not</td>
+</tr>
+</tbody>
+</table>
+<h3 id="使用判断符号"><a href="#使用判断符号" class="headerlink" title="使用判断符号 []"></a>使用判断符号 <code>[]</code></h3><p>可以使用<code>[]</code>来代替<code>test</code>进行判断<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ -z "$HOME" ]</div></pre></td></tr></table></figure></p>
+<p>使用<code>[]</code>必须要特别注意，在bash语法中使用时，必须要注意中括号内的每个组件都需要有空格键来分隔，中括号中的变量最好都以双引号括起来</p>
+<h2 id="shell脚本的默认变量"><a href="#shell脚本的默认变量" class="headerlink" title="shell脚本的默认变量"></a>shell脚本的默认变量</h2><p>向shell脚本中传递参数和获取参数的方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scriptname opt1 opt2 opt3 ...</div><div class="line">$0         $1   $2   $3</div></pre></td></tr></table></figure></p>
+<p>其他的一些参数：</p>
+<ul>
+<li><code>$#</code> : 后接参数个数</li>
+<li><code>$@</code> : 所有的参数<h3 id="shift"><a href="#shift" class="headerlink" title="shift"></a><code>shift</code></h3><code>shift</code>会移动变量，后面可以跟数字，表示一次移除多少变量</li>
+</ul>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="if-then"><a href="#if-then" class="headerlink" title="if ... then..."></a><code>if ... then...</code></h3><p><code>if ... then...</code> 是最常见的条件判断式。<br>当只有一个判断要进行时，可以使用如下方式：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if [ 条件测试语句 ]; then</div><div class="line">    条件成立</div><div class="line">fi</div></pre></td></tr></table></figure></p>
+<p>可以通过<code>&amp;&amp;</code>或者<code>||</code>来分隔两个条件判断式，如：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if [ "$yn" == "Y" || "$yn" == "y"]; then</div><div class="line">    "do something"</div><div class="line">fi</div></pre></td></tr></table></figure></p>
+<p>对于多重、复杂条件判断，可以用如下方式：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if [ 条件判断式一 ]; then</div><div class="line">    "do something"</div><div class="line">elif [ 条件判断式二 ]; then</div><div class="line">    "do something"</div><div class="line">else </div><div class="line">    "do something"</div><div class="line">fi</div></pre></td></tr></table></figure></p>
+<h3 id="使用-case-esac判断"><a href="#使用-case-esac判断" class="headerlink" title="使用 case...esac判断"></a>使用 <code>case...esac</code>判断</h3><p>这种判断经常用来做固定字符串来执行某些操作的需求<br><code>case</code> 语法如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">case $变量 in</div><div class="line">    "第一个变量内容" )</div><div class="line">        "do something"</div><div class="line">        ;;   #需要用两个分号结尾</div><div class="line">    * ) </div><div class="line">        其他条件执行内容</div><div class="line">        ;;</div><div class="line">esac</div></pre></td></tr></table></figure></p>
+<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><p>shell中函数的语法如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function fname () &#123;</div><div class="line">    'do some thing'</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为shell脚本的执行方式是由下而上的，由左而右的，因此，function的设置一定要在程序的最前面，这样才能在执行时被找到可用的程序段。<br>function中也有内置变量，函数名为$0, 而后续连接的变量也是以$1, $2… 来代替的。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></div><div class="line">function print () &#123;</div><div class="line">    echo "Choice is $1" </div><div class="line">&#125;</div><div class="line"></div><div class="line">echo "This program will print your choice: "</div><div class="line">case $1 in </div><div class="line">    "one" )</div><div class="line">        print 1</div><div class="line">        ;;</div><div class="line">    "two" )</div><div class="line">        print 2</div><div class="line">        ;;</div><div class="line">    * )</div><div class="line">       echo "Usage $0 (one|two)"</div><div class="line">       ;;</div><div class="line">esac</div></pre></td></tr></table></figure></p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="不定循环：while-do-done-util-do-done"><a href="#不定循环：while-do-done-util-do-done" class="headerlink" title="不定循环：while do done, util do done"></a>不定循环：<code>while do done</code>, <code>util do done</code></h3><p>两种方式的循环如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 当满足条件condition时，执行循环体</span></div><div class="line">while [ condition ]</div><div class="line">do</div><div class="line">    'do something'</div><div class="line">done</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 当不满足条件时执行循环体</span></div><div class="line">until [condition]</div><div class="line">do</div><div class="line">    'do something'</div><div class="line">done</div></pre></td></tr></table></figure></p>
+<p>自加运算如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s=0</div><div class="line">i=0</div><div class="line">while [ "$i" != "100" ]</div><div class="line">do</div><div class="line">    i=$(($i+1))</div><div class="line">    s=$(($s+$i))</div><div class="line">done</div></pre></td></tr></table></figure></p>
+<h3 id="for-do-done"><a href="#for-do-done" class="headerlink" title="for...do...done"></a><code>for...do...done</code></h3><p>语法如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for var in con1 con2 con3 ...</div><div class="line">do</div><div class="line">    'do something'</div><div class="line">done</div><div class="line"><span class="meta">#</span><span class="bash"> 第二种方式</span></div><div class="line">for ( ( 初始值; 限制数; 执行步长 ))</div><div class="line">do</div><div class="line">    'do something'</div><div class="line">done</div></pre></td></tr></table></figure></p>
+<p>可以对其他输出内容进行遍历<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">users=$( cut -d ':' -f1 /etc/passwd )</div><div class="line">for username in $users</div><div class="line">do</div><div class="line">    id $username</div><div class="line">    finger $username</div><div class="line">done</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 扫描网络</span></div><div class="line">network="192.168.1"</div><div class="line">for sitenu in $(seq 1 100)</div><div class="line">do </div><div class="line">    ping -c 1 -w 1 $&#123;network&#125;.$&#123;sitenu&#125; &amp;&gt; /dev/null &amp;&amp; result=0 || result=1</div><div class="line">    if [ "$result" == 0 ]; then</div><div class="line">        echo "Server $&#123;network&#125;.$&#123;sitenu&#125; is up"</div><div class="line">    fi</div><div class="line">done</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 数值处理</span></div><div class="line">s=0</div><div class="line">nu=100</div><div class="line">for ( ( i=1; i&lt;=$nu; i=i+1))</div><div class="line">do</div><div class="line">    s=$( ($s+$i))</div><div class="line">done</div></pre></td></tr></table></figure></p>
+<h2 id="shell脚本调试"><a href="#shell脚本调试" class="headerlink" title="shell脚本调试"></a>shell脚本调试</h2><p>可以利用shell脚本参数来检查shell的正确性<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sh [-nvx] script.sh</div><div class="line">-n: 不执行script，只检查语法</div><div class="line">-v: 执行script前，将script内容输出到屏幕上</div><div class="line">-x: 将使用到的script内容显示到屏幕上</div></pre></td></tr></table></figure></p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>可以用 <code>export</code> 来将自定义变量转换成环境变量</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-09-22T06:23:09.101Z" itemprop="dateUpdated">2017-09-22 06:23:09</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/08/19/linux/shell/&title=《shell 编程》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/08/19/linux/shell/&title=《shell 编程》 — 壹叶知秋的博客&source=shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/08/19/linux/shell/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shell 编程》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/08/19/linux/shell/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/08/19/linux/shell/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/22/linux/linux server/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">linux 网络常用命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/08/19/sublime/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">sublime 配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/08/19/linux/shell/&title=《shell 编程》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/08/19/linux/shell/&title=《shell 编程》 — 壹叶知秋的博客&source=shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/08/19/linux/shell/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shell 编程》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/08/19/linux/shell/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/08/19/linux/shell/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/08/19/linux/shell/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105841950-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

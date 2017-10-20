@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="MySQL数据库MySQL 是典型的关系型数据库，因为其免费开源，所以被广泛的应用数据库是按照数据结构来组织、存储和管理数据的仓库当然我们也可以将数据存储在文件中，但是文件中读写数据速度相对较慢所以，我们使用关系型数据库管理系统（RDBMS）来存储和管理数据关系型数据库，是建立在关系模型基础上的数据库，通过集合代数等数学概念和方法来处理数据库中的数据。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-09T03:40:42.276Z">
+<meta property="og:updated_time" content="2017-10-12T04:04:00.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基础语句">
 <meta name="twitter:description" content="MySQL数据库MySQL 是典型的关系型数据库，因为其免费开源，所以被广泛的应用数据库是按照数据结构来组织、存储和管理数据的仓库当然我们也可以将数据存储在文件中，但是文件中读写数据速度相对较慢所以，我们使用关系型数据库管理系统（RDBMS）来存储和管理数据关系型数据库，是建立在关系模型基础上的数据库，通过集合代数等数学概念和方法来处理数据库中的数据。">
@@ -230,7 +230,43 @@
 <li>删除数据库： <code>DROP DATABASE db_name;</code></li>
 </ol>
 <h1 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h1><p>数据类型是指列、存储过程参数、表达式和局部变量的数据特征，它决定了数据的存储格式，代表了不同的信息类型</p>
-<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>可以根据下表选择需要的整型类型，既能保证能存储所需数值，又能节省空间 <code>UNSIGNED</code> 无符号值<br>数据类型   | 存储范围              | 字节<br>:——–|:—————      |:————-<br>tinyint   | 有符号值： -128到127 (-2^7 到 2^7-1) <br> 无符号值： 0到255 (0到2^8-1)   | 1字节<br>samllint  | 有符号值： -32768到32767 (-2^15 到 2^15-1) <br> 无符号值： 0到65535 (0到2^16-1)   | 2字节<br>mediumint | 有符号值： -2^23 到 2^23-1 <br> 无符号值： 0到2^24-1   | 3 字节 (3*8)<br>int       | 有符号值： -2^31 到 2^31 -1 <br> 无符号值： 0 到 2^32-1 | 4 字节<br>bigint    | 有符号值： -2^63 到 2^63 -1 <br> 无符号值： 0 到 2^64-1 | 8 字节</p>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>可以根据下表选择需要的整型类型，既能保证能存储所需数值，又能节省空间 <code>UNSIGNED</code> 无符号值。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">存储范围</th>
+<th style="text-align:left">字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tinyint</td>
+<td style="text-align:left">有符号值： -128到127 (-2^7 到 2^7-1) <br> 无符号值： 0到255 (0到2^8-1)</td>
+<td style="text-align:left">1字节</td>
+</tr>
+<tr>
+<td style="text-align:left">samllint</td>
+<td style="text-align:left">有符号值： -32768到32767 (-2^15 到 2^15-1) <br> 无符号值： 0到65535 (0到2^16-1)</td>
+<td style="text-align:left">2字节</td>
+</tr>
+<tr>
+<td style="text-align:left">mediumint</td>
+<td style="text-align:left">有符号值： -2^23 到 2^23-1 <br> 无符号值： 0到2^24-1</td>
+<td style="text-align:left">3 字节 (3*8)</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">有符号值： -2^31 到 2^31 -1 <br> 无符号值： 0 到 2^32-1</td>
+<td style="text-align:left">4 字节</td>
+</tr>
+<tr>
+<td style="text-align:left">bigint</td>
+<td style="text-align:left">有符号值： -2^63 到 2^63 -1 <br> 无符号值： 0 到 2^64-1</td>
+<td style="text-align:left">8 字节</td>
+</tr>
+</tbody>
+</table>
 <h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><table>
 <thead>
 <tr>
@@ -345,7 +381,7 @@
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_name;</div><div class="line"><span class="comment">-- 结果：</span></div><div class="line"> +<span class="comment">----+------+------------+</span></div><div class="line">| id | name | birthday   |</div><div class="line">+<span class="comment">----+------+------------+</span></div><div class="line">|  1 | Jhon | 1991-11-23 |</div><div class="line">+<span class="comment">----+------+------------+</span></div><div class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure>
 <h3 id="CASE-WHEN"><a href="#CASE-WHEN" class="headerlink" title="CASE WHEN"></a>CASE WHEN</h3><p>可以在 <code>select</code> 的列中使用 <code>case when condition then val1 else val2 end</code> 来进行查询操作</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`ubs_spider_black`</span>.<span class="string">`ubs_black_web_lingxi_sugg`</span> (<span class="string">`keyword`</span>, <span class="string">`match_type`</span>, <span class="string">`type`</span>, <span class="string">`create_time`</span>, <span class="string">`modify_time`</span>, <span class="string">`start_time`</span>, <span class="string">`end_time`</span>, <span class="string">`user`</span>, <span class="string">`sync_status`</span>, <span class="string">`sync_message`</span>, <span class="string">`sync_modify_time`</span>) </div><div class="line"><span class="keyword">SELECT</span> </div><div class="line">    sugg_word <span class="keyword">as</span> keyword, </div><div class="line">    (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> fuzz=<span class="number">0</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">end</span>) <span class="keyword">AS</span> match_type,</div><div class="line">    (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sugg_case=<span class="string">''</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="keyword">type</span>,</div><div class="line">    create_time, modify_time, start_time, end_time, <span class="keyword">user</span>, <span class="number">1</span> <span class="keyword">as</span> sync_status, <span class="string">""</span> <span class="keyword">as</span> sync_message, start_time <span class="keyword">as</span> sync_modify_time</div><div class="line"><span class="keyword">from</span> ubs_black_web_sugg <span class="keyword">where</span> sugg_case=<span class="string">''</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`db1`</span>.<span class="string">`table1`</span> (<span class="string">`keyword`</span>, <span class="string">`match_type`</span>, <span class="string">`type`</span>, <span class="string">`create_time`</span>, <span class="string">`modify_time`</span>, <span class="string">`start_time`</span>, <span class="string">`end_time`</span>, <span class="string">`user`</span>) </div><div class="line"><span class="keyword">SELECT</span> </div><div class="line">    sugg_word <span class="keyword">as</span> keyword, </div><div class="line">    (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> fuzz=<span class="number">0</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">end</span>) <span class="keyword">AS</span> match_type,</div><div class="line">    (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sugg_case=<span class="string">''</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="keyword">type</span>,</div><div class="line">    create_time, modify_time, start_time, end_time, <span class="keyword">user</span> </div><div class="line"><span class="keyword">from</span> <span class="string">`db2`</span>.<span class="string">`table2`</span> <span class="keyword">where</span> sugg_case=<span class="string">''</span>;</div></pre></td></tr></table></figure>
 <h2 id="UPDATE-更新命令"><a href="#UPDATE-更新命令" class="headerlink" title="UPDATE 更新命令"></a>UPDATE 更新命令</h2><p>如果我们要更改MySQL中的数据，那么我们需要使用 UPDATE 命令，其语法如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">UPDATE</span> tb_name <span class="keyword">SET</span> field1=newValue1, field2=newValue2, ... [<span class="keyword">WHERE</span> clause];</div></pre></td></tr></table></figure></p>
 <p><code>UPDATE</code> 语句说明：</p>
 <ul>
@@ -498,7 +534,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-09T03:40:42.276Z" itemprop="dateUpdated">2017-10-09 03:40:42</time>
+    最后更新时间：<time datetime="2017-10-12T04:04:00.433Z" itemprop="dateUpdated">2017-10-12 04:04:00</time>
 </span><br>
 
 
@@ -572,14 +608,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/10/12/front/HTML标签/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">HTML 标签</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/09/18/java/java 泛型/" id="post-next" class="post-nav-link">
+      <a href="/2017/10/09/mysql/MySQL技巧/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">java 泛型</h4>
+        <h4 class="title">MySQL技巧</h4>
       </a>
     </div>
   

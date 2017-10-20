@@ -161,6 +161,81 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front/HTML标签"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-12 04:02:41" datetime="2017-10-12T04:02:41.702Z"  itemprop="datePublished">2017-10-12</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/12/front/HTML标签/">HTML 标签</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+         标签&lt;video&gt;标签是HTML5的新标签，其属性如下：
+
+
+
+属性
+值
+描述
+
+
+
+
+autoplay
+autoplay
+视频就绪后马上播放
+
+
+controls
+controls
+向用户展示控件，比如播放按钮等
+
+
+height
+pixels
+视频播放器的高度
+
+
+width
+pixels
+视频播放器的宽度
+
+
+loop
+loop
+当媒介文件完成播放后再次开始播放
+
+
+mu...
+    
+        <br>
+        <a href="/2017/10/12/front/HTML标签/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-mysql/MySQL基础语句"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -193,6 +268,55 @@
     
         <br>
         <a href="/2017/10/09/mysql/MySQL基础语句/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql/MySQL技巧"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-08 18:51:00" datetime="2017-10-08T18:51:00.000Z"  itemprop="datePublished">2017-10-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/09/mysql/MySQL技巧/">MySQL技巧</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+查询时间是今天的数据
+ 12select * from table_name where to_days(create_time) = to_days(now());select * from table_name where date(create_time) = curdate();
+    
+        <br>
+        <a href="/2017/10/09/mysql/MySQL技巧/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -349,7 +473,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-vuex"
+            <article id="post-front/vuex"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -367,7 +491,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/31/vuex/">vuex</a>
+      <a class="post-title-link" href="/2017/08/31/front/vuex/">vuex</a>
     </h3>
   
 
@@ -387,7 +511,7 @@
          ...
     
         <br>
-        <a href="/2017/08/31/vuex/" class="post-more waves-effect waves-button">
+        <a href="/2017/08/31/front/vuex/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -488,7 +612,11 @@ git remote add origi...
 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &quot;GBK&quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8)
 Cookie rejected [...] 对于 Cookie rejected ，可能是机器配置了域名，但是没有使用域名访问机器。
 使用Java转换xslt时，可以通过 TransformerFactory.newInstance(&quot;com.self.SelfConfig&quot;,com.self.SelfConfig.class.getClassLoader())，其中 com.self.SelfConfig 是继承自 TransformerFactoryImpl，覆盖了其 newTemplatesHandlers() 方法的类。
-在maven中使用java编译时，出现 Compilation failed:internal java compiler error，信息中有Information:java:javacTask:源发行版1.8需要目标发行版1.8。这是因为maven默认的编译版本不是1.8，修改pom.xml:123456789101112&lt;build&gt;    &lt;plugins&gt;        &lt;plugin&gt;            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;            &lt;configuration&gt;                &lt;source&gt;1.8&lt;/source&gt;                &lt;target&gt;1.8&lt;/target&gt;            &lt;/configuration&gt;        &lt;/plugin&gt;    &lt;/plugins&gt;&lt;/build&gt;
+在maven中使用java编译时，出现 Compilation failed:internal java compiler error，信息中有Information:java:javacTask:源发行版1.8需要目标发行版1.8。这是因为maven默认的编译版本不是1.8，修改pom.xml:
+123456789101112&lt;build&gt;    &lt;plugins&gt;        &lt;plugin&gt;            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;            &lt;configuration&gt;                &lt;source&gt;1.8&lt;/source&gt;                &lt;target&gt;1.8&lt;/target&gt;            &lt;/configuration&gt;        &lt;/plugin&gt;    &lt;/plugins&gt;&lt;/build&gt;
+
+引入 slf4j jar 包时，出现： java.lang.IllegalAccessError: tried to access field org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory。可能的原因是其他jar包中包含的 slf4j-api.jar 的版本比较低，解决方案是查找引入的jar包文件，哪一个包使用的 slf4j-api 版本比较低，如果是 maven，可以使用如下方式去掉低版本的jar：
+123456  &lt;exclusions&gt;    &lt;exclusion&gt;        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;    &lt;/exclusion&gt;&lt;/exclusions&gt;
 
 
 JavaScript
@@ -514,7 +642,7 @@ JavaScript
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-linux server"
+            <article id="post-linux/linux server"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -532,7 +660,7 @@ JavaScript
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/22/linux server/">linux 网络常用命令</a>
+      <a class="post-title-link" href="/2017/08/22/linux/linux server/">linux 网络常用命令</a>
     </h3>
   
 
@@ -547,7 +675,7 @@ JavaScript
 ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: 123456789ifconfig [interface] &#123;up/down&#125;         ## 观察与启动接口ifconfig interface &#123;opti...
     
         <br>
-        <a href="/2017/08/22/linux server/" class="post-more waves-effect waves-button">
+        <a href="/2017/08/22/linux/linux server/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -555,102 +683,6 @@ ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相�
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-sublime"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-08-19 09:52:00" datetime="2017-08-19T09:52:00.000Z"  itemprop="datePublished">2017-08-19</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/19/sublime/">sublime 配置</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        配置markdown
-安装package controll: 快捷键`ctrl+``打开Sublime控制台，输入下面代码： sublime 3
- 1import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Packa...
-    
-        <br>
-        <a href="/2017/08/19/sublime/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-shell"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-08-19 09:52:00" datetime="2017-08-19T09:52:00.000Z"  itemprop="datePublished">2017-08-19</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux-编程/">linux 编程</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/19/shell/">shell 编程</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        shell script虽然是程序，但是它处理数据的速度是不够的。因为shell用的是外部的命令bash shell的一些默认工具，所以它经常会调用外部的函数库。shell 经常被用来管理系统，而不是处理数据。
-    
-        <br>
-        <a href="/2017/08/19/shell/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </div>
     

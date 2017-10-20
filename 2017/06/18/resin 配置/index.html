@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="resin 配置resin 配置日志信息12345678910111213&amp;lt;log-handler name=&quot;&quot; level=&quot;info&quot; path=&quot;stdout:&quot;               timestamp=&quot;[%y-%m-%d %H:%M:%S.%s] &amp;#123;%&amp;#123;thread&amp;#125;&amp;#125; &quot;/&amp;gt;&amp;lt;stdout-log path-forma">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-04T05:51:58.080Z">
+<meta property="og:updated_time" content="2017-10-09T08:55:59.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="resin 配置">
 <meta name="twitter:description" content="resin 配置resin 配置日志信息12345678910111213&amp;lt;log-handler name=&quot;&quot; level=&quot;info&quot; path=&quot;stdout:&quot;               timestamp=&quot;[%y-%m-%d %H:%M:%S.%s] &amp;#123;%&amp;#123;thread&amp;#125;&amp;#125; &quot;/&amp;gt;&amp;lt;stdout-log path-forma">
@@ -173,7 +173,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#resin-配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">resin 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#resin-配置日志信息"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">resin 配置日志信息</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#resin-配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">resin 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#resin-配置日志信息"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">resin 配置日志信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置远程调试端口"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置远程调试端口</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -197,6 +197,8 @@
             <h1 id="resin-配置"><a href="#resin-配置" class="headerlink" title="resin 配置"></a>resin 配置</h1><h2 id="resin-配置日志信息"><a href="#resin-配置日志信息" class="headerlink" title="resin 配置日志信息"></a>resin 配置日志信息</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">log-handler</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">level</span>=<span class="string">"info"</span> <span class="attr">path</span>=<span class="string">"stdout:"</span></span></div><div class="line"><span class="tag">               <span class="attr">timestamp</span>=<span class="string">"[%y-%m-%d %H:%M:%S.%s] &#123;%&#123;thread&#125;&#125; "</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">stdout-log</span> <span class="attr">path-format</span>=<span class="string">"log/stdout.log.%Y%m%d"</span> <span class="attr">rollover-period</span>=<span class="string">"1D"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">stderr-log</span> <span class="attr">path-format</span>=<span class="string">"log/stderr.log.%Y%m%d"</span> <span class="attr">rollover-period</span>=<span class="string">"1D"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line"><span class="comment"> - level='info' for production</span></div><div class="line"><span class="comment"> - 'fine' or 'finer' for development and troubleshooting</span></div><div class="line"><span class="comment">--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"com.caucho"</span> <span class="attr">level</span>=<span class="string">"info"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"com.caucho.java"</span> <span class="attr">level</span>=<span class="string">"config"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"com.caucho.loader"</span> <span class="attr">level</span>=<span class="string">"config"</span>/&gt;</span></div></pre></td></tr></table></figure>
 <p><code>stdout-log</code>中的<code>path-format</code>设置了正常输出日志的路径和日志文件命名格式；<code>rollover-period</code>设置了日志文件生成时间间隔。 <code>1D</code>是一天，<code>1H</code>是一个小时。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;cluster id=&quot;app&quot;&gt;</div><div class="line">    &lt;!-- sets the content root for the cluster, relative to resin.root --&gt;</div><div class="line">    &lt;root-directory&gt;.&lt;/root-directory&gt;</div><div class="line"></div><div class="line">    &lt;!-- defaults for each server, i.e. JVM --&gt;</div><div class="line">    &lt;server-default&gt;</div><div class="line">      &lt;!-- The http port --&gt;</div><div class="line">      &lt;http id=&quot;&quot; address=&quot;*&quot; port=&quot;9090&quot;/&gt;</div><div class="line">    &lt;/server-default&gt;</div><div class="line"></div><div class="line">    &lt;!-- define the servers in the cluster --&gt;</div><div class="line">    &lt;server id=&quot;web&quot; address=&quot;127.0.0.1&quot; port=&quot;6801&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;!-- the default host, matching any host name --&gt;</div><div class="line">    &lt;host id=&quot;&quot; root-directory=&quot;.&quot;&gt;</div><div class="line">      &lt;!--</div><div class="line">         - configures an explicit root web-app matching the</div><div class="line">         - webapp&apos;s ROOT</div><div class="line">        --&gt;</div><div class="line">	&lt;web-app id=&quot;/&quot; root-directory=&quot;/search/odin/resin/umiswxb&quot;/&gt;      </div><div class="line">      &lt;!--</div><div class="line">         - Administration application /resin-admin</div><div class="line">        --&gt;</div><div class="line">      &lt;!--</div><div class="line">      &lt;web-app id=&quot;/resin-admin&quot; root-directory=&quot;$&#123;resin.root&#125;/doc/admin&quot;&gt;</div><div class="line">        &lt;prologue&gt;</div><div class="line">          &lt;resin:set var=&quot;resin_admin_external&quot; value=&quot;false&quot;/&gt;</div><div class="line">          &lt;resin:set var=&quot;resin_admin_insecure&quot; value=&quot;true&quot;/&gt;</div><div class="line">        &lt;/prologue&gt;</div><div class="line">      &lt;/web-app&gt;</div><div class="line">        --&gt;</div><div class="line">      &lt;!--</div><div class="line">	 - Resin documentation - remove for a live site</div><div class="line">	--&gt;</div><div class="line">      &lt;!--&lt;web-app id=&quot;/resin-doc&quot; root-directory=&quot;$&#123;resin.root&#125;/doc/resin-doc&quot;/&gt;--&gt;</div><div class="line"></div><div class="line">      &lt;!--</div><div class="line">	 - &lt;resin:LoadBalance regexp=&quot;^/load&quot; cluster=&quot;backend-tier&quot;/&gt;</div><div class="line">	 - &lt;resin:HttpProxy regexp=&quot;^/http&quot; address=&quot;localhost:9000&quot;/&gt;</div><div class="line">	 - &lt;resin:FastCgiProxy regexp=&quot;^/fcgi&quot; address=&quot;localhost:9001&quot;/&gt;</div><div class="line">	--&gt;</div><div class="line">    &lt;/host&gt;</div><div class="line">  &lt;/cluster&gt;</div></pre></td></tr></table></figure></p>
 <p><code>cluster</code>可以配置不同的服务，<code>id</code>属性是其服务唯一的标记<br><code>server-default</code>中的<code>http</code>的<code>port</code>配置了该服务监听的端口，<code>web-app</code>的<code>id</code>属性定义了服务的访问路径，<code>root-directory</code>定义了服务代码放置的位置。</p>
+<h2 id="配置远程调试端口"><a href="#配置远程调试端口" class="headerlink" title="配置远程调试端口"></a>配置远程调试端口</h2><p>在 resin3.1下的版本中，修改 bin/httpd.sh 文件中的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">args=&quot;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787&quot;</div></pre></td></tr></table></figure></p>
+<p>在 resin3.1 以上的版本中，修改 conf/resin.properties 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jvm_args  :  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9090</div></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -204,7 +206,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-08-04T05:51:58.080Z" itemprop="dateUpdated">2017-08-04 05:51:58</time>
+    最后更新时间：<time datetime="2017-10-09T08:55:59.868Z" itemprop="dateUpdated">2017-10-09 08:55:59</time>
 </span><br>
 
 
@@ -281,18 +283,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/18/linux-常用命令/" id="post-prev" class="post-nav-link">
+      <a href="/2017/06/18/markdown语法/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">linux 常用命令</h4>
+        <h4 class="title">markdown语法</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/06/18/正则表达式/" id="post-next" class="post-nav-link">
+      <a href="/2017/06/18/python/python3-安装protobuf模块/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">正则表达式</h4>
+        <h4 class="title">python3 安装protobuf模块</h4>
       </a>
     </div>
   
