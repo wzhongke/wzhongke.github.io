@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-20T11:51:17.687Z">
+<meta property="og:updated_time" content="2017-10-23T08:17:01.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux 常用命令">
 <meta name="twitter:description" content="使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。">
@@ -492,7 +492,7 @@
 </tbody>
 </table>
 <h3 id="top-动态查看进程的变化"><a href="#top-动态查看进程的变化" class="headerlink" title="top 动态查看进程的变化"></a>top 动态查看进程的变化</h3><p><code>top</code> 命令可以持续检测程序的运行状态，使用方式如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">top [-d 数字] | top [-bnp]</div><div class="line">参数如下：</div><div class="line">-d: 后面可以接秒数，就是整个进程界面更新的秒数，默认是 5s</div><div class="line">-b: 以批次的方式执行top，通常会结合数据流重定向来批处理结果</div><div class="line">-n: 与 -b 搭配，表示需要进行几次 top 结果的数据</div><div class="line">-p: 指定某些PID来进行查看</div><div class="line">在top命令中，可以使用如下按键命令：</div><div class="line">   ?: 显示在top当中可以输入的按键指令</div><div class="line">   P: 以 CPU 的使用资源排序显示</div><div class="line">   M: 以内存的使用资源排序显示</div><div class="line">   N: 以PID来排序</div><div class="line">   T: 该进程使用的CPU时间累积排序</div><div class="line">   k: 给予某个PID一个信号</div><div class="line">   r: 给某个PID重新定制一个nice属性</div><div class="line">   q: 离开top</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">top [-d 数字] | top [-bnp]</div><div class="line">参数如下：</div><div class="line">-d: 后面可以接秒数，就是整个进程界面更新的秒数，默认是 5s</div><div class="line">-b: 以批次的方式执行top，通常会结合数据流重定向来批处理结果</div><div class="line">-n: 与 -b 搭配，表示需要进行几次 top 结果的数据</div><div class="line">-p: 指定某些PID来进行查看</div><div class="line">-H: 显示线程</div><div class="line">在top命令中，可以使用如下按键命令：</div><div class="line">   ?: 显示在top当中可以输入的按键指令</div><div class="line">   P: 以 CPU 的使用资源排序显示</div><div class="line">   M: 以内存的使用资源排序显示</div><div class="line">   N: 以PID来排序</div><div class="line">   T: 该进程使用的CPU时间累积排序</div><div class="line">   k: 给予某个PID一个信号</div><div class="line">   r: 给某个PID重新定制一个nice属性</div><div class="line">   q: 离开top</div></pre></td></tr></table></figure>
 <h3 id="pstree-查看进程树"><a href="#pstree-查看进程树" class="headerlink" title="pstree 查看进程树"></a>pstree 查看进程树</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">pstree [-A|U] [-up]</div><div class="line">参数：</div><div class="line">-A: 各进程树之间的连接</div><div class="line">-U: 各进程树之间的连接以utf8码的字符来连接</div><div class="line">-p: 列出每个进程的PID</div><div class="line">-u: 列出每个进程的账号</div><div class="line">示例：</div><div class="line"></div><div class="line">init(1)-+-agetty(2112)</div><div class="line">        |-crond(2071)---crond(13076)---sh(13084)---sleep(13112)</div><div class="line">        |-events/0(8)</div><div class="line">        |-events/1(9)</div><div class="line">        |-glusterfs(19972)-+-&#123;glusterfs&#125;(19973)</div><div class="line">        |                  \`-&#123;glusterfs&#125;(19982)</div><div class="line">        |-httpd(1988)-+-httpd(884,apache)</div></pre></td></tr></table></figure>
 <h3 id="kill-进程管理"><a href="#kill-进程管理" class="headerlink" title="kill 进程管理"></a>kill 进程管理</h3><p>我们可以使用 kill 或者 killall 来向进程发送信号。使用如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">kill</span> -signal PID</div><div class="line">killall [-iIe] -signal 命令名称</div><div class="line">参数: </div><div class="line">-i: interactive ，交互式的，若需要删除，会出现提示</div><div class="line">-e: exact，表示后边接的 命令名称 要一致，但完整的命令不能超过15个字符</div><div class="line">-I: 命令名称（可能含有参数），忽略大小写</div></pre></td></tr></table></figure></p>
 <p>其中常用的 signal 有：</p>
@@ -543,7 +543,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-20T11:51:17.687Z" itemprop="dateUpdated">2017-10-20 11:51:17</time>
+    最后更新时间：<time datetime="2017-10-23T08:17:01.451Z" itemprop="dateUpdated">2017-10-23 08:17:01</time>
 </span><br>
 
 
@@ -620,18 +620,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/18/front/apply和call的区别/" id="post-prev" class="post-nav-link">
+      <a href="/2017/06/18/markdown语法/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">apply和call</h4>
+        <h4 class="title">markdown语法</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/06/18/正则表达式/" id="post-next" class="post-nav-link">
+      <a href="/2017/06/18/front/javascript 常用技巧/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">正则表达式</h4>
+        <h4 class="title">javascript 常用技巧</h4>
       </a>
     </div>
   

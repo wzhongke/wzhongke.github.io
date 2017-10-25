@@ -161,6 +161,62 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-java/jvm调优"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-23 04:08:55" datetime="2017-10-23T04:08:55.321Z"  itemprop="datePublished">2017-10-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/23/java/jvm调优/">jvm调优</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        在常见的线上问题中，如下问题比较常见：
+
+内存泄露
+某个进程CPU突然飙升
+线程死锁
+响应变慢
+
+如果遇到上述问题，我们可以基于监控工具来定位问题。java中常用的分析监控工具有： jps、jstat、jinfo、jmap、jhat、jstack
+jps: JVM进程状况jps用来查看进程的状况，语法如下：
+1234567891011jps [options] [hostid]参数：-q: ...
+    
+        <br>
+        <a href="/2017/10/23/java/jvm调优/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-front/HTML标签"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -618,6 +674,8 @@ Cookie rejected [...] 对于 Cookie rejected ，可能是机器配置了域名�
 引入 slf4j jar 包时，出现： java.lang.IllegalAccessError: tried to access field org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory。可能的原因是其他jar包中包含的 slf4j-api.jar 的版本比较低，解决方案是查找引入的jar包文件，哪一个包使用的 slf4j-api 版本比较低，如果是 maven，可以使用如下方式去掉低版本的jar：
 123456  &lt;exclusions&gt;    &lt;exclusion&gt;        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;    &lt;/exclusion&gt;&lt;/exclusions&gt;
 
+eclipse 不能正确引用jar文件。 在jar文件上右键 -&gt; Build Path -&gt; add to path
+
 
 JavaScript
 在ipad上通过jquery绑定的click事件不生效，解决方法：
@@ -627,55 +685,6 @@ JavaScript
     
         <br>
         <a href="/2017/08/22/碰到过的问题/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-linux/linux server"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-08-22 02:18:53" datetime="2017-08-22T02:18:53.985Z"  itemprop="datePublished">2017-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/other/">other</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/22/linux/linux server/">linux 网络常用命令</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        linux 常用网络命令ifconfig, ifup, ifdown这三个指令都是用来启动网络接口的。
-
-ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: 123456789ifconfig [interface] &#123;up/down&#125;         ## 观察与启动接口ifconfig interface &#123;opti...
-    
-        <br>
-        <a href="/2017/08/22/linux/linux server/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>

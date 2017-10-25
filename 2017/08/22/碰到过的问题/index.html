@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8) Cookie rejected [...] 对于 Cookie rejected">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-17T08:43:42.893Z">
+<meta property="og:updated_time" content="2017-10-23T08:50:57.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="碰到过的问题">
 <meta name="twitter:description" content="Java 在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &amp;quot;GBK&amp;quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8) Cookie rejected [...] 对于 Cookie rejected">
@@ -204,6 +204,8 @@
 <li><p>引入 slf4j jar 包时，出现： <code>java.lang.IllegalAccessError: tried to access field org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory</code>。<br>可能的原因是其他jar包中包含的 slf4j-api.jar 的版本比较低，解决方案是查找引入的jar包文件，哪一个包使用的 slf4j-api 版本比较低，如果是 maven，可以使用如下方式去掉低版本的jar：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
+<li><p>eclipse 不能正确引用jar文件。 在jar文件上右键 -&gt; Build Path -&gt; add to path</p>
+</li>
 </ol>
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ol>
 <li><p>在ipad上通过jquery绑定的click事件不生效，解决方法：</p>
@@ -257,7 +259,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-17T08:43:42.893Z" itemprop="dateUpdated">2017-10-17 08:43:42</time>
+    最后更新时间：<time datetime="2017-10-23T08:50:57.257Z" itemprop="dateUpdated">2017-10-23 08:50:57</time>
 </span><br>
 
 

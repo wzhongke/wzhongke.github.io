@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="壹叶知秋的博客">
 <meta property="og:description" content="查询时间是今天的数据  12select * from table_name where to_days(create_time) = to_days(now());select * from table_name where date(create_time) = curdate();">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-10T08:00:44.587Z">
+<meta property="og:updated_time" content="2017-10-24T09:19:58.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL技巧">
 <meta name="twitter:description" content="查询时间是今天的数据  12select * from table_name where to_days(create_time) = to_days(now());select * from table_name where date(create_time) = curdate();">
@@ -197,7 +197,7 @@
 <p> Type值| 说明<br> :—–|:——–<br> MICROSECOND   | 毫秒<br> SECOND        | 秒<br> MINUTE        | 分<br> HOUR          | 时<br> DAY           | 天<br> WEEK          | 周<br> MONTH         | 月<br> QUARTER       | 刻<br> YEAR          | 年</p>
 </li>
 <li><p>删除MySQL中的重复数据</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">max</span>(<span class="keyword">id</span>) <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">duplicate</span> <span class="keyword">having</span> <span class="keyword">count</span>(<span class="keyword">duplicate</span>) &gt; <span class="number">1</span>) <span class="keyword">as</span> b);</div></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">max</span>(<span class="keyword">id</span>) <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">duplicate</span> <span class="keyword">having</span> <span class="keyword">count</span>(<span class="keyword">duplicate</span>) &gt; <span class="number">1</span>) <span class="keyword">as</span> b) <span class="keyword">and</span> <span class="keyword">id</span> <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">duplicate</span> <span class="keyword">having</span> <span class="keyword">count</span>(<span class="keyword">duplicate</span>) &gt; <span class="number">1</span>) <span class="keyword">as</span> c);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -207,7 +207,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-10T08:00:44.587Z" itemprop="dateUpdated">2017-10-10 08:00:44</time>
+    最后更新时间：<time datetime="2017-10-24T09:19:58.067Z" itemprop="dateUpdated">2017-10-24 09:19:58</time>
 </span><br>
 
 

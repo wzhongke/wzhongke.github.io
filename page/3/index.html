@@ -161,14 +161,14 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-java/java 文件处理"
+            <article id="post-svg动画"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017-06-30 11:41:43" datetime="2017-06-30T11:41:43.000Z"  itemprop="datePublished">2017-06-30</time>
+        <time class="post-time" title="2017-07-02 19:42:25" datetime="2017-07-02T19:42:25.000Z"  itemprop="datePublished">2017-07-02</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/svg/">svg</a></li></ul>
 
 
 
@@ -179,7 +179,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/30/java/java 文件处理/">java 文件处理</a>
+      <a class="post-title-link" href="/2017/07/03/svg动画/">svg动画</a>
     </h3>
   
 
@@ -189,19 +189,72 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        PathPath 是java7中java.nio.file包中的类，它是一个抽象构造。创建和处理Path不会马上绑定到对应的物理位置，如果试图读取一个未创建的文件会抛出IOException.
-使用 Paths.get(String filePath, String more ... ) 来创建一个 Path。
-可以通过resolve方法来合并两个Path:12// 最终是文件是 /usr/...
+        svg 字体动画
     
         <br>
-        <a href="/2017/06/30/java/java 文件处理/" class="post-more waves-effect waves-button">
+        <a href="/2017/07/03/svg动画/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svg/">svg</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-algorithms/缓存算法"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-30 11:41:43" datetime="2017-06-30T11:41:43.000Z"  itemprop="datePublished">2017-06-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/30/algorithms/缓存算法/">缓存算法</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        众所周知，内存的读取速度比硬盘类存储设备快的多。为了降低硬件设备的负载，提高响应速度，增加吞吐率，我们可以将最近使用过，并且将来还要使用的数据缓存到内存中。因为内存的容量是有限的，所以根据怎么选择将来还要使用的数据，产生了各种缓存算法。
+一些术语
+命中：当客户发起一个请求，如果在缓存中，就成为缓存命中
+Cache Miss：如果还有缓存空间，没有命中的就会被存储到缓存中；如果缓存满了，而又没命中缓存，那么久会按照缓存算法，用新对象替换旧对象。
+存储成本：将数据放到缓存所需要的时间和空间
+失效：当存在缓存中的数据需要更新时，缓存中的这个数据就失效了
+
+Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段时间内使用次数很少，那么在将来一段时间内被使用的可能性也很小。
+命中率LFU的命中率还要看数据的访问顺序。一旦访问内容发生较大的变化，LFU需要更长的时间来适应。因为他是根据频率来淘汰数据的，新的数据访问频率低，很容易被淘汰掉。这样会导致之前经常而现在不被访问的数据，一直赖在缓存中。所以，一般相比LFU，会采用LRU算法
+    
+        <br>
+        <a href="/2017/06/30/algorithms/缓存算法/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
     </div>
     
@@ -258,14 +311,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-algorithms/缓存算法"
+            <article id="post-java/java 文件处理"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-06-30 11:41:43" datetime="2017-06-30T11:41:43.000Z"  itemprop="datePublished">2017-06-30</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
 
 
 
@@ -276,7 +329,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/30/algorithms/缓存算法/">缓存算法</a>
+      <a class="post-title-link" href="/2017/06/30/java/java 文件处理/">java 文件处理</a>
     </h3>
   
 
@@ -286,25 +339,19 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        众所周知，内存的读取速度比硬盘类存储设备快的多。为了降低硬件设备的负载，提高响应速度，增加吞吐率，我们可以将最近使用过，并且将来还要使用的数据缓存到内存中。因为内存的容量是有限的，所以根据怎么选择将来还要使用的数据，产生了各种缓存算法。
-一些术语
-命中：当客户发起一个请求，如果在缓存中，就成为缓存命中
-Cache Miss：如果还有缓存空间，没有命中的就会被存储到缓存中；如果缓存满了，而又没命中缓存，那么久会按照缓存算法，用新对象替换旧对象。
-存储成本：将数据放到缓存所需要的时间和空间
-失效：当存在缓存中的数据需要更新时，缓存中的这个数据就失效了
-
-Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段时间内使用次数很少，那么在将来一段时间内被使用的可能性也很小。
-命中率LFU的命中率还要看数据的访问顺序。一旦访问内容发生较大的变化，LFU需要更长的时间来适应。因为他是根据频率来淘汰数据的，新的数据访问频率低，很容易被淘汰掉。这样会导致之前经常而现在不被访问的数据，一直赖在缓存中。所以，一般相比LFU，会采用LRU算法
+        PathPath 是java7中java.nio.file包中的类，它是一个抽象构造。创建和处理Path不会马上绑定到对应的物理位置，如果试图读取一个未创建的文件会抛出IOException.
+使用 Paths.get(String filePath, String more ... ) 来创建一个 Path。
+可以通过resolve方法来合并两个Path:12// 最终是文件是 /usr/...
     
         <br>
-        <a href="/2017/06/30/algorithms/缓存算法/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/30/java/java 文件处理/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
     </div>
     
@@ -410,54 +457,6 @@ Least Frequently Used (LFU):LFU算法认为：如果一个数据在最近一段�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-hello-world"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/hello-world/">hexo Hello World</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-    
-        <br>
-        <a href="/2017/06/18/hello-world/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-java/ConcurrentHashMap"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -491,54 +490,6 @@ HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导�
     
         <br>
         <a href="/2017/06/18/java/ConcurrentHashMap/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-二叉树的分层遍历"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/二叉树的分层遍历/">二叉树的分层遍历</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        今天去面试的时候被问到二叉树的分层遍历，因为原来写Python脚本的时候自己用队列的方法写过一次 分层遍历。结果面试官说能不能用递归的方法，不用队列实现。唔，临时想没有想起来，因此记录一下。
-首先定义一个二叉树的节点：12345class TreeNode:    def __init__(self,value):        self.value=value        self.left=None        self.right=None
-    
-        <br>
-        <a href="/2017/06/18/二叉树的分层遍历/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -601,14 +552,14 @@ HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-linux/linux-常用命令"
+            <article id="post-hello-world"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017-06-17 19:42:25" datetime="2017-06-17T19:42:25.000Z"  itemprop="datePublished">2017-06-17</time>
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
 
 
@@ -619,7 +570,7 @@ HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/18/linux/linux-常用命令/">linux 常用命令</a>
+      <a class="post-title-link" href="/2017/06/18/hello-world/">hexo Hello World</a>
     </h3>
   
 
@@ -629,17 +580,66 @@ HashMap不是线程安全的在多线程环境下，使用HashMap的put()会导�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
     
         <br>
-        <a href="/2017/06/18/linux/linux-常用命令/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/18/hello-world/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-二叉树的分层遍历"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-17 19:48:32" datetime="2017-06-17T19:48:32.000Z"  itemprop="datePublished">2017-06-17</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/18/二叉树的分层遍历/">二叉树的分层遍历</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        今天去面试的时候被问到二叉树的分层遍历，因为原来写Python脚本的时候自己用队列的方法写过一次 分层遍历。结果面试官说能不能用递归的方法，不用队列实现。唔，临时想没有想起来，因此记录一下。
+首先定义一个二叉树的节点：12345class TreeNode:    def __init__(self,value):        self.value=value        self.left=None        self.right=None
+    
+        <br>
+        <a href="/2017/06/18/二叉树的分层遍历/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
     </div>
     
