@@ -161,6 +161,45 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-front/css 动画"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-10-25 09:10:59" datetime="2017-10-25T09:10:59.439Z"  itemprop="datePublished">2017-10-25</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/10/25/front/css 动画/">css 动画</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        transitions可以通过设置 transitions 来实现过渡效果。其用法如下：1234transition:  [ &lt;transition-property&gt; |               &lt;transition-duration&gt; |               &lt;transition-timing-function&gt; |          ...
+    
+        <br>
+        <a href="/2017/10/25/front/css 动画/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-java/jvm调优"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -628,70 +667,6 @@ git remote add origi...
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-碰到过的问题"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-08-22 02:18:53" datetime="2017-08-22T02:18:53.994Z"  itemprop="datePublished">2017-08-22</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/other/">other</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/08/22/碰到过的问题/">碰到过的问题</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Java
-在java中，对于读取文件乱码，可以通过以下方式来指定文件的编码new InputStreamReader(new FileInputStream(file), &quot;GBK&quot;) 或者 Files.newBufferedReader(path, StandardCharsets.UTF_8)
-Cookie rejected [...] 对于 Cookie rejected ，可能是机器配置了域名，但是没有使用域名访问机器。
-使用Java转换xslt时，可以通过 TransformerFactory.newInstance(&quot;com.self.SelfConfig&quot;,com.self.SelfConfig.class.getClassLoader())，其中 com.self.SelfConfig 是继承自 TransformerFactoryImpl，覆盖了其 newTemplatesHandlers() 方法的类。
-在maven中使用java编译时，出现 Compilation failed:internal java compiler error，信息中有Information:java:javacTask:源发行版1.8需要目标发行版1.8。这是因为maven默认的编译版本不是1.8，修改pom.xml:
-123456789101112&lt;build&gt;    &lt;plugins&gt;        &lt;plugin&gt;            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;            &lt;configuration&gt;                &lt;source&gt;1.8&lt;/source&gt;                &lt;target&gt;1.8&lt;/target&gt;            &lt;/configuration&gt;        &lt;/plugin&gt;    &lt;/plugins&gt;&lt;/build&gt;
-
-引入 slf4j jar 包时，出现： java.lang.IllegalAccessError: tried to access field org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory。可能的原因是其他jar包中包含的 slf4j-api.jar 的版本比较低，解决方案是查找引入的jar包文件，哪一个包使用的 slf4j-api 版本比较低，如果是 maven，可以使用如下方式去掉低版本的jar：
-123456  &lt;exclusions&gt;    &lt;exclusion&gt;        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;    &lt;/exclusion&gt;&lt;/exclusions&gt;
-
-eclipse 不能正确引用jar文件。 在jar文件上右键 -&gt; Build Path -&gt; add to path
-
-
-JavaScript
-在ipad上通过jquery绑定的click事件不生效，解决方法：
- 1$(document).bind("click touchstart", function()&#123;&#125;)
-
-使用java拼接json字符串时，不能用\n， 否则JavaScript不会识别。
-    
-        <br>
-        <a href="/2017/08/22/碰到过的问题/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
 
     </div>
     

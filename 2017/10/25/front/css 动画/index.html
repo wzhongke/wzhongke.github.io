@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>css 动画 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="transitions可以通过设置 transitions 来实现过渡效果。其用法如下：1234transition:  [ &amp;lt;transition-property&amp;gt; |               &amp;lt;transition-duration&amp;gt; |               &amp;lt;transition-timing-function&amp;gt; |">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css 动画">
+<meta property="og:url" content="http://wzhongke.github.io/2017/10/25/front/css 动画/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="transitions可以通过设置 transitions 来实现过渡效果。其用法如下：1234transition:  [ &amp;lt;transition-property&amp;gt; |               &amp;lt;transition-duration&amp;gt; |               &amp;lt;transition-timing-function&amp;gt; |">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-27T04:13:37.285Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css 动画">
+<meta name="twitter:description" content="transitions可以通过设置 transitions 来实现过渡效果。其用法如下：1234transition:  [ &amp;lt;transition-property&amp;gt; |               &amp;lt;transition-duration&amp;gt; |               &amp;lt;transition-timing-function&amp;gt; |">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-105841950-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">css 动画</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">css 动画</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-25T09:10:59.439Z" itemprop="datePublished" class="page-time">
+  2017-10-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#transitions"><span class="post-toc-number">1.</span> <span class="post-toc-text">transitions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#transforms"><span class="post-toc-number">2.</span> <span class="post-toc-text">transforms</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-front/css 动画"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">css 动画</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-25 09:10:59" datetime="2017-10-25T09:10:59.439Z"  itemprop="datePublished">2017-10-25</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="transitions"><a href="#transitions" class="headerlink" title="transitions"></a>transitions</h1><p>可以通过设置 transitions 来实现过渡效果。其用法如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">transition:  [ &lt;transition-property&gt; |</div><div class="line">               &lt;transition-duration&gt; |</div><div class="line">               &lt;transition-timing-function&gt; |</div><div class="line">               &lt;<span class="selector-tag">transition-delay</span>&gt; ]</div></pre></td></tr></table></figure></p>
+
+<style>.wrapper{position:relative;border:1px #aaa solid;width:500px;height:500px;margin:0 auto 10px;padding:10px}.shadow{-webkit-box-shadow:5px 5px 5px #aaa;-moz-box-shadow:5px 5px 5px #aaa;box-shadow:5px 5px 5px #aaa;margin-bottom:10px}.normal,.example2,.example3{width:100px;height:100px;position:absolute;top:210px;left:210px;border-radius:50px;background-color:red;text-align:center;transition:all 1s ease-in-out}.example2{background-color:blue;transition-property:top,left;transition-duration:1s,1s;transition-delay:0s,1s}.example3{background-color:purple;transition-property:top,left,border-radius,background-color;transition-duration:2s,1s,0.5s,0.5s;transition-delay:0s,0.5s,1s,1.5s}.wrapper:hover .normal{top:0;left:0}.wrapper:hover .example2{top:398px;left:398px}.wrapper:hover .example3{top:0;left:398px;border-radius:0}.wrapper p{line-height:70px;color:white;font-weight:bold;margin-left:0 0 10px}</style><div class="wrapper shadow"><div class="normal shadow"><p>Normal</p></div><div class="example2"><p>Example2</p></div><div class="example3"><p>Example3</p></div></div>
+
+<h1 id="transforms"><a href="#transforms" class="headerlink" title="transforms"></a>transforms</h1><p>可以通过 transforms 来实现变形效果。目前有2D变形和3D变形，不过3D变形只有新的浏览器中支持。其语法如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: none|transform-functions</div></pre></td></tr></table></figure></p>
+<p>它的属性值如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">含义      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">定义不进行转换。    </td>
+</tr>
+<tr>
+<td style="text-align:left">matrix(n,n,n,n,n,n)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。  </td>
+</tr>
+<tr>
+<td style="text-align:left">matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</td>
+<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。  </td>
+</tr>
+<tr>
+<td style="text-align:left">translate(x,y)</td>
+<td style="text-align:left">定义 2D 转换。   </td>
+</tr>
+<tr>
+<td style="text-align:left">translate3d(x,y,z)</td>
+<td style="text-align:left">定义 3D 转换。   </td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(x)</td>
+<td style="text-align:left">定义转换，只是用 X 轴的值。 </td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(y)</td>
+<td style="text-align:left">定义转换，只是用 Y 轴的值。 </td>
+</tr>
+<tr>
+<td style="text-align:left">translateZ(z)</td>
+<td style="text-align:left">定义 3D 转换，只是用 Z 轴的值。 </td>
+</tr>
+<tr>
+<td style="text-align:left">scale(x,y)</td>
+<td style="text-align:left">定义 2D 缩放转换。 </td>
+</tr>
+<tr>
+<td style="text-align:left">scale3d(x,y,z)</td>
+<td style="text-align:left">定义 3D 缩放转换。 </td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(x)</td>
+<td style="text-align:left">通过设置 X 轴的值来定义缩放转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(y)</td>
+<td style="text-align:left">通过设置 Y 轴的值来定义缩放转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">scaleZ(z)</td>
+<td style="text-align:left">通过设置 Z 轴的值来定义 3D 缩放转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(angle)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。  </td>
+</tr>
+<tr>
+<td style="text-align:left">rotate3d(x,y,z,angle)</td>
+<td style="text-align:left">定义 3D 旋转。   </td>
+</tr>
+<tr>
+<td style="text-align:left">rotateX(angle)</td>
+<td style="text-align:left">定义沿着 X 轴的 3D 旋转。    </td>
+</tr>
+<tr>
+<td style="text-align:left">rotateY(angle)</td>
+<td style="text-align:left">定义沿着 Y 轴的 3D 旋转。    </td>
+</tr>
+<tr>
+<td style="text-align:left">rotateZ(angle)</td>
+<td style="text-align:left">定义沿着 Z 轴的 3D 旋转。    </td>
+</tr>
+<tr>
+<td style="text-align:left">skew(x-angle,y-angle)</td>
+<td style="text-align:left">定义沿着 X 和 Y 轴的 2D 倾斜转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(angle)</td>
+<td style="text-align:left">定义沿着 X 轴的 2D 倾斜转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(angle)</td>
+<td style="text-align:left">定义沿着 Y 轴的 2D 倾斜转换。  </td>
+</tr>
+<tr>
+<td style="text-align:left">perspective(n)</td>
+<td style="text-align:left">为 3D 转换元素定义透视视图</td>
+</tr>
+</tbody>
+</table>
+<p>可以将 transform 同 transition 结合使用，如下所示：<br>
+<style>
+#transDemo div {
+    height: 120px;width: 120px; border: 1px blue solid; margin: 10px auto; padding:10px; text-align: center; transition: all 2s ease-in-out;
+}
+#transDemo .hover {cursor: pointer;}
+#transDemo div:hover {transform: rotate(720deg) scale(2,2);}
+</style>
+<div id="transDemo">
+<div class="hover"> Hover and see what will happen</div>
+</div>
+</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-10-27T04:13:37.285Z" itemprop="dateUpdated">2017-10-27 04:13:37</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/10/25/front/css 动画/&title=《css 动画》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/10/25/front/css 动画/&title=《css 动画》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/10/25/front/css 动画/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css 动画》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/10/25/front/css 动画/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/10/25/front/css 动画/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/10/23/java/jvm调优/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">jvm调优</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/10/25/front/css 动画/&title=《css 动画》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/10/25/front/css 动画/&title=《css 动画》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/10/25/front/css 动画/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css 动画》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/10/25/front/css 动画/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/10/25/front/css 动画/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/10/25/front/css 动画/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105841950-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -13,24 +13,24 @@
     
     
     
-    <title>壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <title>父子组价通信 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="click 	   	export default { 		name: &apos;componentA&apos;, 		data: function() { 			return { 				msg: &quot;component a!&quot; 			} 		}, 		events: { 			&apos;addNew&apos; : function (msg) { 				console.log(msg); 			}">
+    <meta name="description" content="123&amp;lt;template&amp;gt;    &amp;lt;/template&amp;gt;">
 <meta property="og:type" content="website">
-<meta property="og:title" content="壹叶知秋的博客">
+<meta property="og:title" content="父子组价通信">
 <meta property="og:url" content="http://wzhongke.github.io/vue.html">
 <meta property="og:site_name" content="壹叶知秋的博客">
-<meta property="og:description" content="click 	   	export default { 		name: &apos;componentA&apos;, 		data: function() { 			return { 				msg: &quot;component a!&quot; 			} 		}, 		events: { 			&apos;addNew&apos; : function (msg) { 				console.log(msg); 			}">
+<meta property="og:description" content="123&amp;lt;template&amp;gt;    &amp;lt;/template&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-14T02:02:15.912Z">
+<meta property="og:updated_time" content="2017-09-14T02:02:15.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="壹叶知秋的博客">
-<meta name="twitter:description" content="click 	   	export default { 		name: &apos;componentA&apos;, 		data: function() { 			return { 				msg: &quot;component a!&quot; 			} 		}, 		events: { 			&apos;addNew&apos; : function (msg) { 				console.log(msg); 			}">
+<meta name="twitter:title" content="父子组价通信">
+<meta name="twitter:description" content="123&amp;lt;template&amp;gt;    &amp;lt;/template&amp;gt;">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -125,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis"></div>
+        <div class="flex-col header-title ellipsis">父子组价通信</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,7 +147,7 @@
 <header class="content-header page-header">
 
     <div class="container fade-scale">
-        <h1 class="title"></h1>
+        <h1 class="title">父子组价通信</h1>
         <h5 class="subtitle">
             
         </h5>
@@ -162,110 +162,7 @@
 <div class="container body-wrap">
     <article class="page-article fade" itemprop="blogPage">
         <div class="post-content page-content" id="page-content" itemprop="pageContent">
-            <template>
-	<div class="hello">
-		<h1></h1>
-		<h2>  </h2> <!-- 可以直接用 -->
-		<button @click="onClickMe">click</button>
-	</div>
-</template>
-<script type="text/javascript">
-	export default {
-		name: 'componentA',
-		data: function() {
-			return {
-				msg: "component a!"
-			}
-		},
-		events: {
-			'addNew' : function (msg) {
-				console.log(msg);
-			}
-		},
-		props: ['msgfromfather'],
-		methods : {
-			onClickMe: function() {
-				this.$emit('children-tell', this.msg)
-			}
-		}
-	}
-</script>
-
-<template>
-	<div id="app">
-		<h1></h1>
-		<input v-model="newItem" v-on:keyup.enter="addNew">
-		<ul>
-			<li v-for="item in items" v-bind:class="{finished:item.isFinished}" v-on:click="toggleFinish(item)"> </li>
-		</ul>
-		<p> children tell:  </p>
-		<component-a msgfromfather="hello" v-on:children-tell="listenToChildren"></component-a>
-	</div>
-</template>
-<script type="text/javascript">
-const STORAGE_KEY='todo-vue'
-export default {
-	fetch: function() {
-		return JSON.parse(window.location.getItem(STORAGE_KEY) || '[]')
-	},
-	save: function (items) {
-		window.location.setItem(STORAGE_KEY, JSON.stringify(items))
-	}
-}
-</script>
-<script type="text/javascript">
-	export default {
-		data () {
-			return {
-				title: 'this is a todo list',
-				items: store.fetch(),
-				newItem: '',
-				childWords: ''
-			}
-		},
-		watch: {
-			items: {
-				handler: function (items) {
-					Store.save(items)
-				}
-			},
-			deep: true
-		},
-		events: {
-			'children-tell' : function (){
-				this.childWords = msg;
-			}
-		},
-		methods: {
-			toogleFinish: function(item) {
-				item.isFinished = !item.isFinished;
-			},
-			addNew: function() {
-				this.items.push({
-					label: this.newItem,
-					isFinished: false
-				})
-				this.newItem = ''
-				this.$broadcas('addNew', this.items);
-			},
-			listenToChildren: function(msg) {
-				this.childWords = msg;
-			}
-		}
-	}
-</script>
-
-
-<!-- 
- Vue 实例实现了一个自定义事件接口，这个事件系统独立于DOM事件
-
- - 使用 $on() 监听事件
- - 使用 `$emit()` 触发事件
- - 使用 `$dispatch()` 派发事件，事件沿着父链冒泡
- - 使用`$broadcas()` 广播事件，事件向下传导给所有后代
-
- Vue事件在冒泡过程中第一次触发回调之后自动停止冒泡，除非回调明确返回true
--->
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    </div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
         </div>
 
         
@@ -284,7 +181,7 @@ export default {
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/vue.html&title=壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/vue.html&title=《父子组价通信》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -294,7 +191,7 @@ export default {
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/vue.html&title=壹叶知秋的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/vue.html&title=《父子组价通信》 — 壹叶知秋的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -304,7 +201,7 @@ export default {
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=壹叶知秋的博客&url=http://wzhongke.github.io/vue.html&via=http://wzhongke.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《父子组价通信》 — 壹叶知秋的博客&url=http://wzhongke.github.io/vue.html&via=http://wzhongke.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -379,7 +276,7 @@ export default {
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/vue.html&title=壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/vue.html&title=《父子组价通信》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -389,7 +286,7 @@ export default {
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/vue.html&title=壹叶知秋的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/vue.html&title=《父子组价通信》 — 壹叶知秋的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -399,7 +296,7 @@ export default {
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=壹叶知秋的博客&url=http://wzhongke.github.io/vue.html&via=http://wzhongke.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《父子组价通信》 — 壹叶知秋的博客&url=http://wzhongke.github.io/vue.html&via=http://wzhongke.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
