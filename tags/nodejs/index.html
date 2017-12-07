@@ -156,15 +156,15 @@
             ">全部</a>
         
 
-            <a href="/tags/nodejs/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light active">nodejs</a>
+            <a href="/tags/工具/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">工具</a>
 
         
 
-            <a href="/tags/markdown/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light">markdown</a>
+            <a href="/tags/nodejs/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light active">nodejs</a>
 
         
 
-            <a href="/tags/工具/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">工具</a>
+            <a href="/tags/markdown/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">markdown</a>
 
         
 
@@ -184,11 +184,11 @@
 
         
 
-            <a href="/tags/javascript/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">javascript</a>
+            <a href="/tags/设计模式/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">设计模式</a>
 
         
 
-            <a href="/tags/设计模式/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">设计模式</a>
+            <a href="/tags/javascript/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">javascript</a>
 
         
 
@@ -196,19 +196,19 @@
 
         
 
-            <a href="/tags/linux/" style="-webkit-order:10;order:10" class="tags-list-item waves-effect waves-button waves-light">linux</a>
+            <a href="/tags/java/" style="-webkit-order:10;order:10" class="tags-list-item waves-effect waves-button waves-light">java</a>
 
         
 
-            <a href="/tags/java/" style="-webkit-order:11;order:11" class="tags-list-item waves-effect waves-button waves-light">java</a>
+            <a href="/tags/error/" style="-webkit-order:11;order:11" class="tags-list-item waves-effect waves-button waves-light">error</a>
 
         
 
-            <a href="/tags/error/" style="-webkit-order:12;order:12" class="tags-list-item waves-effect waves-button waves-light">error</a>
+            <a href="/tags/sql/" style="-webkit-order:12;order:12" class="tags-list-item waves-effect waves-button waves-light">sql</a>
 
         
 
-            <a href="/tags/sql/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">sql</a>
+            <a href="/tags/linux/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">linux</a>
 
         
 
@@ -351,7 +351,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-<script src="/css/style.css"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -371,7 +371,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="/css/style.css" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -404,7 +404,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var length = codes.length;
     for (var i=0; i<length; i++) {
         codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
-        console.log(codes[i].innerHTML)
     }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

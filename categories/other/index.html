@@ -156,15 +156,15 @@
             ">全部</a>
         
 
-            <a href="/categories/nodejs/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">nodejs</a>
+            <a href="/categories/工具/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">工具</a>
 
         
 
-            <a href="/categories/markdown/" style="-webkit-order:14;order:14" class="tags-list-item waves-effect waves-button waves-light">markdown</a>
+            <a href="/categories/nodejs/" style="-webkit-order:14;order:14" class="tags-list-item waves-effect waves-button waves-light">nodejs</a>
 
         
 
-            <a href="/categories/工具/" style="-webkit-order:15;order:15" class="tags-list-item waves-effect waves-button waves-light">工具</a>
+            <a href="/categories/markdown/" style="-webkit-order:15;order:15" class="tags-list-item waves-effect waves-button waves-light">markdown</a>
 
         
 
@@ -184,11 +184,11 @@
 
         
 
-            <a href="/categories/javascript/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">javascript</a>
+            <a href="/categories/设计模式/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">设计模式</a>
 
         
 
-            <a href="/categories/设计模式/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">设计模式</a>
+            <a href="/categories/javascript/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">javascript</a>
 
         
 
@@ -196,23 +196,23 @@
 
         
 
-            <a href="/categories/linux/" style="-webkit-order:6;order:6" class="tags-list-item waves-effect waves-button waves-light">linux</a>
+            <a href="/categories/java/" style="-webkit-order:6;order:6" class="tags-list-item waves-effect waves-button waves-light">java</a>
 
         
 
-            <a href="/categories/linux/编程/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">编程</a>
+            <a href="/categories/java/error/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">error</a>
 
         
 
-            <a href="/categories/java/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">java</a>
+            <a href="/categories/sql/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">sql</a>
 
         
 
-            <a href="/categories/java/error/" style="-webkit-order:9;order:9" class="tags-list-item waves-effect waves-button waves-light">error</a>
+            <a href="/categories/linux/" style="-webkit-order:9;order:9" class="tags-list-item waves-effect waves-button waves-light">linux</a>
 
         
 
-            <a href="/categories/sql/" style="-webkit-order:10;order:10" class="tags-list-item waves-effect waves-button waves-light">sql</a>
+            <a href="/categories/linux/编程/" style="-webkit-order:10;order:10" class="tags-list-item waves-effect waves-button waves-light">编程</a>
 
         
 
@@ -491,7 +491,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-<script src="/css/style.css"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -511,7 +511,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="/css/style.css" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -544,7 +544,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var length = codes.length;
     for (var i=0; i<length; i++) {
         codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
-        console.log(codes[i].innerHTML)
     }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
