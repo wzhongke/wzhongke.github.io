@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>spring | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="spring 模块Core ContainerCore Container由 spring-core, spring-beans, spring-context, spring-context-support 和 spring-expression (Spring Expression Language)模块组成。spring-core 和 spring-beans 模块提供了框架的基本功能——包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring">
+<meta property="og:url" content="http://wzhongke.github.io/2017/12/04/java/spring/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="spring 模块Core ContainerCore Container由 spring-core, spring-beans, spring-context, spring-context-support 和 spring-expression (Spring Expression Language)模块组成。spring-core 和 spring-beans 模块提供了框架的基本功能——包">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-24T08:25:35.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring">
+<meta name="twitter:description" content="spring 模块Core ContainerCore Container由 spring-core, spring-beans, spring-context, spring-context-support 和 spring-expression (Spring Expression Language)模块组成。spring-core 和 spring-beans 模块提供了框架的基本功能——包">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-105841950-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">spring</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">spring</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-04T11:14:24.459Z" itemprop="datePublished" class="page-time">
+  2017-12-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#spring-模块"><span class="post-toc-number">1.</span> <span class="post-toc-text">spring 模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Core-Container"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Core Container</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AOP-和-代理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">AOP 和 代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Messaging"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Messaging</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Data-Access-Integration"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Data Access/Integration</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Web</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Test"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Test</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Maven-Dependency"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Maven Dependency</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#日志依赖"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">日志依赖</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#The-IoC-container"><span class="post-toc-number">2.</span> <span class="post-toc-text">The IoC container</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Container-Overview"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Container Overview</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean-定义"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Bean 定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean-命名"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Bean 命名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean-初始化"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Bean 初始化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#依赖"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">依赖</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于构造方式"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">基于构造方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于-Setter-来构造bean"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">基于 Setter 来构造bean</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-java/spring"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">spring</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-04 11:14:24" datetime="2017-12-04T11:14:24.459Z"  itemprop="datePublished">2017-12-04</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="spring-模块"><a href="#spring-模块" class="headerlink" title="spring 模块"></a>spring 模块</h1><h2 id="Core-Container"><a href="#Core-Container" class="headerlink" title="Core Container"></a>Core Container</h2><p>Core Container由 spring-core, spring-beans, spring-context, spring-context-support 和 spring-expression (Spring Expression Language)模块组成。<br>spring-core 和 spring-beans 模块提供了框架的基本功能——包括IoC和依赖注入。 <code>BeanFactory</code> 是一个精心设计的工厂模式，它消除了对程序单例的需求，并允许将实际程序逻辑中将依赖关系的配置和规范相分离。<br>spring-context 模块是在 core 和 beans 模块的基础上构建的：这是一种以类似JNDI注册表的框架访问对象方法的风格。Context模块继承了Beans模块的特性，并且增加了对国际化、事件传播、资源加载和透明创建上下文的支持。Context模块也支持Java EE的特性，如EJB，JMX和基本的远程调用。 <code>ApplicationContext</code> 接口是Context模块的核心。<br>spring-context-support 支持将第三方库整合到spring应用的上下文环境中，例如caching(EhCache, Guava, Jcache), mailing(JavaMail), scheduling(CommonJ, Quartz) 和模板引擎(FreeMarker, JasperReports, Velocity).<br>spring-expression 模块为运行时查询和操作对象图提供了强大的EL表达式。</p>
+<h2 id="AOP-和-代理"><a href="#AOP-和-代理" class="headerlink" title="AOP 和 代理"></a>AOP 和 代理</h2><p>spring-aop 模块提供了允许自定义的面向切面编程的AOP方式，比如用方法拦截和切入点来干净地将该分离的功能代码分离开。<br>spring-aspects 模块提供与 AspectJ 集成<br>spring-instrument 模块提供了在特定应用服务器中使用的类代理支持和类加载器的实现<br>spring-instrument-tomcat 模块包含了Tomcat的Spring工具代理</p>
+<h2 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a>Messaging</h2><p>spring-messaging 模块提供了集成Spring消息模块的整合，像Message， MessageChannel，MessageHandler 和其他作为基于消息传递的应用程序</p>
+<h2 id="Data-Access-Integration"><a href="#Data-Access-Integration" class="headerlink" title="Data Access/Integration"></a>Data Access/Integration</h2><p>数据访问/集成 有 JDBC，ORM，OXM，JMS和事务模块</p>
+<ul>
+<li>spring-jdbc 模块提供了一个JDBC的抽象层，不需要进行单调乏味的JDBC编码和解析数据库特定的错误代码。</li>
+<li>spring-tx 模块支持编程和声明式事务管理，用于实现特殊接口的类和所有POJO</li>
+<li>spring-orm 模块提供了整个流行ORM API的数据层框架，如JPA，JDO和Hibernate。</li>
+<li>spring-oxm 模块提供了支持 Object-XML映射的抽象层，像 JAXB，Castor，XML Beans，JiBX 和 XStream</li>
+<li>spring-jms 模块包含了生产消费消息的特性</li>
+</ul>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>Web层包含了 spring-web, spring-webmvc, spring-websocket 和 spring-webmvc-portlet 模块</p>
+<ul>
+<li>spring-web 模块提供了基本的面向Web的集成功能，例如多文件上传功能，使用Servlet监听器对IoC进行初始化，面向Web的应用程序上下文。它还包含一个HTTP客户端和对Spring远程处理的Web相关部分支持。</li>
+<li>spring-webmvc 模块包含了针对web应用程序的 Spring的 MVC 和 REST Web Services 实现。Spring的MVC框架提供了域模型代码和Web表单之间的清晰分离，并且与Spring框架的其他所有功能集成在一起。</li>
+<li>spring-webmvc-portlet 模块（也称为Web-Portlet模块）提供了在Portlet环境中使用的MVC实现，并映射了spring-webmvc的功能</li>
+</ul>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>spring-test 模块支持 unit testing 和 Spring组件同 Junit或者TestNG之间的整合测试。它提供了一致的Spring <code>ApplicationContext</code>s加载和缓存上下文。 它还提供了模拟对象，您可以使用它来单独测试您的代码。</p>
+<h2 id="Maven-Dependency"><a href="#Maven-Dependency" class="headerlink" title="Maven Dependency"></a>Maven Dependency</h2><p>使用Maven管理依赖时，我们都不需要明确地引入日志依赖。例如，创建应用上下文并使用依赖注入来配置应用，我们的Maven依赖应该如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">denpendencies</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用Maven过程中，很可能会意外地引入不同版本的Spring jar包。比如，在第三方库或者Spring项目中，将传递的依赖关系拉到较旧的版本。如果我们没有明确指定依赖，各种各样的意外问题都可能会出现。<br>我们可以使用 BOM(bill of materials) 来解决这个问题，我们可以在 <code>dependencyManagement</code> 中引入 <code>spring-framework-bom</code> 来保证Spring依赖是同一个版本。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-framework-bom<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用BOM的另一个优点就是，我们无需在依赖中指定 <code>&lt;version&gt;</code> 属性:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="日志依赖"><a href="#日志依赖" class="headerlink" title="日志依赖"></a>日志依赖</h2><p>Spring引入的唯一一个外部依赖是 commons-logging 包，commons-logging 的运行时发现算法是有问题的。我们可以通过两种方式将 commons-logging 换掉：</p>
+<ol>
+<li><p>在 spring-core 模块中排除依赖关系</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>依靠一个特殊的 commons-logging 依赖，然后用一个空的jar来替换这个库</p>
+</li>
+</ol>
+<p>使用Log4j来作为框架的日志系统。Log4j是稳健效率高的，我们在测试Spring的时候，用的就是Log4j。在Spring中使用Log4j，我们需要在Maven中添加依赖，并且在classpath根目录下加入其配置文件log4j.properties 或者 log4j.xml:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.14<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>log4j.properties 如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log4j.rootCategory=INFO, stdout</div><div class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</div><div class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.stdout.layout.ConversionPattern=%d&#123;ABSOLUTE&#125; %5p %t %c&#123;2&#125;:%L - %m%n</div><div class="line">log4j.category.org.springframework.beans.factory=DEBUG</div></pre></td></tr></table></figure></p>
+<h1 id="The-IoC-container"><a href="#The-IoC-container" class="headerlink" title="The IoC container"></a>The IoC container</h1><p>控制反转（IoC，又名依赖注入 DI）是一个过程，对象通过构造参数，或者工厂方法的参数，或者设置构造完成对象的参数来定义他们的依赖关系。然后容器在创建bean时将其依赖的对象注入到bean中。<br><code>org.springframework.beans</code> 和 <code>org.springframework.context</code> 是Spring框架IoC容器的核心包。<code>BeanFactory</code> 接口提供了配置框架和基本的功能，<code>ApplicationContext</code> 增加了更多企业特定的功能，它完全是<code>BeanFactory</code>的超集。<br>那些构成应用程序骨干并被Spring IoC容器管理的对象，被称为 beans。</p>
+<h2 id="Container-Overview"><a href="#Container-Overview" class="headerlink" title="Container Overview"></a>Container Overview</h2><p><code>org.springframework.context.ApplicationContext</code> 接口代表了Spring IoC容器，它负责初始化，配置，并且组装上述的beans。一般，容器通过XML，或者Java注解，或者Java代码来配置对象。</p>
+<p>通常在应用中，会创建<code>ClassPathXmlApplicationContext</code> 或者 <code>FileSystemXmlApplicationContext.</code> 的实例，来读取XML配置，并根据XML组装对象。</p>
+<p>下图是高度抽象的视图，描述了spring是如何工作的。<br>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="296" viewbox="7 121 440 296"><defs><marker id="a" markerunits="userSpaceOnUse" orient="auto" markerwidth="16.236" markerheight="10.551" viewbox="-1 -1.376 16.236 10.551" refx="15.236" refy="3.899"><path fill="#323232" stroke="#323232" stroke-width="2" d="M2.236 3.9l12-3.9v7.798z"/></marker><marker id="b" markerunits="userSpaceOnUse" orient="auto" markerwidth="16.236" markerheight="10.551" viewbox="-1 -1.376 16.236 10.551" refx="15.236" refy="3.899"><path fill="#323232" stroke="#323232" stroke-width="2" d="M2.236 3.9l12-3.9v7.798z"/></marker><marker id="c" markerunits="userSpaceOnUse" orient="auto" markerwidth="16.236" markerheight="10.551" viewbox="-1 -1.376 16.236 10.551" refx="15.236" refy="3.899"><path fill="#323232" stroke="#323232" stroke-width="2" d="M2.236 3.9l12-3.9v7.798z"/></marker></defs><path fill="none" d="M7 121h440v296H7V121z"/><path fill="#f5927b" stroke="#323232" stroke-width="2" d="M208 213h198v68H208z"/><text x="88" y="15.375" fill="#323232" font-size="15" font-family="Arial" text-anchor="middle" transform="translate(218 237.625)">Spring 容器</text><path fill="none" stroke="#323232" stroke-width="2" d="M307 197.764V152" marker-start="url(#a)"/><path fill="none" d="M267 141h160v40H267z"/><text x="79" y="15.375" fill="#323232" font-size="15" font-family="微软雅黑" font-weight="bold" text-anchor="middle" transform="translate(267 151.625)">POJOs</text><path fill="none" stroke="#323232" stroke-width="2" d="M192.764 247H93" marker-start="url(#b)"/><path fill="none" d="M27 205h160v40H27z"/><text x="79" y="15.375" fill="#323232" font-size="15" font-family="Arial" font-weight="bold" text-anchor="middle" transform="translate(27 215.625)">配置</text><path fill="#f5927b" stroke="#323232" stroke-width="2" d="M213 339h188v58H213z"/><text x="83" y="15.375" fill="#323232" font-size="15" font-family="Arial" text-anchor="middle" transform="translate(223 358.625)">配置好的，可以使用的系统</text><path fill="none" stroke="#323232" stroke-width="2" d="M307 323.764V281" marker-start="url(#c)"/><path fill="none" d="M267 288h160v40H267z"/><text x="79" y="15.375" fill="#323232" font-size="15" font-family="Arial" font-weight="bold" text-anchor="middle" transform="translate(267 298.625)">生产对象</text></svg>
+</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Spring配置通常有至少一个被容器管理的bean组成。基于XML配置，是在顶层<code>&lt;beans/&gt;</code>中配置 <code>&lt;bean/&gt;</code>元素。基于Java配置的，通常是<code>@Configuration</code>注解的类中的<code>@Bean</code>注解的方法。<br>基于XML配置的数据如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></div><div class="line"><span class="tag"><span class="string">            http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">"resources/messageSource.xml"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"example1"</span> <span class="attr">class</span>=<span class="string">"com.spring.Example1"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"example2"</span> <span class="attr">class</span>=<span class="string">"com.spring.Example2"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- more bean definitions go here --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>我们可以通过如下方式获取一个<code>ApplicationContext</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext context =</div><div class="line"><span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="keyword">new</span> String[] &#123;<span class="string">"services.xml"</span>, <span class="string">"daos.xml"</span>&#125;);</div><div class="line">Example1 example1 = context.getBean(<span class="string">"example1"</span>, Example.class);</div></pre></td></tr></table></figure></p>
+<p>我们可以通过 <code>ApplicationContext</code> 接口的 <code>getBean()</code> 方法从Spring获取对象，但是这样会产生对Spring APIs的依赖，所以不建议这么做。我们可以通过框架来注入依赖。</p>
+<h3 id="Bean-定义"><a href="#Bean-定义" class="headerlink" title="Bean 定义"></a>Bean 定义</h3><p>我们可以使用如下属性来定义一个Bean元素</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">class</td>
+<td style="text-align:left">bean 的类路径</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">bean 的名字</td>
+</tr>
+<tr>
+<td style="text-align:left">scope</td>
+<td style="text-align:left">bean 的生命周期</td>
+</tr>
+<tr>
+<td style="text-align:left">constructor arguments</td>
+<td style="text-align:left">注入的构造参数</td>
+</tr>
+<tr>
+<td style="text-align:left">properties</td>
+<td style="text-align:left">注入的属性值</td>
+</tr>
+<tr>
+<td style="text-align:left">autowiring mode</td>
+<td style="text-align:left">自动注入模式</td>
+</tr>
+<tr>
+<td style="text-align:left">lazy-initialization mode</td>
+<td style="text-align:left">懒加载模式</td>
+</tr>
+<tr>
+<td style="text-align:left">initialization method</td>
+<td style="text-align:left">初始化方法</td>
+</tr>
+<tr>
+<td style="text-align:left">destruction method</td>
+<td style="text-align:left">销毁方法</td>
+</tr>
+</tbody>
+</table>
+<p>我们还可以将在容器外创建的对象加入到Spring容器中：通过 <code>ApplicationContext</code> 的 <code>getBeanFactory()</code> 方法获取到 <code>BeanFactory</code>，然后通过 <code>registerSingleton(...)</code> 或者 <code>registerBeanDefinition(...)</code> 来注册到容器中。</p>
+<h3 id="Bean-命名"><a href="#Bean-命名" class="headerlink" title="Bean 命名"></a>Bean 命名</h3><p>每个Bean都有一个或多个标识符，标识符在容器中必须唯一。如果我们不提供标识符（id 或 name)，容器会为该Bean生成一个唯一的标识符。</p>
+<p>我们可以用 <code>alias</code> 为 Bean 定义一个别名：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">"subsystemA-dataSource"</span> <span class="attr">alias</span>=<span class="string">"subsystemB-dataSource"</span>/&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Bean-初始化"><a href="#Bean-初始化" class="headerlink" title="Bean 初始化"></a>Bean 初始化</h3><p>如果是基于XML配置的容器，我们通过<code>&lt;bean/&gt;</code> 标签中的 <code>class</code> 属性来指定对象的类型。对于内部静态类，我们需要在 bean 的class 属性中，用 “$” 分隔。如果 <code>com.example.Foo</code> 中有一个静态内部类 <code>Bar</code>，那么 bean 的 class 属性应该写为： <code>com.example.Foo$Bar</code><br>构造Bean的方法有： 构造器、静态工厂方法、对象的工厂方法：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">&lt;!-- 静态工厂方法构造bean --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"clientService"</span> <span class="attr">class</span>=<span class="string">"com.examples.ClientService"</span> <span class="attr">factory-method</span>=<span class="string">"createInstance"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 对象的工厂方法构造 bean --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"clientService2"</span> <span class="attr">factory-bean</span>=<span class="string">"clientService"</span> <span class="attr">factory-method</span>=<span class="string">"createClient"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>Denpendency Injection 有两种主要的方式：基于构造方法的 和 基于Setter的</p>
+<h3 id="基于构造方式"><a href="#基于构造方式" class="headerlink" title="基于构造方式"></a>基于构造方式</h3><p>基于构造方式的DI是通过容器调用多个参数的构造器来完成的，每个参数表示一个依赖关系。<br>如果构造参数中不存在歧义，那么在bean定义构造参数的顺序就是其构造器参数的顺序。对于如下bean：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> x.y;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Foo</span><span class="params">(Bar bar, Baz baz)</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为<code>Foo</code>构造器的两个参数<code>Bar</code>和<code>Baz</code>不存在歧义，所以顺序或者类型可以不明确提供。其xml中bean的定义可以写成：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"foo"</span> <span class="attr">class</span>=<span class="string">"x.y.Foo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"bar"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"baz"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"bar"</span> <span class="attr">class</span>=<span class="string">"x.y.Bar"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"baz"</span> <span class="attr">class</span>=<span class="string">"x.y.Baz"</span>/&gt;</span></div></pre></td></tr></table></figure></p>
+<p>对于基础类型，Spring不能判断其类型是什么，像<code>&lt;value&gt;true&lt;/value&gt;</code>，所以我们要提供一些额外的信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> examples;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleBean</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ExampleBean</span><span class="params">(<span class="keyword">int</span> years, String ultimateAnswer)</span> </span>&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上述例子中，我们可以使用<code>type</code>属性提供类型：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"exampleBean"</span> <span class="attr">class</span>=<span class="string">"examples.ExampleBean"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">type</span>=<span class="string">"int"</span> <span class="attr">value</span>=<span class="string">"7500000"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">type</span>=<span class="string">"java.lang.String"</span> <span class="attr">value</span>=<span class="string">"42"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>还可以使用<code>index</code>属性来指定参数的顺序，<code>index</code> 是从0开始的:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"exampleBean"</span> <span class="attr">class</span>=<span class="string">"examples.ExampleBean"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">"0"</span> <span class="attr">value</span>=<span class="string">"7500000"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">"1"</span> <span class="attr">value</span>=<span class="string">"42"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>还可以通过指定构造参数的名字来消除歧义:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"exampleBean"</span> <span class="attr">class</span>=<span class="string">"examples.ExampleBean"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"years"</span> <span class="attr">value</span>=<span class="string">"7500000"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"ultimateAnswer"</span> <span class="attr">value</span>=<span class="string">"42"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="基于-Setter-来构造bean"><a href="#基于-Setter-来构造bean" class="headerlink" title="基于 Setter 来构造bean"></a>基于 Setter 来构造bean</h3><p>基于 Setter 来构造bean是通过容器调用无参构造或者无参静态工厂方法构造出bean后，通过调用setter方法注入属性实现的。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-24T08:25:35.637Z" itemprop="dateUpdated">2017-11-24 08:25:35</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/12/04/java/spring/&title=《spring》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/12/04/java/spring/&title=《spring》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/12/04/java/spring/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《spring》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/12/04/java/spring/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/12/04/java/spring/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/12/04/碰到过的问题/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">碰到过的问题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/04/front/HTML标签/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">HTML 标签</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/12/04/java/spring/&title=《spring》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/12/04/java/spring/&title=《spring》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/12/04/java/spring/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《spring》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/12/04/java/spring/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/12/04/java/spring/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/12/04/java/spring/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105841950-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

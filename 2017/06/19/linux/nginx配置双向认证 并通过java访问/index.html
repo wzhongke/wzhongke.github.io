@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>nginx配置双向认证 并通过java访问 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux">
+    <meta name="description" content="最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用了openssl来生成证书。 安装openssl部分linux系统上已经默认安装了openssl，可以使用openssl version来查看机器上是否安装了openssl。如果没有安装，可以执行 yum install nginx openss">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx配置双向认证 并通过java访问">
+<meta property="og:url" content="http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用了openssl来生成证书。 安装openssl部分linux系统上已经默认安装了openssl，可以使用openssl version来查看机器上是否安装了openssl。如果没有安装，可以执行 yum install nginx openss">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/aa0e5bd8524d12cea6429c15e9682d9f?fid=2318483978-250528-393924946231140&time=1497780000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-hdynUkKCDnjIDRkD%2FWFc0V0CQb0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=3914457463978335134&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/557bfba3a7b82bdcc2b8b74029b89a8b?fid=2318483978-250528-1007737737813295&time=1497780000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-OmphjdusddoNYroutLQuFkZRTRA%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=3914448979859963184&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta property="og:updated_time" content="2017-11-16T05:07:31.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx配置双向认证 并通过java访问">
+<meta name="twitter:description" content="最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用了openssl来生成证书。 安装openssl部分linux系统上已经默认安装了openssl，可以使用openssl version来查看机器上是否安装了openssl。如果没有安装，可以执行 yum install nginx openss">
+<meta name="twitter:image" content="https://thumbnail0.baidupcs.com/thumbnail/aa0e5bd8524d12cea6429c15e9682d9f?fid=2318483978-250528-393924946231140&time=1497780000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-hdynUkKCDnjIDRkD%2FWFc0V0CQb0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=3914457463978335134&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-105841950-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">nginx配置双向认证 并通过java访问</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">nginx配置双向认证 并通过java访问</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-18T19:42:25.000Z" itemprop="datePublished" class="page-time">
+  2017-06-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装openssl"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装openssl</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用脚本生成证书"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用脚本生成证书</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置nginx"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#是用chrome浏览器访问"><span class="post-toc-number">4.</span> <span class="post-toc-text">是用chrome浏览器访问</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用java完成双向认证"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用java完成双向认证</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考网站"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考网站</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/nginx配置双向认证 并通过java访问"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">nginx配置双向认证 并通过java访问</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-06-18 19:42:25" datetime="2017-06-18T19:42:25.000Z"  itemprop="datePublished">2017-06-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用了openssl来生成证书。</p>
+<h2 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h2><p>部分linux系统上已经默认安装了openssl，可以使用<code>openssl version</code>来查看机器上是否安装了openssl。如果没有安装，可以执行 <code>yum install nginx openssl -y</code> 安装</p>
+<h2 id="使用脚本生成证书"><a href="#使用脚本生成证书" class="headerlink" title="使用脚本生成证书"></a>使用脚本生成证书</h2><p>每次使用命令行安装都是一个巨大的考验，尤其是在输入各种信息的时候。输入错误就要Crtl+c重新来过。因此，将安装过程写成一个脚本，方便安装。<br><a id="more"></a></p>
+<ol>
+<li>在nginx的conf目录下新建一个文件夹：<code>mkdir openssl &amp;&amp; cd openssl</code></li>
+<li>将shell脚本和下面的配置文件拷贝到openssl目录下，可以根据自己修改sheel脚本中的<code>SUBJECT</code>和<code>CA</code>；<br>脚本执行过程中需要输入证书的域名，如果机器没有域名，那么输入ip。如果证书的ip或者域名与输入的内容不一致，是用java访问时，会报错<br><code>javax.net.ssl.SSLPeerUnverifiedException: Certificate for &lt;*.*.*.*&gt; doesn&#39;t match any of the subject alternative names: []；</code><br>需要输入两种密码，第一种是server.key的密码，第二种是client.key的密码，改密码要在是用证书时用到，需要记住。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># create self-signed server certificate:</span></div><div class="line"><span class="built_in">read</span> -p <span class="string">"请输入证书的域 例如[www.example.com or 192.168.1.52]: "</span> DOMAIN</div><div class="line">mkdir newcerts private conf server</div><div class="line"><span class="comment"># 根据自己的需求，来更改这些内容</span></div><div class="line">SUBJECT=<span class="string">"/C=CN/ST=BJ/L=BJ/O=company/OU=company/CN=<span class="variable">$DOMAIN</span>"</span></div><div class="line">CA=<span class="string">"/C=CN/ST=BJ/L=BJ/O=company/OU=company/CN=<span class="variable">$DOMAIN</span>"</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"创建 CA 根证书..."</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"生成私钥 key 文件..."</span></div><div class="line">openssl genrsa -out private/ca.key 2048  </div><div class="line"><span class="built_in">echo</span> <span class="string">"生成证书请求 csr 文件..."</span></div><div class="line">openssl req -new -subj <span class="variable">$CA</span> -key private/ca.key -out private/ca.csr </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"生成凭证 crt 文件..."</span></div><div class="line">openssl x509 -req -days 365 -<span class="keyword">in</span> private/ca.csr -signkey private/ca.key -out private/ca.crt  </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"为我们的 key 设置起始序列号和创建 CA 键库..."</span></div><div class="line"></div><div class="line">rm -rf serial index.txt</div><div class="line"><span class="built_in">echo</span> FACE &gt; serial</div><div class="line">touch index.txt</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"服务器证书的生成..."</span></div><div class="line">openssl genrsa -out server/server.key 2048 </div><div class="line">openssl req -new -subj <span class="variable">$SUBJECT</span> -key server/server.key -out server/server.csr  </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"使用我们私有的 CA key 为刚才的 key 签名..."</span></div><div class="line">openssl ca -<span class="keyword">in</span> server/server.csr -cert private/ca.crt -keyfile private/ca.key -out server/server.crt -config <span class="string">"./openssl.conf"</span> </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"客户端证书的生成 * 创建存放 key 的目录 users..."</span></div><div class="line">mkdir users  </div><div class="line"><span class="built_in">echo</span> <span class="string">" 为用户创建一个 key..."</span></div><div class="line">openssl genrsa -des3 -out ./users/client.key 2048 </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"为 key 创建一个证书签名请求 csr 文件..."</span></div><div class="line">openssl req -new -subj <span class="variable">$SUBJECT</span> -key ./users/client.key -out ./users/client.csr  </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"使用我们私有的 CA key 为刚才的 key 签名..."</span></div><div class="line">openssl ca -<span class="keyword">in</span> ./users/client.csr -cert ./private/ca.crt -keyfile ./private/ca.key -out ./users/client.crt -config <span class="string">"./openssl.conf"</span> </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"将证书转换为大多数浏览器都能识别的 PKCS12 文件..."</span></div><div class="line">openssl pkcs12 -<span class="built_in">export</span> -clcerts -<span class="keyword">in</span> ./users/client.crt -inkey ./users/client.key -out ./users/client.p12  </div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"把以上生成的文件copy到nginx conf文件的ssl目录下面，如果ssl目录不存在请创建"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"接下请配置nginx.conf操作:"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">" server &#123;																						"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">" 			...                                           "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     ssl on;                                        "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     ssl_certificate ca/server/server.crt;                "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     ssl_certificate_key ca/server/server.key;            "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     ssl_client_certificate ca/private/ca.crt;             "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     ssl_verify_client on;                          "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"			...                                           "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"     &#125;                                               "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"使用如下命令重新加载nginx配置"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"nginx -s reload"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"客户端使用： users/client.p12 和 private/ca.crt"</span></div></pre></td></tr></table></figure>
+<p>在相同的目录下放置如下配置，命名为openssl.conf：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">[ ca ] </div><div class="line">default_ca      = foo                   # The default ca section </div><div class="line"></div><div class="line">[ foo ] </div><div class="line">dir            = ./         # top dir  </div><div class="line">database       = ./index.txt          # index file.  </div><div class="line">new_certs_dir  = ./newcerts           # new certs dir </div><div class="line"></div><div class="line">certificate    = ./private/ca.crt         # The CA cert  </div><div class="line">serial         = ./serial             # serial no file  </div><div class="line">private_key    = ./private/ca.key  # CA private key  </div><div class="line">RANDFILE       = ./private/.rand      # random number file </div><div class="line"></div><div class="line">default_days   = 365                     # how long to certify for  </div><div class="line">default_crl_days= 30                     # how long before next CRL  </div><div class="line">default_md     = sha1                     # message digest method to use  </div><div class="line">unique_subject = no                      # Set to &apos;no&apos; to allow creation of  </div><div class="line">                                         # several ctificates with same subject. </div><div class="line">policy         = policy_any              # default policy </div><div class="line"></div><div class="line">[ policy_any ] </div><div class="line">countryName = match  </div><div class="line">stateOrProvinceName = match  </div><div class="line">organizationName = match  </div><div class="line">organizationalUnitName = match  </div><div class="line">localityName            = optional  </div><div class="line">commonName              = supplied  </div><div class="line">emailAddress            = optional</div></pre></td></tr></table></figure></p>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>修改nginx的配置文件，在server配置如下信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ssl_certificate /path/to/openssl/server/server.crt;</div><div class="line"></div><div class="line">ssl_certificate_key /path/to/openssl/server/server.key;</div><div class="line"></div><div class="line">ssl_client_certificate  /path/to/openssl/private/ca.crt;</div><div class="line"></div><div class="line">ssl_verify_client on;    <span class="comment">## 开启客户端的验证</span></div><div class="line"></div><div class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</div></pre></td></tr></table></figure></p>
+<h2 id="是用chrome浏览器访问"><a href="#是用chrome浏览器访问" class="headerlink" title="是用chrome浏览器访问"></a>是用chrome浏览器访问</h2><p>修改完成后，如果不配置证书，在浏览器中是不能访问的。报错： 400 Bad Request No required SSL certificate was sent<br>安装两个文件： client.p12和ca.crt，之后能够正常访问<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://thumbnail0.baidupcs.com/thumbnail/aa0e5bd8524d12cea6429c15e9682d9f?fid=2318483978-250528-393924946231140&time=1497780000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-hdynUkKCDnjIDRkD%2FWFc0V0CQb0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=3914457463978335134&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="使用java完成双向认证"><a href="#使用java完成双向认证" class="headerlink" title="使用java完成双向认证"></a>使用java完成双向认证</h2><p>将生成的证书： users/client.p12 和 private/ca.crt 拷贝出来。用java做双向认证时，会使用到这两个文件。<br>java 双向认证的代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">private final static String P12_PATH = <span class="string">"client.p12"</span>;   //客户端证书路径</div><div class="line">private final static String P12_PWD = <span class="string">"12345678"</span>; //客户端证书密码</div><div class="line">private final static String CA_PATH = <span class="string">"ca.crt"</span>;   // 根证书路径</div><div class="line"></div><div class="line">public static String sslRequestGet(String url) throws Exception &#123;</div><div class="line">    SSLContext ctx = getSSLContext(P12_PATH, CA_PATH);</div><div class="line">    LayeredConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(ctx);</div><div class="line">    HttpGet httpget = new HttpGet(url);</div><div class="line">    try (CloseableHttpClient httpClient = HttpClients.custom()</div><div class="line">            .setSSLSocketFactory(sslSocketFactory)</div><div class="line">            .build();CloseableHttpResponse response = httpClient.execute(httpget) ) &#123;</div><div class="line">        HttpEntity entity = response.getEntity();</div><div class="line">        String jsonStr = EntityUtils.toString(response.getEntity(), <span class="string">"UTF-8"</span>);//返回结果</div><div class="line">        EntityUtils.consume(entity);</div><div class="line">        <span class="built_in">return</span> jsonStr;</div><div class="line">    &#125; catch (Exception e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> <span class="string">""</span>;</div><div class="line">&#125;</div><div class="line">/** 加载客户端验证证书 **/</div><div class="line">private static SSLContext getSSLContext(String keyStorePath, String trustStorePath) throws NoSuchAlgorithmException, KeyStoreException, UnrecoverableKeyException, IOException, CertificateException, KeyManagementException &#123;</div><div class="line">    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());</div><div class="line">    KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());</div><div class="line">    InputStream is = new FileInputStream(keyStorePath);</div><div class="line">    keyStore.load(is, P12_PWD.toCharArray());</div><div class="line">    is.close();</div><div class="line">    keyManagerFactory.init(keyStore, P12_PWD.toCharArray());</div><div class="line">    SSLContext ctx = SSLContext.getInstance(<span class="string">"TLS"</span>);</div><div class="line">    ctx.init(keyManagerFactory.getKeyManagers(), getTrustManagers(trustStorePath) , null);</div><div class="line">    <span class="built_in">return</span> ctx;</div><div class="line">&#125;</div><div class="line">/** 加载信任证书 **/</div><div class="line">private static TrustManager [] getTrustManagers (String ... crtPath) throws IOException, CertificateException, KeyStoreException, NoSuchAlgorithmException &#123;</div><div class="line">    <span class="keyword">if</span> (crtPath == null || crtPath.length &lt; 1) &#123;</div><div class="line">        <span class="built_in">return</span> null;</div><div class="line">    &#125;</div><div class="line">    CertificateFactory certificateFactory = CertificateFactory.getInstance(<span class="string">"X.509"</span>);</div><div class="line">    KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());</div><div class="line">    keyStore.load(null);</div><div class="line">    <span class="keyword">for</span> (int i=0, j=crtPath.length; i&lt;j; i++) &#123;</div><div class="line">        String path = crtPath[i];</div><div class="line">        InputStream is = new FileInputStream(path);</div><div class="line">        keyStore.setCertificateEntry(Integer.toString(i), certificateFactory.generateCertificate(is));</div><div class="line">        is.close();</div><div class="line">    &#125;</div><div class="line">    TrustManagerFactory trustManagerFactory =TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());</div><div class="line">    trustManagerFactory.init(keyStore);</div><div class="line">    <span class="built_in">return</span> trustManagerFactory.getTrustManagers();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在VM options中添加执行参数： <code>-Djavax.net.debug=all   -Djavax.net.ssl.trustStore=trustStore</code> 可以将双向认证的过程，在debug信息中打印出来<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://thumbnail0.baidupcs.com/thumbnail/557bfba3a7b82bdcc2b8b74029b89a8b?fid=2318483978-250528-1007737737813295&time=1497780000&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-OmphjdusddoNYroutLQuFkZRTRA%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=3914448979859963184&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h2><p><a href="https://blog.imdst.com/nginx-ssl-shuang-xiang-ren-zheng-key-sheng-cheng-he-pei-zhi/" target="_blank" rel="external">Nginx SSL 双向认证，key 生成和配置</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-16T05:07:31.385Z" itemprop="dateUpdated">2017-11-16 05:07:31</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&title=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&title=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&source=最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/06/30/algorithms/缓存算法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">缓存算法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/19/java/java修改字符串编码/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java修改字符串编码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&title=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&title=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&source=最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nginx配置双向认证 并通过java访问》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/06/19/linux/nginx配置双向认证 并通过java访问/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105841950-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

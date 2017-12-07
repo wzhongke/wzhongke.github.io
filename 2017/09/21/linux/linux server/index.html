@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>linux 网络常用命令 | 壹叶知秋的博客 | 不要为恐惧所驾驭...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="other">
+    <meta name="description" content="linux 常用网络命令ifconfig, ifup, ifdown这三个指令都是用来启动网络接口的。  ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: 123456789ifconfig [interface] &amp;#123;up/down&amp;#125;         ## 观察与启动接口ifconfig interface &amp;#123;options">
+<meta name="keywords" content="other">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 网络常用命令">
+<meta property="og:url" content="http://wzhongke.github.io/2017/09/21/linux/linux server/index.html">
+<meta property="og:site_name" content="壹叶知秋的博客">
+<meta property="og:description" content="linux 常用网络命令ifconfig, ifup, ifdown这三个指令都是用来启动网络接口的。  ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: 123456789ifconfig [interface] &amp;#123;up/down&amp;#125;         ## 观察与启动接口ifconfig interface &amp;#123;options">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-04T03:40:08.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux 网络常用命令">
+<meta name="twitter:description" content="linux 常用网络命令ifconfig, ifup, ifdown这三个指令都是用来启动网络接口的。  ifconfigifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: 123456789ifconfig [interface] &amp;#123;up/down&amp;#125;         ## 观察与启动接口ifconfig interface &amp;#123;options">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9350854994277981",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-105841950-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/sign.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">壹叶知秋</h5>
+          <a href="mailto:993287653@qq.com" title="993287653@qq.com" class="mail">993287653@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wzhongke" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">linux 网络常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">linux 网络常用命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-09-21T12:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-09-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/other/">other</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#linux-常用网络命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">linux 常用网络命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ifconfig-ifup-ifdown"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ifconfig, ifup, ifdown</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#route"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">route</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ping"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">ping</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#traceroute-两主机间各节点分析"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">traceroute 两主机间各节点分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#netstat-查看本机的网络联机与后门"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">netstat 查看本机的网络联机与后门</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#host-侦测主机名"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">host 侦测主机名</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/linux server"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">linux 网络常用命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-09-21 12:00:00" datetime="2017-09-21T12:00:00.000Z"  itemprop="datePublished">2017-09-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/other/">other</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="linux-常用网络命令"><a href="#linux-常用网络命令" class="headerlink" title="linux 常用网络命令"></a>linux 常用网络命令</h1><h2 id="ifconfig-ifup-ifdown"><a href="#ifconfig-ifup-ifdown" class="headerlink" title="ifconfig, ifup, ifdown"></a><code>ifconfig</code>, <code>ifup</code>, <code>ifdown</code></h2><p>这三个指令都是用来启动网络接口的。</p>
+<ol>
+<li><code>ifconfig</code><br><code>ifconfig</code>主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ifconfig [interface] &#123;up/down&#125;         ## 观察与启动接口</div><div class="line">ifconfig interface &#123;options&#125;           ## 设定与修改接口</div><div class="line"># 参数说明</div><div class="line">- interface:  网卡接口代号，如: eth0, th1, ppp0等</div><div class="line">- options:  可以使用的参数: </div><div class="line">    - up/down:  启动/关闭该网络接口</div><div class="line">    - mtu :  设定不同的MTU数值（不建议修改）</div><div class="line">    - netmask:  设置自屏蔽网络</div><div class="line">    - broadcast:  广播地址</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在linux机器上执行<code>ifconfig</code>，会返回如下结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">eth0      Link encap: Ethernet  HWaddr AA: AA: AA: 31: 79: 95  </div><div class="line">          inet addr: 10.143.59.167  Bcast: 10.143.63.255  Mask: 255.255.248.0</div><div class="line">          UP BROADCAST RUNNING MULTICAST  MTU: 1500  Metric: 1</div><div class="line">          RX packets: 69269420 errors: 0 dropped: 0 overruns: 0 frame: 0</div><div class="line">          TX packets: 43411105 errors: 0 dropped: 0 overruns: 0 carrier: 0</div><div class="line">          collisions: 0 txqueuelen: 1000 </div><div class="line">          RX bytes: 159293308457 (148.3 GiB)  TX bytes: 106356430482 (99.0 GiB)</div></pre></td></tr></table></figure></p>
+<ul>
+<li>eth0:  网卡代号</li>
+<li>HWaddr:  网卡硬件地址</li>
+<li>RX:  网络由启动到目前为止的封包接收情况，packets代表封包数、errors代表封包发生错误的数量、dropped代表封包由于有问题而遭到丢弃的数量</li>
+<li>TX:  与RX相反，为网络由启动到目前为止的传送情况</li>
+<li>collisions:  代表封包碰撞情况</li>
+<li>RX bytes, TX bytes:  总接收、发送字节总量<br>修改网络接口<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ifconfig eth0 10.134.96.237    # 系统会依照IP所在的class范围，自动计算netmask、broadcast等IP参数</div><div class="line">ifconfig eth0 10.134.96.237 netmask 255.255.255.128 mtu 8000  # 修改其他数值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果手动设置错误或者有问题，我们可以通过<code>/etc/init.d/network restart</code> 来重启整个网络接口</p>
+<ol>
+<li><code>ifup</code>, <code>ifdown</code><br>还可以用配置文件来修改网络参数，执行这两个命令会执行<code>/etc/sysconfig/network-scripts</code>中相应的脚本</li>
+</ol>
+<h2 id="route"><a href="#route" class="headerlink" title="route"></a><code>route</code></h2><p>route可以查看机器使用的路由信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">route [-nee]</div><div class="line">route add [-net/host] [网域或主机] netmask [mask] [gw/dev]</div><div class="line">route del  [-net/host] [网域或主机] netmask [mask] [gw/dev]</div><div class="line"><span class="comment">## 参数说明</span></div><div class="line">-n:  直接展示通讯协议或主机名，直接用IP或port number</div><div class="line">-ee:  使用更详细的信息显示</div><div class="line"><span class="comment">## 增加与删除路由</span></div><div class="line">-nest:  后边接的是路由为一个域名</div><div class="line">-host:  后面接的为连接到单部主机的路由</div><div class="line">netmask:  与域名有关，可以设定netmask决定域名的大小</div><div class="line">gw:  gateway的简写，后接的是IP</div><div class="line">dev:  如果指定哪一块网卡联机出去，设定该值</div></pre></td></tr></table></figure></p>
+<p>使用<code>route</code>指令字段的含义如下: </p>
+<ul>
+<li>Destination, Genmask:  分别是network和netmask</li>
+<li>Gateway:  表明该机器是通过哪个gateway连接出去的，如果是 0.0.0.0 表示该路由直接是本机传送</li>
+<li>Iface:  表明是从哪个网卡出去的<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 路由的增加与删除</span></div><div class="line"><span class="comment"># 删除192.168.0.0/16网段，需要将路由表上的信息都写入才能删除</span></div><div class="line">route del -net 192.168.0.0 netmask 255.255.0.0 dev eth0</div><div class="line"><span class="comment"># 增加预设路由，只有一个就够了</span></div><div class="line">route add default gw 192.168.1.250</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当出现<code>Network is unreachable</code>时，可能是gw后边的IP直接连接。</p>
+<h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a><code>ping</code></h2><p>ping通过ICMP封包来进行网络状态报告。其使用方式如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">ping [选项与参数] IP</div><div class="line">    -c 数值:  后接ping的次数</div><div class="line">    -n:  输出数据时不进行IP与主机的反查，直接用IP输出，速度较快</div><div class="line">    -s 数值:  发送出去的ICMP封包大小，预设为56bytes，可以调大</div><div class="line">    -t 数值:  TTL的数值，预设是255，每经过一个节点就会减1</div><div class="line">    -W 数值:  等待响应时间</div><div class="line"><span class="comment"># 例子</span></div><div class="line">ping -c 3 192.168.22.10</div><div class="line">PING 192.168.22.10 (192.168.22.10) 56(84) bytes of data.</div><div class="line">64 bytes from 192.168.22.10: icmp_seq=1 ttl=59 time=4.40 ms</div><div class="line">64 bytes from 192.168.22.10: icmp_seq=2 ttl=59 time=1.40 ms</div><div class="line">64 bytes from 192.168.22.10: icmp_seq=3 ttl=59 time=1.12 ms</div><div class="line"></div><div class="line">--- 192.168.22.10 ping statistics ---</div><div class="line">3 packets transmitted, 3 received, 0% packet loss, time 2004ms</div><div class="line">rtt min/avg/max/mdev = 1.121/2.309/4.405/1.486 ms</div></pre></td></tr></table></figure></p>
+<p>上例中响应消息中，几个重要的项目是：</p>
+<ul>
+<li>64bytes: 表示传送的ICMP封包大小为64bytes，在某些特殊场合中，可以用-s 2000来取代</li>
+<li>imcp_seq=1: ICMP所侦测进行的次数，第一次编号为1</li>
+<li>ttl=59</li>
+</ul>
+<h2 id="traceroute-两主机间各节点分析"><a href="#traceroute-两主机间各节点分析" class="headerlink" title="traceroute 两主机间各节点分析"></a><code>traceroute</code> 两主机间各节点分析</h2><p><code>traceroute</code>用来追踪两部主机之间通过的各个节点通讯状况的好坏。其使用方式如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">traceroute [选项与参数] IP</div><div class="line">    -n:  必进行主机的名称解析，单纯用IP，速度较快</div><div class="line">    -U:  使用UDP的port 33433 来进行侦测</div><div class="line">    -I:  会用 ICMP 的方式 进行侦测</div><div class="line">    -w:  若对方主机在几秒钟没有回声，就放弃</div><div class="line">    -T:  使用TCP来侦测，因为UDP/ICMP的攻击层出不穷，因此很多路由器可能取消两个封包的响应功能。</div><div class="line"></div><div class="line"><span class="comment">## 例子</span></div><div class="line">traceroute -n -w1 10.152.105.195</div><div class="line">traceroute to 10.152.105.195 (10.152.105.195), 30 hops max, 60 byte packets</div><div class="line"> 1  10.144.103.252  0.662 ms  0.646 ms  0.741 ms</div><div class="line"> 2  * * *</div><div class="line"> 3  * * *</div><div class="line"> 4  * * *</div><div class="line"> 5  * * *</div><div class="line"> 6  10.152.105.195  1.344 ms  1.172 ms  1.042 ms</div></pre></td></tr></table></figure></p>
+<p>其中 <code>* * *</code> 是因为该节点可能有某些防护措施，让我们发送的封包信息被丢弃</p>
+<h2 id="netstat-查看本机的网络联机与后门"><a href="#netstat-查看本机的网络联机与后门" class="headerlink" title="netstat 查看本机的网络联机与后门"></a><code>netstat</code> 查看本机的网络联机与后门</h2><p><code>netstat</code>可以查看网络接口监听情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 与路由有关的参数</span></div><div class="line">netstat -[rn]</div><div class="line"><span class="comment"># 与网络接口有关的参数</span></div><div class="line">netstat -[antulpc]</div><div class="line">与路由有关的参数：</div><div class="line">-r : 列出路由表(route table)，功能如同 route 这个指令；</div><div class="line">-n : 不使用主机名与服务名称，使用 IP 与 port number ，如同 route -n</div><div class="line">与网络接口有关的参数: </div><div class="line">-a : 列出所有的联机状态，包括 tcp/udp/unix socket 等；</div><div class="line">-t : 仅列出 TCP 封包的联机；</div><div class="line">-u : 仅列出 UDP 封包的联机；</div><div class="line">-l : 仅列出有在 Listen (监听) 的服务之网络状态；</div><div class="line">-p : 列出 PID 与 Program</div><div class="line">-c : 可以设定几秒钟后自动更新一次，例如 -c 5 每五秒更新一次网络状态的显示</div><div class="line"><span class="comment"># 例子</span></div><div class="line">netstat -an</div><div class="line">Active Internet connections (servers and established)</div><div class="line">Proto Recv-Q Send-Q Local Address               Foreign Address             State      </div><div class="line">tcp        0      0 0.0.0.0:9090                0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0      0 127.0.0.1:6600              0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      </div><div class="line"><span class="comment"># 显示目前已经启动的网络服务</span></div><div class="line">netstat -tulnp</div><div class="line">Active Internet connections (only servers)</div><div class="line">Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name   </div><div class="line">tcp        0      0 0.0.0.0:9090                0.0.0.0:*                   LISTEN      18251/java          </div><div class="line">tcp        0      0 127.0.0.1:6600              0.0.0.0:*                   LISTEN      18201/java          </div><div class="line">tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      26249/nginx         </div><div class="line">tcp        0      0 0.0.0.0:8080                0.0.0.0:*                   LISTEN      18251/java </div><div class="line"><span class="comment"># 观察本机上头所有的网络联机状态</span></div><div class="line">netstat -atunp</div></pre></td></tr></table></figure>
+<p>netstat的输出主要分为两大部分：TPC/IP的网络接口；传统的Unix socket。输出参数的含义如下：</p>
+<ul>
+<li>Proto: 联机封包协议，TCP/UDP等</li>
+<li>Recv-Q: 非由用户程序连接所复制而来的总bytes数，</li>
+<li>Send-Q: 由远程主机所传送而来，但不具有ACK标志的总bytes数，意指主动联机SYNdrome或其他标志的封包所占的bytes数</li>
+<li>Local Address: 本地端的地址和端口号</li>
+<li>Foreign Address: 远程主机IP与端口</li>
+<li>stat: 连接状态</li>
+</ul>
+<h2 id="host-侦测主机名"><a href="#host-侦测主机名" class="headerlink" title="host 侦测主机名"></a><code>host</code> 侦测主机名</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">host [-a] hostname [server]</div><div class="line">-a: 列出该主机详细的各项主机名设定数据</div><div class="line">[server]: 可以使用非为 /etc/resolv.con 的DNS服务IP来查询</div><div class="line"><span class="comment"># 例子</span></div><div class="line">host www.baidu.com</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-04T03:40:08.723Z" itemprop="dateUpdated">2017-11-04 03:40:08</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://wzhongke.github.io">
+            <img src="/img/sign.jpg" alt="壹叶知秋">
+            壹叶知秋
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/09/21/linux/linux server/&title=《linux 网络常用命令》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/09/21/linux/linux server/&title=《linux 网络常用命令》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/09/21/linux/linux server/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux 网络常用命令》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/09/21/linux/linux server/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/09/21/linux/linux server/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/09/21/java/jvm调优/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">jvm调优</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/09/18/java/java 泛型/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java 泛型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>壹叶知秋 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wzhongke.github.io/2017/09/21/linux/linux server/&title=《linux 网络常用命令》 — 壹叶知秋的博客&pic=http://wzhongke.github.io/img/sign.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wzhongke.github.io/2017/09/21/linux/linux server/&title=《linux 网络常用命令》 — 壹叶知秋的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wzhongke.github.io/2017/09/21/linux/linux server/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux 网络常用命令》 — 壹叶知秋的博客&url=http://wzhongke.github.io/2017/09/21/linux/linux server/&via=http://wzhongke.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wzhongke.github.io/2017/09/21/linux/linux server/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://wzhongke.github.io/2017/09/21/linux/linux server/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你走了';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '你来了';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script>
+    var codes = document.getElementsByClassName("code");
+    var length = codes.length;
+    for (var i=0; i<length; i++) {
+        codes[i].innerHTML =  codes[i].innerHTML.replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g, "<b>$1</b>");
+        console.log(codes[i].innerHTML)
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105841950-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
