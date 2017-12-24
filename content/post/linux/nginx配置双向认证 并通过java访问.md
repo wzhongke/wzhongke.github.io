@@ -6,6 +6,7 @@ categories: ["linux"]
 ---
 
 最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不好用。所以使用了openssl来生成证书。
+
 ## 安装openssl
 部分linux系统上已经默认安装了openssl，可以使用`openssl version`来查看机器上是否安装了openssl。如果没有安装，可以执行 `yum install nginx openssl -y` 安装
 

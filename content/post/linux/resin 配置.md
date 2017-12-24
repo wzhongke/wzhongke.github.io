@@ -6,6 +6,7 @@ categories: ["linux"]
 ---
 
 # resin 配置
+
 ## resin 配置日志信息
 ```xml
 <log-handler name="" level="info" path="stdout:"
@@ -22,7 +23,9 @@ categories: ["linux"]
 <logger name="com.caucho.java" level="config"/>
 <logger name="com.caucho.loader" level="config"/>
 ```
+
 `stdout-log`中的`path-format`设置了正常输出日志的路径和日志文件命名格式；`rollover-period`设置了日志文件生成时间间隔。 `1D`是一天，`1H`是一个小时。
+
 <!-- more -->
 ```
 <cluster id="app">
@@ -69,7 +72,9 @@ categories: ["linux"]
     </host>
   </cluster>
 ```
+
 `cluster`可以配置不同的服务，`id`属性是其服务唯一的标记
+
 `server-default`中的`http`的`port`配置了该服务监听的端口，`web-app`的`id`属性定义了服务的访问路径，`root-directory`定义了服务代码放置的位置。
 
 ## 配置远程调试端口
@@ -78,10 +83,12 @@ categories: ["linux"]
 ```
 args="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787"
 ```
+
 在 resin3.1 以上的版本中，修改 conf/resin.properties 文件
 ```
 jvm_args  :  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9090  
 ```
+
 或者修改 resin.xml 文件，在 `server-default` 标签下，添加
 ```xml
 <jvm-arg>-Xdebug</jvm-arg>
