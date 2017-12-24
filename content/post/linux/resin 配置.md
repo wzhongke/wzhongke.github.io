@@ -1,5 +1,5 @@
 ---
-title : "resin 配置"
+title: resin 配置
 date: 2017-06-17 19:42:25
 tags: ["linux"]
 categories: ["linux"]
