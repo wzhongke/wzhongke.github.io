@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright@Kevin Tan</copyright>
-    <lastBuildDate>Sat, 19 Aug 2017 09:52:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2017 19:21:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux编译安装httpd</title>
+      <link>https://wzhongke.github.io/post/linux/make%E5%AE%89%E8%A3%85httpd/</link>
+      <pubDate>Thu, 28 Dec 2017 19:21:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/linux/make%E5%AE%89%E8%A3%85httpd/</guid>
+      <description>有时候需要在内网的机器上安装httpd，因为机器不能上网，yum源也不可用，只能手动编译。 准备工作——下载httpd的安装包 Apach Http server apr以及</description>
+    </item>
     
     <item>
       <title>shell 编程</title>
@@ -45,7 +54,7 @@
       <pubDate>Sat, 17 Jun 2017 19:42:25 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/linux/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。 目录类 ls: 查看文件与目录 bash ls [-aAdfFhilnrRSt]</description>
+      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。 目录类 ls: 查看文件与目录 ls [-aAdfFhilnrRSt] 目</description>
     </item>
     
     <item>

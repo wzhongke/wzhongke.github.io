@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright@Kevin Tan</copyright>
-    <lastBuildDate>Sat, 19 Aug 2017 09:52:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Dec 2017 12:50:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mathjax 符号说明</title>
+      <link>https://wzhongke.github.io/post/mathjax/</link>
+      <pubDate>Wed, 27 Dec 2017 12:50:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/mathjax/</guid>
+      <description>使用MathJax插入公式 MathJax 插入的公式有两种形式：行内公式和独立公式。 1. 默认的行内公式是使用 $...$或 \(...\) 符号包裹内容。如 $a^2=b^2+c^2$ 2. 默认的独立公式</description>
+    </item>
     
     <item>
       <title>sublime 配置</title>

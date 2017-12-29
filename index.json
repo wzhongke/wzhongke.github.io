@@ -31,6 +31,14 @@
         "uri": "/post/algorithms/_解决思路"
     },
     {
+        "title": "动态规划",
+        "uri": "/post/algorithms/动态规划"
+    },
+    {
+        "title": "图算法",
+        "uri": "/post/algorithms/图"
+    },
+    {
         "title": "找出字符串最大回文",
         "uri": "/post/algorithms/找出字符串最大回文"
     },
@@ -150,6 +158,10 @@
         "uri": "/post/java/java修改字符串编码"
     },
     {
+        "title": "java技巧",
+        "uri": "/post/java/java技巧"
+    },
+    {
         "title": "java线程池技术",
         "uri": "/post/java/Java线程池技术"
     },
@@ -198,6 +210,10 @@
         "uri": "/post/linux/linux-忘记root密码"
     },
     {
+        "title": "linux编译安装httpd",
+        "uri": "/post/linux/make安装httpd"
+    },
+    {
         "title": "nginx配置双向认证 并通过java访问",
         "uri": "/post/linux/nginx配置双向认证 并通过java访问"
     },
@@ -216,6 +232,14 @@
     {
         "title": "markdown语法",
         "uri": "/post/markdown语法"
+    },
+    {
+        "title": "mathjax 符号说明",
+        "uri": "/post/mathjax"
+    },
+    {
+        "title": "数据库系统概念",
+        "uri": "/post/mysql/DataSystemConcept"
     },
     {
         "title": "MySQL基础语句",
