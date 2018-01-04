@@ -48,7 +48,7 @@
     },
     {
         "title": "atom 插件",
-        "uri": "/post/atom 插件"
+        "uri": "/post/atom-插件"
     },
     {
         "title": "创建型模式",
@@ -83,7 +83,7 @@
     },
     {
         "title": "css 动画",
-        "uri": "/post/front/css 动画"
+        "uri": "/post/front/css-动画"
     },
     {
         "title": "HTML 标签",
@@ -91,7 +91,7 @@
     },
     {
         "title": "javascript 常用技巧",
-        "uri": "/post/front/javascript 常用技巧"
+        "uri": "/post/front/javascript-常用技巧"
     },
     {
         "title": "vuex",
@@ -111,7 +111,7 @@
     },
     {
         "title": "hugo markdown 中使用javascript",
-        "uri": "/post/hugo markdown中使用javascript"
+        "uri": "/post/hugo-markdown中使用javascript"
     },
     {
         "title": "Hibernate学习笔记",
@@ -119,7 +119,7 @@
     },
     {
         "title": "java 多线程",
-        "uri": "/post/java/_java 多线程"
+        "uri": "/post/java/_java-多线程"
     },
     {
         "title": "mysql",
@@ -135,11 +135,11 @@
     },
     {
         "title": "java 文件处理",
-        "uri": "/post/java/java 文件处理"
+        "uri": "/post/java/java-文件处理"
     },
     {
         "title": "java 泛型",
-        "uri": "/post/java/java 泛型"
+        "uri": "/post/java/java-泛型"
     },
     {
         "title": "java中override与overload的区别",
@@ -199,7 +199,7 @@
     },
     {
         "title": "linux 网络常用命令",
-        "uri": "/post/linux/linux server"
+        "uri": "/post/linux/linux-server"
     },
     {
         "title": "linux 常用命令",
@@ -215,7 +215,7 @@
     },
     {
         "title": "nginx配置双向认证 并通过java访问",
-        "uri": "/post/linux/nginx配置双向认证 并通过java访问"
+        "uri": "/post/linux/nginx配置双向认证-并通过java访问"
     },
     {
         "title": "shell 编程",
@@ -223,7 +223,7 @@
     },
     {
         "title": "\"linux下执行脚本出现报：syntax error",
-        "uri": "/post/linux/unexpected end of file"
+        "uri": "/post/linux/unexpected-end of file"
     },
     {
         "title": "vim 使用快捷键",

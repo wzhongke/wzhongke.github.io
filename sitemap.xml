@@ -24,13 +24,6 @@
   </url>
   
   <url>
-    <loc>https://wzhongke.github.io/post/mysql/datasystemconcept/</loc>
-    <lastmod>2017-12-23T19:22:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://wzhongke.github.io/post/algorithms/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
     <lastmod>2017-12-22T08:37:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -469,14 +462,14 @@
   
   <url>
     <loc>https://wzhongke.github.io/tags/mysql/</loc>
-    <lastmod>2017-12-23T19:22:00+00:00</lastmod>
+    <lastmod>2017-10-08T19:48:32+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzhongke.github.io/categories/mysql/</loc>
-    <lastmod>2017-12-23T19:22:00+00:00</lastmod>
+    <lastmod>2017-10-08T19:48:32+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
