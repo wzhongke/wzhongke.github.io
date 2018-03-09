@@ -138,7 +138,8 @@ body {
     height: 3.95rem;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,95,172,0.5);
+    background: #005FAC;
+    background-color: rgba(0,95,172);
     border-top: 1px solid #979797;
     border-radius: 1px;
 }
