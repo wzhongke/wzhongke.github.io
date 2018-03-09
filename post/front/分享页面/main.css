@@ -1,0 +1,198 @@
+p, h4{
+    margin: 0;
+    font-weight: normal;
+}
+
+body {
+    font-family:  PingFangSC-Regular, -apple-system, PingFang SC, Helvetica Neue, STHeiti, Microsoft Yahei, Tahoma, Simsun, sans-serif;
+    background-color: rgb(32,149,243);
+}
+
+.container {
+    width: 90%;
+    margin: 1.5rem auto auto;
+    background-color: #fff;
+    border: 1px solid rgba(151,151,151,1);
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.image-wrapper { 
+    position: relative;
+    text-align: center;
+}
+
+.image-wrapper img {
+    height: 2.5rem;
+    position: absolute;
+    top: -1.25rem;
+    margin-left: -1.25rem;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 0.6rem;
+    line-height: 1.33rem;
+    color: #333333;
+    margin-top: 1.5rem;
+}
+
+.desicion {
+    font-size: 0.75rem;
+    line-height: 1.05rem;
+    color: #4D4D4D;
+    margin-top: 0.2rem;
+}
+
+.already {
+    font-family: PingFangSC-Medium;
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    color: #2095F3;
+    margin-top: 0.6rem;
+}
+
+.circle {
+    height: 5.55rem;
+    width: 5.55rem;
+    border-radius: 100%;
+    box-shadow: 0 0 0 0.35rem rgba(26,133,219,0.3);
+    margin: 0.51rem auto 0 auto;
+    overflow: hidden;
+    background-color: #2095F3;
+}
+.circle-top {
+    color: white;
+    height: 70%;
+}
+
+.circle-top h4 {
+    font-family: PingFangSC-Medium;
+    letter-spacing: 0;
+    font-size: 1.3rem;
+    padding-top: 1.1rem;
+}
+
+.circle-top p {
+    font-size: 0.45rem;
+    line-height: 12.5px;
+}
+
+.circle-bottom {
+    line-height: 100%;
+    vertical-align: middle;
+    height: 30%;
+    background-color: rgb(255,223,49);
+}
+
+.circle-bottom p {
+    line-height: 1.5rem;
+    font-size: 0.505rem;
+}
+
+.statistic {
+    font-size: 0.65rem;
+    line-height: 0.925rem;
+    color: #2095f3;
+    margin-top: 0.87rem;
+}
+
+.info {
+    margin-top: 1.09rem;
+}
+
+.info div {
+    width: 50%;
+    height: 3.75rem;
+    border-top: 1px solid #E2E2E2;
+    float:left;
+}
+
+.info h4 {
+    color: #4D4D4D;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    margin-top: 0.65rem;
+}
+
+.info p {
+    font-size: 0.65rem;
+    line-height: 1.325rem;
+    color: #AAAAAA;
+}
+
+.info div:nth-child(even) {
+    border-left: 1px solid #E2E2E2;
+    margin-left: -1px;
+}
+
+.clearfix:after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+.footer {
+    width: 100%;
+    position:fixed;
+    height: 3.95rem;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,95,172,0.5);
+    border: 1px solid #979797;
+    border-radius: 1px;
+}
+
+.footer div {
+    float: left;
+    color: white;
+}
+
+.footer .logo-wrapper {
+    margin-left: 1.025rem;
+    margin-top: 0.575rem;
+    height:2.5rem;
+    width: 2.5rem;
+    overflow: hidden;
+    border-radius: 0.4rem;
+}
+
+.footer img {
+    height: 2.5rem
+}
+
+.footer .text {
+    margin-left: 0.76rem;
+    margin-top: 0.76rem;
+    font-size: 0.9rem;
+}
+
+.footer h4 {
+    font-family: PingFangSC-Semibold;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
+
+.footer p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+}
+
+.download-btn {
+    display: block;
+    float: right;
+    background: #FFDF31;
+    border: 1px solid #979797;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 1.025rem;
+    margin-right: 0.85rem;
+}
+

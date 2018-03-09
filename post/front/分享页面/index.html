@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 22px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>下决心</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-wrapper"></div>
+        <div class="content">
+            <p class="username">早早</p>
+            <p class="desicion">下决心减“肉肉”</p>
+            <p class="already">已经坚持1天</p>
+        </div>
+        <div class="circle">
+            <div class="circle-top">
+                <h4>50</h4>
+                <p>押注（元）</p>
+            </div>
+            <div class="circle-bottom">
+                <p>已经领20元</p>
+            </div>
+        </div>
+        <div class="statistic">今日领取2.3元，累积领取20元</div>
+        <div class="info clearfix">
+            <div><h4>50元</h4><p>决心押注</p></div>
+            <div><h4>30天</h4><p>决心周期</p></div>
+            <div><h4>2元</h4><p>平均每日可领取</p></div>
+            <div><h4>5:50</h4><p>每日提醒时间</p></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo-wrapper">
+            <img src="logo.png"/>
+        </div>
+        <div class="text">
+            <h4>下决心</h4>
+            <p>下决心不再用嘴</p>
+        </div>
+        <a class="download-btn" href="//www.xiajuexin.cn">立即下载</a>
+    </div>
+    <script src="zepto.min.js"></script>
+    <script>
+        var href = location.href;
+        var desicionId = href.substr(href.lastIndexOf('/' + 1));
+       
+       var data = {"status":0,"msg":"success","data":{"decision_info":{"decision_id":"200","name":"\u8bfb\u4e66","start_date":"2018-02-20","end_date":"2018-02-26","money":"10","status":"3","create_time":"1519132794","type":"0","update_time":"1519132794","pay_type":"1","giveup_time":"","yiling_money":"0","left_money":"10","real_yiling_money":"0","zhiyi_money":"0","guoqi_money":"0","fangqi_money":"0","earliest_zhiyi_time":"","remind":"1","remind_freq":"22:00","account_id":"275","privacy":"0","week":"1,2,3,4,5,6,7","last_get_money_date":"","invitation_code":"","is_public":0,"total_days":7,"passed_days":7,"weiling_money":0},
+       "owner_info":{"user_id":"275","username":"","signature":"","head_pic":"","register_date":"","ip":"","city":"","sex":"","identification":"","cellphone":"","paypwd":"","wechat_nickname":"\u660f\u53c2\u3001","wechat_sex":"0","wechat_headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTKJn00QRPUIQdHCVxsZROf8hQ6uxT2mh6bLnrIibEKLL2PhqUoks56K2kXwew27AIlMRdyM9JsnXhg\/132","wechat_openid":"odY79s6vwWPndV4VnzDzqM9BEBEs","wechat_login_date":"2018-02-20 21:00:39","account_id":"275","show_name":""},"diary":[]}};
+
+       var decisionInfo = data.data.decision_info;
+       var ownerInfo = data.data.owner_info;
+
+       var userImage = ownerInfo.wechat_headimgurl;
+       var userName = ownerInfo.wechat_nickname;
+
+       $(".username").html(userName);
+       $(".image-wrapper").html("<img src='"+ userImage +"'/>");
+    </script>
+</body>
+</html>
