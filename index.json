@@ -39,6 +39,10 @@
         "title": "图算法"
     },
     {
+        "uri": "/post/algorithms/字符串匹配算法",
+        "title": "字符串匹配算法"
+    },
+    {
         "uri": "/post/algorithms/找出字符串最大回文",
         "title": "找出字符串最大回文"
     },
@@ -90,6 +94,10 @@
         "title": "css 动画"
     },
     {
+        "uri": "/post/front/css-总结",
+        "title": "css使用方式总结"
+    },
+    {
         "uri": "/post/front/html标签",
         "title": "HTML 标签"
     },
@@ -98,12 +106,20 @@
         "title": "javascript 常用技巧"
     },
     {
+        "uri": "/post/front/nodejs",
+        "title": "nodejs 学习笔记"
+    },
+    {
         "uri": "/post/front/vuex",
         "title": "vuex"
     },
     {
         "uri": "/post/front/vue学习笔记",
         "title": "vue 学习笔记"
+    },
+    {
+        "uri": "/post/front/webpack",
+        "title": "webpack"
     },
     {
         "uri": "/post/git",
@@ -144,6 +160,10 @@
     {
         "uri": "/post/java/java-泛型",
         "title": "java 泛型"
+    },
+    {
+        "uri": "/post/java/java-计算内存",
+        "title": "java 计算对象占用内存"
     },
     {
         "uri": "/post/java/java中override与overload的区别",
@@ -190,6 +210,10 @@
         "title": "spring"
     },
     {
+        "uri": "/post/java/springlearn",
+        "title": "spring 学习笔记"
+    },
+    {
         "uri": "/post/java/xpath",
         "title": "XPath 笔记"
     },
@@ -200,10 +224,6 @@
     {
         "uri": "/post/java/单例实现方式",
         "title": "单例实现方式"
-    },
-    {
-        "uri": "/post/linux/_nginx配置",
-        "title": "nginx 配置"
     },
     {
         "uri": "/post/linux/linux-server",
@@ -220,6 +240,10 @@
     {
         "uri": "/post/linux/make安装httpd",
         "title": "linux编译安装httpd"
+    },
+    {
+        "uri": "/post/linux/nginx配置",
+        "title": "nginx 配置"
     },
     {
         "uri": "/post/linux/nginx配置双向认证-并通过java访问",
