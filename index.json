@@ -98,6 +98,10 @@
         "title": "css使用方式总结"
     },
     {
+        "uri": "/post/front/es6",
+        "title": "es6"
+    },
+    {
         "uri": "/post/front/html标签",
         "title": "HTML 标签"
     },
@@ -200,6 +204,10 @@
     {
         "uri": "/post/java/mybatis",
         "title": "mybatis"
+    },
+    {
+        "uri": "/post/java/rpc",
+        "title": "java RPC"
     },
     {
         "uri": "/post/java/spring-搭建过程中出现的问题",
