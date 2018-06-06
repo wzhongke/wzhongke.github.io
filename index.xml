@@ -589,17 +589,6 @@
     </item>
     
     <item>
-      <title></title>
-      <link>https://wzhongke.github.io/post/front/_vue/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/front/_vue/</guid>
-      <description> title: vue.js
-draft: true 环境搭建 ## 安装cnpm npm install -g cnpm --registry=https://registry.npm.taobao.org ## 安装vue cnpm install -g vue-cli ## 初始化一个项目 vue init webpack my-project ## 下载依赖 cnpm install  Vue中重要的组件部分
-new Vue({ data: { a: 1, b: [] } methods: { doSomething: function() { this.a++; } }, watch: { &#39;a&#39;: function(val, oldVal) { console.log(val, oldVal); } } })  对html内容进行转义 &amp;lt;p v-text=&amp;quot;a&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; # 保留html格式 &amp;lt;p v-html=&amp;quot;a&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;  </description>
-    </item>
-    
-    <item>
       <title>HTML 标签</title>
       <link>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -609,12 +598,39 @@ new Vue({ data: { a: 1, b: [] } methods: { doSomething: function() { this.a++; }
     </item>
     
     <item>
+      <title>Springboot2 &#43; Prometheus 监控</title>
+      <link>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</guid>
+      <description>从 SpringBoot 2.0 开始，Micrometer 就成为默认的指标输出引擎。 Micrometer 是一种支持多种检测系统的应用，像 Atlas，Datadog, Prometheus 等等。 配置Spri</description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://wzhongke.github.io/post/linux/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/linux/docker/</guid>
+      <description>安装 windows 直接下载(安装包)[https://docs.docker.com/docker-for-windows/install/]安装 Linux 下安</description>
+    </item>
+    
+    <item>
       <title>java 计算对象占用内存</title>
       <link>https://wzhongke.github.io/post/java/java-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/java/java-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</guid>
       <description>可以使用如下代码计算对象占用内存： import java.lang.instrument.Instrumentation; import java.lang.reflect.Array; import java.lang.reflect.Field; import java.lang.reflect.Modifier; import java.util.IdentityHashMap; import java.util.Map; import java.util.Stack; /** * 借助 Instrumentation 接口的 getObjectSize 方法计算对象占用空间 * 原来的 sizeOf 只能计算本对象占用空间， 无法计</description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://wzhongke.github.io/post/java/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/maven/</guid>
+      <description>maven执行命令： mvn clean install -Dmaven.test.skip=true</description>
     </item>
     
     <item>
@@ -633,6 +649,15 @@ new Vue({ data: { a: 1, b: [] } methods: { doSomething: function() { this.a++; }
       
       <guid>https://wzhongke.github.io/post/webpackage/</guid>
       <description>文件中的缩进是2，修改idea的配置之后不生效，需要修改文件 .editorconfig 创建webpack vue init webpack # 或者 vue init gurghet/webpack npm install # 安装依赖 如果有 less 文件，需要安装 npm install --save-dev</description>
+    </item>
+    
+    <item>
+      <title>zookeeper 集群搭建</title>
+      <link>https://wzhongke.github.io/post/linux/%E6%90%AD%E5%BB%BAzookeeper%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/linux/%E6%90%AD%E5%BB%BAzookeeper%E9%9B%86%E7%BE%A4/</guid>
+      <description>安装 zookeeper 下载zookeeper，建议选择稳定版本： wget 将下载文件解压到 /usr/local/zookeeper 配置 zookeeper 集群 将 conf/zoo_sample.cfg 复制到 conf/zoo.cfg，并修改该文件： tickTime=2000 dataDir=/search/odin/zookeeper clientPort=2181 initLimit=5 syncLimit=2 server.1=10.134.96.237:2888:3888</description>
     </item>
     
     <item>

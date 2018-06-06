@@ -450,12 +450,6 @@
   </url>
   
   <url>
-    <loc>https://wzhongke.github.io/post/front/_vue/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://wzhongke.github.io/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -615,6 +609,12 @@
   </url>
   
   <url>
+    <loc>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://wzhongke.github.io/tags/sql/</loc>
     <lastmod>2017-07-20T16:05:42+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -664,7 +664,19 @@
   </url>
   
   <url>
+    <loc>https://wzhongke.github.io/post/linux/docker/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://wzhongke.github.io/post/java/java-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzhongke.github.io/post/java/maven/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -677,6 +689,12 @@
   
   <url>
     <loc>https://wzhongke.github.io/post/webpackage/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzhongke.github.io/post/linux/%E6%90%AD%E5%BB%BAzookeeper%E9%9B%86%E7%BE%A4/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
