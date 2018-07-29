@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="UTF-8"><title>flex 布局 | World of Wang</title><meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1"><link rel="canonical" href="https://wzhongke.github.io/post/front/flex%E5%B8%83%E5%B1%80/"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet"><link rel="stylesheet" href="https://wzhongke.github.io//css/index-5eb34aa86f.css"><link href="https://wzhongke.github.io/index.xml" rel="alternate" type="application/rss+xml" title="World of Wang"><link href="https://wzhongke.github.io/index.xml" rel="feed" type="application/rss+xml" title="World of Wang"><link href="https://wzhongke.github.io//favicon.ico" rel="shortcut icon"><script>window.origin = "https://wzhongke.github.io/";
+    
+    var outer = document.createElement('div');
+    outer.style.cssText = "visibility:hidden;width:100%;overflow:scroll";
+    document.documentElement.appendChild(outer);
+    window.scrollWidth = outer.offsetWidth - outer.clientWidth;
+    document.documentElement.removeChild(outer);</script></head><body><div id="modal-search" class="modal"><div class="modal-content"><form><div class="row"><div class="input-field col s12"><input id="in-search" type="text" required aria-required="true" autofocus autocomplete="off"> <label for="in-search">Search</label></div></div></form><div class="out-wrapper row"><div id="out-search" class="collection col s12"></div></div></div></div><div class="navbar-fixed"><nav class="navbar"><div class="nav-wrapper container"><a href="javascript:void(0)" class="button-collapse"><i class="material-icons">menu</i></a> <a href="https://wzhongke.github.io/" class="brand-logo"><i class="material-icons">restaurant_menu</i> World of Wang</a><ul class="right hide-on-small-and-down"><li><a class="modal-trigger" href="#modal-search"><i class="material-icons">search</i></a></li><li><a href="https://wzhongke.github.io/index.xml" target="_blank"><i class="material-icons">rss_feed</i></a></li></ul><ul class="center tabs tabs-transparent hide-on-med-and-down"><li class="tab"><a href="https://wzhongke.github.io//" class="">Home</a></li><li class="tab"><a href="https://wzhongke.github.io//archive/" class="">Archive</a></li><li class="tab"><a href="https://wzhongke.github.io//about/" class="">About</a></li><li class="tab"><a href="https://wzhongke.github.io//post/%E7%A2%B0%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98/" class="">碰到过的问题</a></li></ul></div></nav></div><aside class="side-panel"><div class="inner"><div class="profile"><div class="profile__bg" style="background-image:url('https://wzhongke.github.io//img/profile-bg-7c6e6a1672.jpg')"></div><img class="profile__avatar" src="https://wzhongke.github.io//img/sign-d1f802b4e8.jpg" alt="avatar"><h3 class="profile__name">壹冶知秋</h3><p class="profile__desc">Do not ride on fear...</p></div><ul class="nav-group show-on-medium-and-down menu"><li><a class="collapsible-header waves-effect waves-indigo" href="https://wzhongke.github.io//"><i class="material-icons">home</i> <span class="content">Home</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="https://wzhongke.github.io//archive/"><i class="material-icons">archive</i> <span class="content">Archive</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="https://wzhongke.github.io//about/"><i class="material-icons">person</i> <span class="content">About</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="https://wzhongke.github.io//post/%E7%A2%B0%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="material-icons">bookmark</i> <span class="content">碰到过的问题</span> <i class="material-icons">chevron_right</i></a></li></ul><ul class="nav-group show-on-small tools"><li><a class="collapsible-header waves-effect waves-indigo modal-trigger" href="#modal-search"><i class="material-icons">search</i> <span class="content">Search</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" target="_blank" href="https://wzhongke.github.io/index.xml"><i class="material-icons">rss_feed</i> <span class="content">RSS Feed</span> <i class="material-icons">chevron_right</i></a></li></ul><ul class="collapsible nav-group" data-collapsible="accordion"><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons">whatshot</i> <span class="content">Latest</span> <i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="https://wzhongke.github.io/post/java/netty/">高并发 netty</a> <a class="collection-item" href="https://wzhongke.github.io/post/front/flex%E5%B8%83%E5%B1%80/">flex 布局</a> <a class="collection-item" href="https://wzhongke.github.io/post/front/es6/">es6</a> <a class="collection-item" href="https://wzhongke.github.io/post/front/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84javascript/">你不知道的JavaScript读书笔记</a> <a class="collection-item" href="https://wzhongke.github.io/post/front/webpack/">webpack</a> <a class="collection-item" href="https://wzhongke.github.io/post/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">字符串匹配算法</a> <a class="collection-item" href="https://wzhongke.github.io/post/front/css-%E6%80%BB%E7%BB%93/">css使用方式总结</a> <a class="collection-item" href="https://wzhongke.github.io/post/java/springlearn/">spring 学习笔记</a> <a class="collection-item" href="https://wzhongke.github.io/post/algorithms/%E6%A0%91/">树算法</a> <a class="collection-item" href="https://wzhongke.github.io/post/linux/make%E5%AE%89%E8%A3%85httpd/">linux编译安装httpd</a></div></div></li><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons"><i class="material-icons">class</i></i> <span class="content">Category </span><i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="https://wzhongke.github.io//categories/java">java<span class="badge">11</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/linux">linux<span class="badge">9</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/javascript">javascript<span class="badge">7</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/%E7%AE%97%E6%B3%95">算法<span class="badge">7</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/python">python<span class="badge">5</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式<span class="badge">5</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/other">other<span class="badge">4</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/%E5%B7%A5%E5%85%B7">工具<span class="badge">3</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/css">css<span class="badge">2</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/mysql">mysql<span class="badge">2</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/error">error<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/markdown">markdown<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/nodejs">nodejs<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/sql">sql<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/svg">svg<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/vue">vue<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/%E6%97%85%E8%A1%8C">旅行<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//categories/%E7%BC%96%E7%A8%8B">编程<span class="badge">1</span></a></div></div></li><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons"><i class="material-icons">local_offer</i></i> <span class="content">Tag </span><i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="https://wzhongke.github.io//tags/java">java<span class="badge">11</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/linux">linux<span class="badge">9</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/javascript">javascript<span class="badge">6</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/%E7%AE%97%E6%B3%95">算法<span class="badge">6</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/python">python<span class="badge">5</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式<span class="badge">5</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/other">other<span class="badge">4</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/%E5%B7%A5%E5%85%B7">工具<span class="badge">3</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/css">css<span class="badge">2</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/markdown">markdown<span class="badge">2</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/mysql">mysql<span class="badge">2</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/error">error<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/nodejs">nodejs<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/sql">sql<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/svg">svg<span class="badge">1</span></a> <a class="collection-item" href="https://wzhongke.github.io//tags/%E6%97%85%E8%A1%8C">旅行<span class="badge">1</span></a></div></div></li></ul><ul class="nav-group external-link"><li><a class="collapsible-header waves-effect waves-indigo" href="https://github.com/wzhongke" target="_blank"><svg class="svg-icons svg-icons-github"><use xlink:href="#svg-icons-github"></use></svg> <span class="content">Github<small>@wzhongke</small></span> <i class="material-icons">chevron_right</i></a></li></ul></div></aside><main id="single" role="main" class="main-panel"><section class="container"><div class="inner"><div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation"><a class="breadcrumb" href="https://wzhongke.github.io/"><i class="material-icons">location_on</i>Home</a> <a class="breadcrumb" href="https://wzhongke.github.io/post/">Post</a> <a class="breadcrumb" href="https://wzhongke.github.io/post/front/">Front</a> <span class="breadcrumb">flex 布局</span></div><section class="post-wrapper"><div class="toc-panel"><nav id="TableOfContents"><ul><li><a href="#父元素属性">父元素属性</a><ul><li><a href="#flex-direction"><code>flex-direction</code></a></li><li><a href="#flex-wrap"><code>flex-wrap</code></a></li><li><a href="#flex-flow"><code>flex-flow</code></a></li><li><a href="#justify-content"><code>justify-content</code></a></li><li><a href="#align-items"><code>align-items</code></a></li></ul></li><li><a href="#align-content"><code>align-content</code></a></li><li><a href="#内部元素属性">内部元素属性</a><ul><li><a href="#order"><code>order</code></a></li><li><a href="#flex-grow"><code>flex-grow</code></a></li><li><a href="#flex-shrink"><code>flex-shrink</code></a></li><li><a href="#flex-basis"><code>flex-basis</code></a></li><li><a href="#flex"><code>flex</code></a></li><li><a href="#align-self"><code>align-self</code></a></li></ul></li><li><a href="#示例">示例</a></li></ul></nav></div><div class="post"><div class="card"><div class="card-content"><span class="card-title">flex 布局 </span><span class="card-meta"><time><span>Fri Jun 8 2018</span></time><address><a href="https://wzhongke.github.io//categories/css">css</a>&nbsp;</address></span><article class="article"><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">参考地址</a></p><p>Flexbox 布局模型旨在提供一种更有效的方式来布置，对齐和分配容器中的物品之间的空间，即使其尺寸未知或动态的。</p><p>Flexbox 布局最主要的思想是容器可以为了填满可用空间而修改其内部元素的宽高。一个扩展容器可以扩展它内部元素来填满剩余的空间，也可以防止溢出而缩小它内部的元素。</p><p>最重要的是，与常规布局不同，Flexbox 布局与方向无关。</p><blockquote><p>Flexbox 布局最适合应用程序的组件和小规模布局，而Grid布局则适用于大规模布局。</p></blockquote><h1 id="父元素属性">父元素属性</h1><p>通过设置元素的 CSS 属性 <code>display: flex;</code> 来使用 Flexbox 布局。</p><h2 id="flex-direction"><code>flex-direction</code></h2><p><code>flex-direction</code> 定义了容器的主轴，也就是容器内部元素的排列方向。有如下属性：</p><pre><code class="language-css">.container {
+    flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre><ul><li><code>row</code>（默认值）: <code>ltr</code> 是从左到右，<code>rtl</code> 是从右到左</li><li><code>row-reverse</code>: <code>ltr</code> 是从右到左，<code>rtl</code> 是从左到右</li><li><code>column</code>: 同 <code>row</code>，但是元素是从上到下</li><li><code>column-reverse</code> : 同 <code>row-reverse</code>，但是元素是从下到上</li></ul><h2 id="flex-wrap"><code>flex-wrap</code></h2><p>默认情况下，flex 元素会试着在一行内排列。可以用 <code>flex-wrap</code> 属性来调整：</p><pre><code class="language-css">.container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><ul><li><code>nowrap</code> (默认): 所有 flex 元素都会在一行</li><li><code>wrap</code> : flex 元素会从上到下包装成多行</li><li><code>wrap-reverse</code>: flex 元素会从下到上包装成多行</li></ul><h2 id="flex-flow"><code>flex-flow</code></h2><p><code>flex-flow</code> 是 <code>flex-direction</code> 和 <code>flex-wrap</code> 的缩写，默认是 <code>row nowrap</code>:</p><pre><code class="language-css">.container {
+    flex-flow: &lt;flex-direction&gt; || flex-wrap
+}
+</code></pre><h2 id="justify-content"><code>justify-content</code></h2><p><code>justify-content</code> 定义了容器内元素在主轴方向的对齐方式。如果一行的元素不是浮动的，或者是浮动但达到最大尺寸时，它会分配额外的空间。当元素溢出时，它也对元素的对齐进行控制。</p><pre><code class="language-css">.container {
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+</code></pre><ul><li><code>flex-start</code>(默认): 元素从起始处开始</li><li><code>flex-end</code>: 元素从结束处开始</li><li><code>center</code>: 元素居中</li><li><code>space-between</code>: 元素平均分布，第一个元素在起始处，最后一个元素在结尾</li><li><code>space-around</code>: 元素平均分布剩余空间，每个元素两侧的空间相同。</li><li><code>space-evenly</code>: 两个元素之间的空间相等</li></ul><style>#justify-content .container {
+    background-color: rgb(87, 39, 75);
+    height: 40px;
+    display: flex;
+}
+
+#justify-content .item {
+    background-color: peru;
+    height: 20px;
+    /* 控制父容器剩余空间分配比例 */
+    /* flex-grow: 1; */
+    align-self: center;
+}
+
+#justify-content span {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#justify-content .item2 {
+    margin: 0 10px;
+}
+
+#justify-content .container1 {
+    justify-content: flex-start;
+}
+
+#justify-content .container2 {
+    justify-content: flex-end;
+}
+
+#justify-content .container3 {
+    justify-content: center;
+}
+
+#justify-content .container4 {
+    justify-content: space-around;
+}
+
+#justify-content .container5 {
+    justify-content: space-between;
+}
+
+#justify-content .container6 {
+    justify-content: space-evenly;
+}</style><div id="justify-content"><span>flex-start</span><div class="container container1"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div><span>flex-end</span><div class="container container2"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div><span>center</span><div class="container container3"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div><span>space-around</span><div class="container container4"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div><span>space-between</span><div class="container container5"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div><span>space-evenly</span><div class="container container6"><div class="item item1" style="width: 100px"></div><div class="item item2" style="width: 50px"></div><div class="item item3" style="width: 150px"></div></div></div><h2 id="align-items"><code>align-items</code></h2><p><code>align-items</code> 定义了主轴垂直方向，也就是辅轴方向元素对齐的方式。</p><pre><code class="language-css">.container {
+    align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><ul><li><code>flex-start</code>: 辅轴开始边缘</li><li><code>flex-end</code>: 辅轴结束边缘</li><li><code>center</code>: 辅轴方向居中</li><li><code>baseline</code>: 根据基线对齐</li><li><code>stretch</code>(默认): 填满容器，还遵循 <code>min-width</code>/<code>max-width</code></li></ul><style>#align-items .container {
+  background-color: rgb(87, 39, 75);
+  height: 80px;
+  width: 80%;
+  display: flex;
+}
+
+#align-items .item {
+  background-color: peru;
+  height: 40px;
+  width: 50px;
+}
+
+#align-items .item2 {
+    margin: 0 10px;
+    height: 30px;
+}
+
+#align-items .container1 {
+  align-items: flex-start;
+}
+
+#align-items .container2 {
+  align-items: flex-end;
+}
+
+#align-items .container3 {
+  align-items: center;
+}
+
+#align-items .container4 {
+  align-items: baseline;
+}
+
+#align-items .container5 {
+  align-items: stretch;
+}</style><div id="align-items"><div style="display:flex;"><div><span>flex-start</span><div class="container container1"><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div></div></div><div><span>flex-end</span><div class="container container2"><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div></div></div></div><span>center</span><div class="container container3"><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div></div><span>space-around</span><div class="container container4"><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div></div><span>space-between</span><div class="container container5"><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div></div></div><h1 id="align-content"><code>align-content</code></h1><p><code>align-content</code> 属性只在 flex 元素有多行子元素时有效。 <code>align-content</code> 主要用来调整伸缩行在伸缩容器中的对齐方式，同 <code>justify-content</code> 属性类似。</p><pre><code class="language-css">.container {
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre><ul><li><code>flex-start</code>: 各行向伸缩容器的起点位置堆叠</li><li><code>flex-end</code>: 各行向伸缩容器结束位置堆叠</li><li><code>center</code>: 各行向伸缩容器的中间位置堆叠</li><li><code>space-between</code>: 各行在伸缩容器中平均分配剩余空间</li><li><code>space-around</code>: 各行在伸缩容器中平均分配剩余空间，两边各有一半空间</li><li><code>stetch</code>: 默认值，各行将会伸展以占用额外空间。</li></ul><h1 id="内部元素属性">内部元素属性</h1><h2 id="order"><code>order</code></h2><p>默认情况下，伸缩元素根据文档流的结构顺序排列。<code>order</code> 属性可以控制内部元素在容器中的先后位置。</p><pre><code class="language-css">.item {
+    order: &lt;integer&gt;; /* 默认是0 */
+}
+</code></pre><h2 id="flex-grow"><code>flex-grow</code></h2><p><code>flex-grow</code> 定义了 flex 元素在必要时增长的规则。它接受一个无单位的值作为一个比例。它决定了容器内元素占用剩余空间的比例。 如果所有元素的 <code>flex-grow</code> 都是 1，那么容器内剩余的空间将会被其中的元素平均分配。如果其中一个元素的值是 2，那么该元素分配的空间将会是其他元素的 2 倍。</p><pre><code class="language-css">.item {
+    flex-grow: &lt;number&gt;; /* 默认值是 0 */
+}
+</code></pre><h2 id="flex-shrink"><code>flex-shrink</code></h2><p><code>flex-shrink</code> 定义了元素在必要时收缩的规则。</p><pre><code class="language-css">.item {
+    flex-shrink: &lt;number&gt;; /* 默认值是1 */
+}
+</code></pre><h2 id="flex-basis"><code>flex-basis</code></h2><p><code>flex-basis</code> 定义了分配剩余空间之前，元素的默认大小。它的值可以是一个长度单位（20%，5rem等）或者是一个关键字。</p><pre><code class="language-css">.item {
+    flex-basis: &lt;length&gt; | auto; /* 默认是auto */
+}
+</code></pre><h2 id="flex"><code>flex</code></h2><p><code>flex</code> 是 <code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code> 的缩写。<code>flex-shrink</code> 和 <code>flex-basis</code> 是可选值。</p><pre><code class="language-css">.item {
+    flex: none | [&lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;?|| &lt;'flex-basis'&gt; ]]
+}
+</code></pre><h2 id="align-self"><code>align-self</code></h2><p><code>align-self</code> 允许覆盖默认的对齐规则。</p><pre><code class="language-css">.item {
+    align-self: auto| flex-start| flex-end| center| baseline| stretch;
+}
+</code></pre><h1 id="示例">示例</h1><p>元素左右垂直居中：</p><pre><code class="language-css">.parent {
+    display: flex;
+    height: 300px; /* whatever */
+}
+.child {
+    width: 100px; /* whatever */
+    height: 100px; /* whatever */
+    margin: auto;
+}
+</code></pre><div id="flex-item"><ul class="flex-container"><li class="flex-item">1</li><li class="flex-item">2</li><li class="flex-item">3</li><li class="flex-item">4</li><li class="flex-item">5</li><li class="flex-item">6</li></ul></div><style>#flex-item .flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#flex-item .flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}</style><p>导航：</p><div id="navigation"><ul class="navigation"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Products</a></li><li><a href="#">Contact</a></li></ul></div><style>#navigation .navigation {
+  list-style: none;
+  margin: 0;
+  background: deepskyblue;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+#navigation .navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+#navigation .navigation a:hover {
+  background: #00b7f5;
+}
+
+@media all and (max-width: 800px) {
+  #navigation .navigation {
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 600px) {
+  #navigation .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+
+  #navigation .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  #navigation .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}</style><p></p></article></div><div class="card-action"><i class="material-icons">local_offer</i> <a class="tag" href="https://wzhongke.github.io//tags/css">#css</a>&nbsp;</div><div class="card-action"><div class="comments"><div id="disqus_thread"></div></div><script type="text/javascript">var disqus_shortname = 'wzhongke';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div><div class="pagination-single"><span class="pagination-item previous"><i class="material-icons">navigate_before</i> <a href="https://wzhongke.github.io/post/front/es6/" rel="prev">es6</a> </span><span class="pagination-item next"><i class="material-icons">navigate_next</i> <a href="https://wzhongke.github.io/post/java/netty/" rel="next">高并发 netty</a></span></div></div></section></div></section><footer class="page-footer"><div class="container"><div class="row"><div class="col l6 s12"><h5 class="white-text">World of Wang</h5><p class="grey-text text-lighten-4">Theme <a href="https://github.com/stkevintan/hugo-YAMT-theme" target="_blank">YAMT</a> designed by <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p></div><div class="col l4 offset-l2 s12"><h5 class="white-text">My Friends</h5><ul><li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li></ul></div></div></div><div class="footer-copyright"><div class="container">Copyright@Kevin Tan</div></div></footer></main><script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script type="text/javascript" src="//dlweb.sogoucdn.com/common/lib/jquery/jquery-1.11.0.min.js"></script><script type="text/javascript" src="//cdn.bootcss.com/lunr.js/2.1.2/lunr.min.js"></script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      }
+    });</script><script type="text/javascript" src="https://wzhongke.github.io//js/materialize.min.js"></script><script type="text/javascript" src="https://wzhongke.github.io//js/index-1c463e212c.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9350854994277981",
+        enable_page_level_ads: true
+    });</script></body></html>
