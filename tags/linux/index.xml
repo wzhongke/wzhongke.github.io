@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on World of Wang</title>
+    <title>linux on World of Wang</title>
     <link>https://wzhongke.github.io/tags/linux/</link>
-    <description>Recent content in Linux on World of Wang</description>
+    <description>Recent content in linux on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
     <lastBuildDate>Thu, 28 Dec 2017 19:21:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -36,7 +35,7 @@
       <pubDate>Thu, 21 Sep 2017 12:00:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/linux/linux-server/</guid>
-      <description>linux 常用网络命令 ifconfig, ifup, ifdown 这三个指令都是用来启动网络接口的。 1. ifconfig ifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: ifconfig [interface] {up/down}</description>
+      <description>linux 常用网络命令 ifconfig, ifup, ifdown 这三个指令都是用来启动网络接口的。 ifconfig ifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: ifconfig [interface] {up/down} ##</description>
     </item>
     
     <item>
@@ -72,7 +71,7 @@
       <pubDate>Sat, 17 Jun 2017 19:42:25 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/linux/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。 目录类 ls: 查看文件与目录 ls [-aAdfFhilnrRSt] 目</description>
+      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。目录类 ls: 查看文件与目录 ls [-aAdfFhilnrRSt] 目</description>
     </item>
     
     <item>

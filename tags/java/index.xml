@@ -1,16 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on World of Wang</title>
+    <title>java on World of Wang</title>
     <link>https://wzhongke.github.io/tags/java/</link>
-    <description>Recent content in Java on World of Wang</description>
+    <description>Recent content in java on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
-    <lastBuildDate>Fri, 20 Jul 2018 18:51:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Feb 2019 12:39:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>java 内存以及GC</title>
+      <link>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</link>
+      <pubDate>Sat, 23 Feb 2019 12:39:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</guid>
+      <description>java 堆内存 根据 Generation 算法，Java 的堆内存被划分为新生代、老年代和持久代。新生代又进一步划分为 Eden 和 Survivor 区，最后 Survivor 由 FromSpace(Survivor0) 和 ToSpace(Survivo1) 组成。 所有通过 new 创建的对象都</description>
+    </item>
+    
+    <item>
+      <title>java 使用代码计算内存</title>
+      <link>https://wzhongke.github.io/post/java/java%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</link>
+      <pubDate>Fri, 22 Feb 2019 11:02:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/java%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</guid>
+      <description>原始类型 在java中，原始类型占用的内存大小是固定的： 类型 | 大小 (byte) :&amp;mdash;&amp;mdash;-|:&amp;mdash;&amp;mdash;&amp;mdash; boolean | 1 byte | 1 short | 2 char | 2 int | 4 float | 4 long | 8 double | 8 对象大小计算 对象大小可以</description>
+    </item>
     
     <item>
       <title>高并发 netty</title>
@@ -108,7 +125,7 @@
       <pubDate>Thu, 02 Apr 2015 11:32:36 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/java/java%E4%B8%AD%E7%9A%84%E5%85%88%E8%B5%8B%E5%80%BC%E5%86%8D%E5%AE%9A%E4%B9%89/</guid>
-      <description>如下代码 public class MyTest{ { value = 3; System.out.println(&amp;quot;函数块&amp;quot;); } MyTest(){ System.out.println(&amp;q</description>
+      <description>如下代码 public class MyTest{ { value = 3; System.out.println(&amp;#34;函数块&amp;#34;); } MyTest(){ System.out.println(&amp;#34</description>
     </item>
     
   </channel>

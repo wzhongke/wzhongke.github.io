@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on World of Wang</title>
@@ -6,11 +6,73 @@
     <description>Recent content in Posts on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
-    <lastBuildDate>Fri, 17 Aug 2018 11:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 19:48:32 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>人生的智慧_叔本华</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%99%BA%E6%85%A7-%E5%8F%94%E6%9C%AC%E5%8D%8E/</link>
+      <pubDate>Fri, 06 Mar 2020 19:48:32 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%99%BA%E6%85%A7-%E5%8F%94%E6%9C%AC%E5%8D%8E/</guid>
+      <description>1. 基本的划分 决定凡人命运的根本差别在于三项内容： 人的自身 人所拥有的的身外之物，亦即财产和所有意义上的占有物 人向其他人所显示的样子，亦即人们对</description>
+    </item>
+    
+    <item>
+      <title>node使用笔记</title>
+      <link>https://wzhongke.github.io/post/node/node%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 25 Oct 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/node/node%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>Date 类型 Date 时间类型在 JSON.stringify() 时调用了 Date.prototype.toJSON() 方法。但是该方法返回的是国际时间，可以通过如下方式返回需要的内容： const moment = require(&amp;#39;moment&amp;#39;); Date.prototype.toJSON = function() { return moment(this).format(&amp;#39;YYYY-MM-DD HH:mm:ss&amp;#39;); }</description>
+    </item>
+    
+    <item>
+      <title>typeorm</title>
+      <link>https://wzhongke.github.io/post/node/typeorm/</link>
+      <pubDate>Sun, 18 Aug 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/node/typeorm/</guid>
+      <description>使用 REPLACE INTO let query = getConnection(&amp;#39;ubs_spider_black&amp;#39;).createQueryBuilder() .insert() .into(FrontWebPageRecord) .values(records); let [sql, param] = query.getQueryAndParameters(); sql = sql.replace(&amp;#39;INSERT INTO&amp;#39;, &amp;#39;REPLACE INTO&amp;#39;); return await conn.blacklist.manager.query(sql, param); 使用流式查询 const queryRunner = typeorm.createQueryRunner(); await queryRunner.connect(); let stream = await queryRunner.stream(&amp;#39;select * from admin&amp;#39;); stream.on(&amp;#39;result&amp;#39;, result =&amp;gt; { console.log(result); }) stream.on(&amp;#39;error&amp;#39;, err =&amp;gt; { queryRunner.release(); console.log(err); }) stream.on(&amp;#39;end&amp;#39;, ()=&amp;gt; { queryRunner.release(); stream.close(); }) 批量插入 使</description>
+    </item>
+    
+    <item>
+      <title>深入浅出 nodejs</title>
+      <link>https://wzhongke.github.io/post/java/spring-%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Sun, 18 Aug 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/spring-%E6%BA%90%E7%A0%81/</guid>
+      <description>String replace /** * 不是正则替换，效率是不是会低些 */ public static String replace(String inString, String oldPattern, @Nullable String newPattern) { if (!hasLength(inString) || !hasLength(oldPattern) || newPattern == null) { return inString; } int index = inString.indexOf(oldPattern); if (index == -1) { // no occurrence -&amp;gt; can return input as-is return inString; } int capacity = inString.length(); // 为什</description>
+    </item>
+    
+    <item>
+      <title>java 内存以及GC</title>
+      <link>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</link>
+      <pubDate>Sat, 23 Feb 2019 12:39:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</guid>
+      <description>java 堆内存 根据 Generation 算法，Java 的堆内存被划分为新生代、老年代和持久代。新生代又进一步划分为 Eden 和 Survivor 区，最后 Survivor 由 FromSpace(Survivor0) 和 ToSpace(Survivo1) 组成。 所有通过 new 创建的对象都</description>
+    </item>
+    
+    <item>
+      <title>java 使用代码计算内存</title>
+      <link>https://wzhongke.github.io/post/java/java%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</link>
+      <pubDate>Fri, 22 Feb 2019 11:02:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/java%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</guid>
+      <description>原始类型 在java中，原始类型占用的内存大小是固定的： 类型 | 大小 (byte) :&amp;mdash;&amp;mdash;-|:&amp;mdash;&amp;mdash;&amp;mdash; boolean | 1 byte | 1 short | 2 char | 2 int | 4 float | 4 long | 8 double | 8 对象大小计算 对象大小可以</description>
+    </item>
+    
+    <item>
+      <title>深入浅出 nodejs</title>
+      <link>https://wzhongke.github.io/post/node/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAnode/</link>
+      <pubDate>Thu, 25 Oct 2018 12:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/node/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAnode/</guid>
+      <description>模块编译 Node 对获取的 JavaScript 文件内容进行了头尾包装： (function (exports, require, module, __filename, __dirname)) { // 文件内容 var math = require(&amp;#39;math&amp;#39;); exports.area = function(radius) { return Math.PI * radius * radius; } // 文件内容结束 }) 有上述代码可以看出，使用 exports=function(){}</description>
+    </item>
     
     <item>
       <title>javascript 基础</title>
@@ -18,7 +80,7 @@
       <pubDate>Fri, 17 Aug 2018 11:00:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/front/javascript/</guid>
-      <description>Boolean 类型 下表给出了各种数据类型及其对应的转换成 Boolean 类型的规则 数据类型 转换为 true 的值 转换为 false 的值 Boolean true fasle String 任何非空字符串 &amp;rdquo;&amp;rdquo; (空字符串) Number 任何非零数值(</description>
+      <description>Boolean 类型 下表给出了各种数据类型及其对应的转换成 Boolean 类型的规则 数据类型 转换为 true 的值 转换为 false 的值 Boolean true fasle String 任何非空字符串 &amp;quot;&amp;rdquo; (空字符串) Number 任何非零数值(</description>
     </item>
     
     <item>
@@ -54,7 +116,7 @@
       <pubDate>Sat, 21 Apr 2018 09:49:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/front/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84javascript/</guid>
-      <description>类型 JavaScript 有7中内置类型： - 空值 null - 未定义 undefined - 布尔值 boolean - 数字 number - 字符串 string - 对象 object - 符号 symbol （ES6新增） 我们可以用 typeof 运算符来查看值的类型，它返回的</description>
+      <description>类型 JavaScript 有7中内置类型： 空值 null 未定义 undefined 布尔值 boolean 数字 number 字符串 string 对象 object 符号 symbol （ES6新增） 我们可以用 typeof 运算符来查看值的类型，它返回的类型的字符串值</description>
     </item>
     
     <item>
@@ -117,7 +179,7 @@
       <pubDate>Wed, 27 Dec 2017 12:50:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/mathjax/</guid>
-      <description>使用MathJax插入公式 MathJax 插入的公式有两种形式：行内公式和独立公式。 1. 默认的行内公式是使用 $...$或 \(...\) 符号包裹内容。如 $a^2=b^2+c^2$ 2. 默认的独立公式</description>
+      <description>使用MathJax插入公式 MathJax 插入的公式有两种形式：行内公式和独立公式。 默认的行内公式是使用 $...$或 \(...\) 符号包裹内容。如 $a^2=b^2+c^2$ 默认的独立公式使用</description>
     </item>
     
     <item>
@@ -172,6 +234,15 @@
       
       <guid>https://wzhongke.github.io/post/front/css-%E5%8A%A8%E7%94%BB/</guid>
       <description>通过 CSS3，我们能够创建动画，这可以在许多网页中取代动画图片、Flash 动画以及 JavaScript。 transitions 可以通过设置 transitions 来实现过渡效果。其用</description>
+    </item>
+    
+    <item>
+      <title>感谢自己的不完美.md</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/_%E6%84%9F%E8%B0%A2%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%8D%E5%AE%8C%E7%BE%8E/</link>
+      <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/_%E6%84%9F%E8%B0%A2%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%8D%E5%AE%8C%E7%BE%8E/</guid>
+      <description>序 拥抱你的不完美 2017-11-26 20:19:11 深入地碰触自己内心的黑暗，而不是逃避黑暗去追求快乐乃至一个外在的好形象，是治愈之路。 Part 1 坏习惯不是你的敌人 2017-11-26 20:20:41 改变恶习最</description>
     </item>
     
     <item>
@@ -234,7 +305,7 @@
       <pubDate>Sun, 08 Oct 2017 18:51:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</guid>
-      <description>查询时间是今天的数据 sql select * from table_name where to_days(create_time) = to_days(now()); select * from table_name where date(create_time) = curdate(); 查询一周之内的数据 select * from table_name where DATE_SUB(CURDATE(), INTERVAL 7 DAY) &amp;lt;= date(create_time); 其中DATE_SUB(date,INTERVA</description>
+      <description>EXPLAIN explain select * from user_info where id = 2 上述 SQL 返回结果如下 id: 1 select_type: SIMPLE table: user_info partitions: NULL type: const possible_keys: PRIMARY key: PRIMARY key_len: 8 ref: const rows: 1 filtered: 100.00 Extra: NULL 1 row in set, 1 warning (0.00 sec) 各个列含义如下： id: SELECT 查询的标识符. 每个</description>
     </item>
     
     <item>
@@ -252,7 +323,7 @@
       <pubDate>Thu, 21 Sep 2017 12:00:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/linux/linux-server/</guid>
-      <description>linux 常用网络命令 ifconfig, ifup, ifdown 这三个指令都是用来启动网络接口的。 1. ifconfig ifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: ifconfig [interface] {up/down}</description>
+      <description>linux 常用网络命令 ifconfig, ifup, ifdown 这三个指令都是用来启动网络接口的。 ifconfig ifconfig主要是可以手动启动、观察与修改网络接口的相关参数。语法如下: ifconfig [interface] {up/down} ##</description>
     </item>
     
     <item>
@@ -279,7 +350,7 @@
       <pubDate>Wed, 30 Aug 2017 19:42:25 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/front/vuex/</guid>
-      <description>Vuex 能做什么 Vuex将多个组件共享的状态从组件中抽离出来，，以一个全局单例的模式进行统一管理。 解决问题 - 多层嵌套组件间传参繁琐，且兄弟组件间的</description>
+      <description>Vuex 能做什么 Vuex将多个组件共享的状态从组件中抽离出来，，以一个全局单例的模式进行统一管理。 解决问题 多层嵌套组件间传参繁琐，且兄弟组件间的状</description>
     </item>
     
     <item>
@@ -297,7 +368,7 @@
       <pubDate>Sat, 19 Aug 2017 09:52:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/sublime/</guid>
-      <description>配置markdown 安装package controll: 快捷键ctrl+\`打开Sublime控制台，输入下面代码： sublime 3 import urllib.request,os,hashlib; h = &#39;df21e130d211cfc94d9b0905775a7c0f&#39; + &#39;1e3d39e33b79698005270310898eea76&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) );</description>
+      <description>配置markdown 安装package controll: 快捷键`ctrl+``打开Sublime控制台，输入下面代码： sublime 3 import urllib.request,os,hashlib; h = &amp;#39;df21e130d211cfc94d9b0905775a7c0f&amp;#39; + &amp;#39;1e3d39e33b79698005270310898eea76&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler())</description>
     </item>
     
     <item>
@@ -374,11 +445,11 @@
     
     <item>
       <title>svg动画</title>
-      <link>https://wzhongke.github.io/post/svg%E5%8A%A8%E7%94%BB/</link>
+      <link>https://wzhongke.github.io/post/front/svg%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Sun, 02 Jul 2017 19:42:25 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/svg%E5%8A%A8%E7%94%BB/</guid>
-      <description>svg 字体动画 {% raw %} .center-btn-wrapper { width: 100%; top: 50%; text-align: center; font-size: 24px; } .center-btn-wrapper a { color: white; text-decoration: none; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.42); background-color: #D87B00; padding: 12px 30px; border-radius: 5px; } .center-btn-wrapper a:hover { background-color: #14516F; } /* 手机适配 / @media screen and (max-width: 768px) { .center-btn-wrapper { font-size: 18px; } } / 暂时隐</description>
+      <guid>https://wzhongke.github.io/post/front/svg%E5%8A%A8%E7%94%BB/</guid>
+      <description>svg 字体动画 {% raw %} css源代码： .center-btn-wrapper { width: 100%; top: 50%; text-align: center; font-size: 24px; } .center-btn-wrapper a { color: white; text-decoration: none; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.42); background-color: #D87B00; padding: 12px 30px; border-radius: 5px; } .center-btn-wrapper a:hover { background-color: #14516F; } /* 手机适配 */ @media screen and (max-width: 768px) { .center-btn-wrapper { font-size:</description>
     </item>
     
     <item>
@@ -436,15 +507,6 @@
     </item>
     
     <item>
-      <title>HashMap 和 ConcurrentHashMap</title>
-      <link>https://wzhongke.github.io/post/java/concurrenthashmap/</link>
-      <pubDate>Sat, 17 Jun 2017 19:48:32 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/java/concurrenthashmap/</guid>
-      <description>并发编程为什么使用ConcurrentHashMap HashMap并不是线程安全的，HashTable虽然是线程安全的，但是HashTabl</description>
-    </item>
-    
-    <item>
       <title>apply和call</title>
       <link>https://wzhongke.github.io/post/front/apply%E5%92%8Ccall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Sat, 17 Jun 2017 19:48:32 +0000</pubDate>
@@ -454,12 +516,21 @@
     </item>
     
     <item>
+      <title>HashMap 和 ConcurrentHashMap</title>
+      <link>https://wzhongke.github.io/post/java/concurrenthashmap/</link>
+      <pubDate>Sat, 17 Jun 2017 19:48:32 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/concurrenthashmap/</guid>
+      <description>并发编程为什么使用ConcurrentHashMap HashMap并不是线程安全的，HashTable虽然是线程安全的，但是HashTabl</description>
+    </item>
+    
+    <item>
       <title>hexo Hello World</title>
       <link>https://wzhongke.github.io/post/hello-world/</link>
       <pubDate>Sat, 17 Jun 2017 19:48:32 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/hello-world/</guid>
-      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;quot;My New Post&amp;quot; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to</description>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to</description>
     </item>
     
     <item>
@@ -486,7 +557,7 @@
       <pubDate>Sat, 17 Jun 2017 19:42:25 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/linux/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。 目录类 ls: 查看文件与目录 ls [-aAdfFhilnrRSt] 目</description>
+      <description>使用ubuntu的时候经常会把常用的一些命令忘掉或不知道有些参数的意思，又懒得看那枯燥的文档。因此记录下来备忘。目录类 ls: 查看文件与目录 ls [-aAdfFhilnrRSt] 目</description>
     </item>
     
     <item>
@@ -558,7 +629,7 @@
       <pubDate>Thu, 02 Apr 2015 11:32:36 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/java/java%E4%B8%AD%E7%9A%84%E5%85%88%E8%B5%8B%E5%80%BC%E5%86%8D%E5%AE%9A%E4%B9%89/</guid>
-      <description>如下代码 public class MyTest{ { value = 3; System.out.println(&amp;quot;函数块&amp;quot;); } MyTest(){ System.out.println(&amp;q</description>
+      <description>如下代码 public class MyTest{ { value = 3; System.out.println(&amp;#34;函数块&amp;#34;); } MyTest(){ System.out.println(&amp;#34</description>
     </item>
     
     <item>
@@ -576,7 +647,7 @@
       <pubDate>Sun, 28 Dec 2014 19:45:33 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/python/pycurl-https-error-unable-to-get-local-issuer-certificate/</guid>
-      <description>在 pycurl 访问 https 链接时可能会报： pycurl.error: (60, &amp;lsquo;SSL certificate problem: unable to get local issuer certificate&amp;rsquo;) 错误 一个比较好的解决方法是： import pycurl import certifi curl = pycurl.Curl() curl.setopt(pycurl.CAINFO, certifi.where()) curl.setopt(pycurl.URL, &#39;https://www.quora.com&#39;) curl.perform()</description>
+      <description>在 pycurl 访问 https 链接时可能会报： pycurl.error: (60, &amp;lsquo;SSL certificate problem: unable to get local issuer certificate&amp;rsquo;) 错误一个比较好的解决方法是： import pycurl import certifi curl = pycurl.Curl() curl.setopt(pycurl.CAINFO, certifi.where()) curl.setopt(pycurl.URL, &amp;#39;https://www.quora.com&amp;#39;) curl.perform()</description>
     </item>
     
     <item>
@@ -594,25 +665,34 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/_photoshop%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description> Ctrl+r: 显示标尺 Shift+Tab:隐藏/显示浮动面板   </description>
+      <description>Ctrl+r: 显示标尺 Shift+Tab:隐藏/显示浮动面板</description>
     </item>
     
     <item>
-      <title>HTML 标签</title>
-      <link>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</link>
+      <title></title>
+      <link>https://wzhongke.github.io/post/front/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</guid>
-      <description>标签 &amp;lt;video&amp;gt;标签是HTML5的新标签，其属性如下： 属性 值 描述 autoplay autoplay 视频就绪后马上播放 controls controls 向用户展示控件，比如播放按钮等 height pixels 视</description>
+      <guid>https://wzhongke.github.io/post/front/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <description>目录结构 ├── dist ├── examples ├── flow ├── packages ├── scripts ├── src flow flow 是Facebook的JavaScript静态类型检查工具。vue用flow作为静</description>
     </item>
     
     <item>
-      <title>Springboot2 &#43; Prometheus 监控</title>
-      <link>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</link>
+      <title></title>
+      <link>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</guid>
-      <description>从 SpringBoot 2.0 开始，Micrometer 就成为默认的指标输出引擎。 Micrometer 是一种支持多种检测系统的应用，像 Atlas，Datadog, Prometheus 等等。 配置Spri</description>
+      <guid>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
+      <description>缓存表和汇总表 我们用术语“缓存表”来表示存储那些可以比较简单地从schema其他表获取（但是每次获取的速度比较慢）数据的表（例如，逻辑上冗余</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85/</guid>
+      <description>重点内容： 让自己的投资分布于多种股票和多个行业，是防范风险的唯一可靠保障 指数基金，多个行业的指数基金 投资者与通货膨胀 通货膨胀并不一定有利于企</description>
     </item>
     
     <item>
@@ -634,12 +714,21 @@
     </item>
     
     <item>
-      <title>java 计算对象占用内存</title>
-      <link>https://wzhongke.github.io/post/java/java-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</link>
+      <title>HTML 标签</title>
+      <link>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/java/java-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98/</guid>
-      <description>可以使用如下代码计算对象占用内存： import java.lang.instrument.Instrumentation; import java.lang.reflect.Array; import java.lang.reflect.Field; import java.lang.reflect.Modifier; import java.util.IdentityHashMap; import java.util.Map; import java.util.Stack; /** * 借助 Instrumentation 接口的 getObjectSize 方法计算对象占用空间 * 原来的 sizeOf 只能计算本对象占用空间， 无法计</description>
+      <guid>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</guid>
+      <description>标签 &amp;lt;video&amp;gt;标签是HTML5的新标签，其属性如下： 属性 值 描述 autoplay autoplay 视频就绪后马上播放 controls controls 向用户展示控件，比如播放按钮等 height pixels 视</description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://wzhongke.github.io/post/jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/jenkins/</guid>
+      <description>jenkins 启动 docker run -d -p 8080:8080 -p 50000:50000 -v ~/.ssh:/root/.ssh -v /var/jenkins_home:/var/jenkins_home -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean pipeline agent docker agent { docker { image: &amp;#39;node&amp;#39; args: &amp;#39;&amp;#39; } } #!groovy pipeline { agent {node {label &amp;#39;master&amp;#39;}} environment { PATH=&amp;#34;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin&amp;#34; FORMATTED_VERSION = VersionNumber([ projectStartDate: &amp;#39;1970-01-01&amp;#39;, versionNumberString: &amp;#39;${BUILD_DATE_FORMATTED, &amp;#34;yyyyMMdd&amp;#34;}.${Publish_Type}.${BUILDS_TODAY}&amp;#39;, versionPrefix: &amp;#39;&amp;#39;, worstResultForIncrement: &amp;#39;NOT_BUILT&amp;#39; ]) } parameters { choice( choices: &amp;#39;req\nzhong\njin&amp;#39;, description: &amp;#39;发布类</description>
     </item>
     
     <item>
@@ -679,6 +768,24 @@
     </item>
     
     <item>
+      <title>Springboot2 &#43; Prometheus 监控</title>
+      <link>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/springboot&#43;prometheus/</guid>
+      <description>从 SpringBoot 2.0 开始，Micrometer 就成为默认的指标输出引擎。 Micrometer 是一种支持多种检测系统的应用，像 Atlas，Datadog, Prometheus 等等。 配置Spri</description>
+    </item>
+    
+    <item>
+      <title>vue 脚手架</title>
+      <link>https://wzhongke.github.io/post/front/vue-%E8%84%9A%E6%89%8B%E6%9E%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/front/vue-%E8%84%9A%E6%89%8B%E6%9E%B6/</guid>
+      <description>安装 可以使用下面任一个命令安装： npm install -g @vue/cli yarn global add @vue/cli 可以使用如下命令查看版本： node --version 创建一个项目 运行命令 vue create project 来创建一个新的项目，可以根据需要来选</description>
+    </item>
+    
+    <item>
       <title>webpackage</title>
       <link>https://wzhongke.github.io/post/webpackage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -707,11 +814,20 @@
     
     <item>
       <title>包管理工具</title>
-      <link>https://wzhongke.github.io/post/front/nodejs/</link>
+      <link>https://wzhongke.github.io/post/node/nodejs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/front/nodejs/</guid>
+      <guid>https://wzhongke.github.io/post/node/nodejs/</guid>
       <description>npm 使用 npm 安装一个本地的包： npm install &amp;lt;package-name&amp;gt; 该命令会在当前的目录下创建一个 node_modules 的目录（如果不存在的话），然后将下载的包保存到这个目录下。 package.json 使用 package.json 是管理本地</description>
+    </item>
+    
+    <item>
+      <title>数据库系统概念</title>
+      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
+      <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
     </item>
     
     <item>
@@ -721,6 +837,15 @@
       
       <guid>https://wzhongke.github.io/post/%E7%A2%B0%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>有时候碰到问题，只知道自己以前解决过。如何解决的，却是一点也想不起来了。故在此记录下，碰到过的问题，以待后续会用到。 Java 在java中，对于读取</description>
+    </item>
+    
+    <item>
+      <title>非暴力沟通</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid>
+      <description>让爱融入生活 “非暴力”一词，来指暴力消退后，自然流露的爱 听到批评时，我们一般会申辩、退缩或反击。然而，一旦专注于彼此的观察、感受及需要，而不</description>
     </item>
     
   </channel>

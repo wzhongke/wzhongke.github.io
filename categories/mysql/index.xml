@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mysql on World of Wang</title>
+    <title>MySQL on World of Wang</title>
     <link>https://wzhongke.github.io/categories/mysql/</link>
-    <description>Recent content in Mysql on World of Wang</description>
+    <description>Recent content in MySQL on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
     <lastBuildDate>Sun, 08 Oct 2017 19:48:32 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
@@ -27,7 +26,16 @@
       <pubDate>Sun, 08 Oct 2017 18:51:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</guid>
-      <description>查询时间是今天的数据 sql select * from table_name where to_days(create_time) = to_days(now()); select * from table_name where date(create_time) = curdate(); 查询一周之内的数据 select * from table_name where DATE_SUB(CURDATE(), INTERVAL 7 DAY) &amp;lt;= date(create_time); 其中DATE_SUB(date,INTERVA</description>
+      <description>EXPLAIN explain select * from user_info where id = 2 上述 SQL 返回结果如下 id: 1 select_type: SIMPLE table: user_info partitions: NULL type: const possible_keys: PRIMARY key: PRIMARY key_len: 8 ref: const rows: 1 filtered: 100.00 Extra: NULL 1 row in set, 1 warning (0.00 sec) 各个列含义如下： id: SELECT 查询的标识符. 每个</description>
+    </item>
+    
+    <item>
+      <title>数据库系统概念</title>
+      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
+      <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
     </item>
     
   </channel>

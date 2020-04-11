@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on World of Wang</title>
@@ -6,7 +6,6 @@
     <description>Recent content in 编程 on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
     <lastBuildDate>Sat, 19 Aug 2017 09:52:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />

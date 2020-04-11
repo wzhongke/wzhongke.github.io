@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on World of Wang</title>
+    <title>python on World of Wang</title>
     <link>https://wzhongke.github.io/categories/python/</link>
-    <description>Recent content in Python on World of Wang</description>
+    <description>Recent content in python on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright@Kevin Tan</copyright>
     <lastBuildDate>Wed, 06 Dec 2017 19:42:25 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
@@ -45,7 +44,7 @@
       <pubDate>Sun, 28 Dec 2014 19:45:33 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/python/pycurl-https-error-unable-to-get-local-issuer-certificate/</guid>
-      <description>在 pycurl 访问 https 链接时可能会报： pycurl.error: (60, &amp;lsquo;SSL certificate problem: unable to get local issuer certificate&amp;rsquo;) 错误 一个比较好的解决方法是： import pycurl import certifi curl = pycurl.Curl() curl.setopt(pycurl.CAINFO, certifi.where()) curl.setopt(pycurl.URL, &#39;https://www.quora.com&#39;) curl.perform()</description>
+      <description>在 pycurl 访问 https 链接时可能会报： pycurl.error: (60, &amp;lsquo;SSL certificate problem: unable to get local issuer certificate&amp;rsquo;) 错误一个比较好的解决方法是： import pycurl import certifi curl = pycurl.Curl() curl.setopt(pycurl.CAINFO, certifi.where()) curl.setopt(pycurl.URL, &amp;#39;https://www.quora.com&amp;#39;) curl.perform()</description>
     </item>
     
     <item>
