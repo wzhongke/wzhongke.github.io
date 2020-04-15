@@ -182,6 +182,10 @@
         "title": "mybatis"
     },
     {
+        "uri": "/post/java/netty-实战",
+        "title": "netty 实战"
+    },
+    {
         "uri": "/post/java/netty",
         "title": "高并发 netty"
     },
@@ -275,10 +279,11 @@
     },
     {
         "uri": "/post/mysql/mysql技术内幕",
-        "title": "数据库系统概念"
+        "title": "MySQL技术内幕"
     },
     {
-        "uri": "/post/mysql/高性能的mysql"
+        "uri": "/post/mysql/高性能的mysql",
+        "title": "高性能的MySQL"
     },
     {
         "uri": "/post/node",

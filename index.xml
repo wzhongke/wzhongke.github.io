@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>非暴力沟通</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link>
+      <pubDate>Sun, 05 Apr 2020 14:20:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid>
+      <description>读后感 我本人不擅长沟通交流，而这本书仿佛给我打开了一个新的世界，让我知道怎么沟通才即有效又有效率。 以往自己生气时总是用沉默表达自己的不满以及</description>
+    </item>
+    
+    <item>
       <title>人生的智慧_叔本华</title>
       <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%99%BA%E6%85%A7-%E5%8F%94%E6%9C%AC%E5%8D%8E/</link>
       <pubDate>Fri, 06 Mar 2020 19:48:32 +0000</pubDate>
@@ -697,15 +706,6 @@
     
     <item>
       <title></title>
-      <link>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
-      <description>缓存表和汇总表 我们用术语“缓存表”来表示存储那些可以比较简单地从schema其他表获取（但是每次获取的速度比较慢）数据的表（例如，逻辑上冗余</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -765,6 +765,15 @@
       
       <guid>https://wzhongke.github.io/post/java/maven/</guid>
       <description>maven执行命令： mvn clean install -Dmaven.test.skip=true</description>
+    </item>
+    
+    <item>
+      <title>MySQL技术内幕</title>
+      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
+      <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
     </item>
     
     <item>
@@ -840,15 +849,6 @@
     </item>
     
     <item>
-      <title>数据库系统概念</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
-      <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
-    </item>
-    
-    <item>
       <title>碰到过的问题</title>
       <link>https://wzhongke.github.io/post/%E7%A2%B0%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -858,12 +858,12 @@
     </item>
     
     <item>
-      <title>非暴力沟通</title>
-      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link>
+      <title>高性能的MySQL</title>
+      <link>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid>
-      <description>让爱融入生活 “非暴力”一词，来指暴力消退后，自然流露的爱 听到批评时，我们一般会申辩、退缩或反击。然而，一旦专注于彼此的观察、感受及需要，而不</description>
+      <guid>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
+      <description>一旦使用了 DISTINCT 和 GROUP BY，那么在查询的执行过程中，通常需要产生临时中间表. DISTINCT 会产生文件排序 MySQL 在进行 GROUP BY 操作的时候要想利用索引，必须满足 GROUP BY 的字段</description>
     </item>
     
   </channel>
