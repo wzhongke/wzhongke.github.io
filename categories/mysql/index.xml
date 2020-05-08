@@ -13,37 +13,37 @@
     
     <item>
       <title>MySQL基础语句</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</link>
       <pubDate>Sun, 08 Oct 2017 19:48:32 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</guid>
       <description>MySQL数据库 MySQL 是典型的关系型数据库，因为其免费开源，所以被广泛的应用 数据库是按照数据结构来组织、存储和管理数据的仓库当然我们也可以将数据</description>
     </item>
     
     <item>
       <title>MySQL技巧</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sun, 08 Oct 2017 18:51:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E5%B7%A7/</guid>
       <description>EXPLAIN explain select * from user_info where id = 2 上述 SQL 返回结果如下 id: 1 select_type: SIMPLE table: user_info partitions: NULL type: const possible_keys: PRIMARY key: PRIMARY key_len: 8 ref: const rows: 1 filtered: 100.00 Extra: NULL 1 row in set, 1 warning (0.00 sec) 各个列含义如下： id: SELECT 查询的标识符. 每个</description>
     </item>
     
     <item>
       <title>MySQL技术内幕</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
       <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
     </item>
     
     <item>
       <title>高性能的MySQL</title>
-      <link>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
+      <link>https://wzhongke.github.io/post/sql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
+      <guid>https://wzhongke.github.io/post/sql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
       <description>一旦使用了 DISTINCT 和 GROUP BY，那么在查询的执行过程中，通常需要产生临时中间表. DISTINCT 会产生文件排序 MySQL 在进行 GROUP BY 操作的时候要想利用索引，必须满足 GROUP BY 的字段</description>
     </item>
     

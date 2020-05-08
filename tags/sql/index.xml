@@ -20,5 +20,14 @@
       <description>MyBatis是什么 MyBatis是定制化SQL、存储过程以及高级映射的持久层框架。MyBatis 可以对配置和原生Map使用简单的 XML 或注解，</description>
     </item>
     
+    <item>
+      <title>Redis</title>
+      <link>https://wzhongke.github.io/post/sql/redis/</link>
+      <pubDate>Sun, 18 Jun 2017 19:42:25 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/sql/redis/</guid>
+      <description>为什么使用 Redis Redis 单线程 Redis 单线程模型能有如此的处理能力，可以归结为三点： 纯内存访问，是如此高的处理能力的重要基础 非阻塞I/O，使用 epoll 来作为 I/O 多路</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,10 +6,19 @@
     <description>Recent content in java on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 23 Feb 2019 12:39:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 18:51:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>netty 实战</title>
+      <link>https://wzhongke.github.io/post/java/netty-%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 15 Apr 2020 18:51:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/netty-%E5%AE%9E%E6%88%98/</guid>
+      <description>异步和事件驱动 Netty是一款异步的事件驱动的网络应用程序框架，支持快速地开发可维护的高性能的面向协议的服务器和客户端 高性能的系统不仅要求超</description>
+    </item>
     
     <item>
       <title>java 内存以及GC</title>
@@ -17,7 +26,7 @@
       <pubDate>Sat, 23 Feb 2019 12:39:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</guid>
-      <description>java 堆内存 根据 Generation 算法，Java 的堆内存被划分为新生代、老年代和持久代。新生代又进一步划分为 Eden 和 Survivor 区，最后 Survivor 由 FromSpace(Survivor0) 和 ToSpace(Survivo1) 组成。 所有通过 new 创建的对象都</description>
+      <description>java 内存区域 java 运行时数据区如下： 程序计数器 程序计数器（Program Counter Register）是一块较小的内存空间，它可以看作是当前线程所执行的字节</description>
     </item>
     
     <item>

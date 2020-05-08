@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>sed和awk</title>
+      <link>https://wzhongke.github.io/post/awk%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Fri, 01 Sep 2017 14:20:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/awk%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <description>awk和sed有很多共同点： 使用相似的语法 面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出 使用正则表达式来进行模式匹配 允许在脚本</description>
+    </item>
+    
+    <item>
       <title>shell 编程</title>
       <link>https://wzhongke.github.io/post/linux/shell/</link>
       <pubDate>Sat, 19 Aug 2017 09:52:00 +0000</pubDate>

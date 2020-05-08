@@ -6,10 +6,28 @@
     <description>Recent content in Posts on World of Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 05 Apr 2020 14:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 19:48:32 +0000</lastBuildDate>
     
 	<atom:link href="https://wzhongke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>思考快与慢</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/</link>
+      <pubDate>Fri, 17 Apr 2020 19:48:32 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/</guid>
+      <description>第一章 一张愤怒的脸和一道乘法题 系统1: 系统1的运行是无意识且快速的，不怎么费脑力，没有感觉，完全处于自主控制状态 系统2: 将注意力转移到需要费</description>
+    </item>
+    
+    <item>
+      <title>netty 实战</title>
+      <link>https://wzhongke.github.io/post/java/netty-%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 15 Apr 2020 18:51:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/java/netty-%E5%AE%9E%E6%88%98/</guid>
+      <description>异步和事件驱动 Netty是一款异步的事件驱动的网络应用程序框架，支持快速地开发可维护的高性能的面向协议的服务器和客户端 高性能的系统不仅要求超</description>
+    </item>
     
     <item>
       <title>非暴力沟通</title>
@@ -62,7 +80,7 @@
       <pubDate>Sat, 23 Feb 2019 12:39:00 +0000</pubDate>
       
       <guid>https://wzhongke.github.io/post/java/java%E5%A0%86%E5%86%85%E5%AD%98/</guid>
-      <description>java 堆内存 根据 Generation 算法，Java 的堆内存被划分为新生代、老年代和持久代。新生代又进一步划分为 Eden 和 Survivor 区，最后 Survivor 由 FromSpace(Survivor0) 和 ToSpace(Survivo1) 组成。 所有通过 new 创建的对象都</description>
+      <description>java 内存区域 java 运行时数据区如下： 程序计数器 程序计数器（Program Counter Register）是一块较小的内存空间，它可以看作是当前线程所执行的字节</description>
     </item>
     
     <item>
@@ -301,19 +319,19 @@
     
     <item>
       <title>MySQL基础语句</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</link>
       <pubDate>Sun, 08 Oct 2017 19:48:32 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/</guid>
       <description>MySQL数据库 MySQL 是典型的关系型数据库，因为其免费开源，所以被广泛的应用 数据库是按照数据结构来组织、存储和管理数据的仓库当然我们也可以将数据</description>
     </item>
     
     <item>
       <title>MySQL技巧</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sun, 08 Oct 2017 18:51:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E5%B7%A7/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E5%B7%A7/</guid>
       <description>EXPLAIN explain select * from user_info where id = 2 上述 SQL 返回结果如下 id: 1 select_type: SIMPLE table: user_info partitions: NULL type: const possible_keys: PRIMARY key: PRIMARY key_len: 8 ref: const rows: 1 filtered: 100.00 Extra: NULL 1 row in set, 1 warning (0.00 sec) 各个列含义如下： id: SELECT 查询的标识符. 每个</description>
     </item>
     
@@ -351,6 +369,15 @@
       
       <guid>https://wzhongke.github.io/post/algorithms/%E6%89%BE%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87/</guid>
       <description>题目 给定一个字符串 s，找到s中最长的回文字符串。可以假设s的最长长度是1000。 Example1 : Input: &amp;ldquo;babad&amp;rdquo; Output: &amp;ldquo;bab&amp;rdquo; Note: &amp;ldquo;aba&amp;rdquo; 也是可以的答案 Example2 : Input: &amp;ldquo;cbbd&amp;rdquo; Output: &amp;ldquo;bb&amp;rdquo; 解法 假设前i个字符</description>
+    </item>
+    
+    <item>
+      <title>sed和awk</title>
+      <link>https://wzhongke.github.io/post/awk%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Fri, 01 Sep 2017 14:20:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/awk%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <description>awk和sed有很多共同点： 使用相似的语法 面向流的，从文本文件中一次读取一行并将处理结果输出到标准输出 使用正则表达式来进行模式匹配 允许在脚本</description>
     </item>
     
     <item>
@@ -504,6 +531,15 @@
       
       <guid>https://wzhongke.github.io/post/linux/nginx%E9%85%8D%E7%BD%AE%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81-%E5%B9%B6%E9%80%9A%E8%BF%87java%E8%AE%BF%E9%97%AE/</guid>
       <description>最近项目开发中的接口要使用双向认证，因为搭建服务器的方式是nginx+resin，而java的keytool配置nginx的双向认证时，并不</description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://wzhongke.github.io/post/sql/redis/</link>
+      <pubDate>Sun, 18 Jun 2017 19:42:25 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/sql/redis/</guid>
+      <description>为什么使用 Redis Redis 单线程 Redis 单线程模型能有如此的处理能力，可以归结为三点： 纯内存访问，是如此高的处理能力的重要基础 非阻塞I/O，使用 epoll 来作为 I/O 多路</description>
     </item>
     
     <item>
@@ -705,15 +741,6 @@
     </item>
     
     <item>
-      <title>dubbox 实现 rpc 服务</title>
-      <link>https://wzhongke.github.io/post/java/dubbox-%E5%AE%9E%E7%8E%B0-rpc-%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/java/dubbox-%E5%AE%9E%E7%8E%B0-rpc-%E6%9C%8D%E5%8A%A1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HTML 标签</title>
       <link>https://wzhongke.github.io/post/front/html%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -751,20 +778,11 @@
     
     <item>
       <title>MySQL技术内幕</title>
-      <link>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
+      <link>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
+      <guid>https://wzhongke.github.io/post/sql/mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</guid>
       <description>MySQL 体系结构 从概念上来说，数据库是文件的集合，是依照数据模型组织起来的并存放于二级存储器中的数据集合；数据库实例是程序，是位于用户与操作系统之</description>
-    </item>
-    
-    <item>
-      <title>node</title>
-      <link>https://wzhongke.github.io/post/node/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wzhongke.github.io/post/node/</guid>
-      <description>npm 常用功能 查看帮助 npm -v 可以查看当前 npm 的版本。 npm 可以查看 npm 帮助说明。 安装依赖包 npm install &amp;lt;package&amp;gt; 安装依赖包。执行后，会在当前目录的 node_modules 目录下创建以包名为名的</description>
     </item>
     
     <item>
@@ -831,6 +849,15 @@
     </item>
     
     <item>
+      <title>未来简史：从智人到智神</title>
+      <link>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzhongke.github.io/post/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2/</guid>
+      <description>这正是历史知识的悖论。知识如果不能改变行为，就没有用处。但知识一旦改变了行为，本身就立刻失去意义。我们拥有越多数据，对历史了解越深入，历史的</description>
+    </item>
+    
+    <item>
       <title>碰到过的问题</title>
       <link>https://wzhongke.github.io/post/%E7%A2%B0%E5%88%B0%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -841,10 +868,10 @@
     
     <item>
       <title>高性能的MySQL</title>
-      <link>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
+      <link>https://wzhongke.github.io/post/sql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzhongke.github.io/post/mysql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
+      <guid>https://wzhongke.github.io/post/sql/%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84mysql/</guid>
       <description>一旦使用了 DISTINCT 和 GROUP BY，那么在查询的执行过程中，通常需要产生临时中间表. DISTINCT 会产生文件排序 MySQL 在进行 GROUP BY 操作的时候要想利用索引，必须满足 GROUP BY 的字段</description>
     </item>
     
